@@ -1,0 +1,28 @@
+{
+    "app": "com.tencent.map",
+    "config": {
+        "autosize": false,
+        "ctime": 1761206336,
+        "forward": true,
+        "token": "cc7085892efb2d96ddf4561434fcbee3",
+        "type": "normal"
+    },
+    "desc": "",
+    "from": 1,
+    "meta": {
+        "Location.Search": {
+            "address": "四川省成都市双流区机场北二路与机场东一路交叉口西侧",
+            "enum_relation_type": 1,
+            "from": "plusPanel",
+            "from_account": 656469762,
+            "id": "",
+            "lat": "30.559103",
+            "lng": "103.951576",
+            "name": "成都双流国际机场",
+            "uint64_peer_account": 706579049
+        }
+    },
+    "prompt": "[位置]成都双流国际机场",
+    "ver": "1.1.2.21",
+    "view": "LocationShare"
+}
