@@ -17,6 +17,17 @@
 | `spec.go` | 读 spec 的小工具: `SpecEndpoints()` / `SpecOperationIDs()` |
 | `spec_test.go` | 一致性测试, 见下 |
 
+## 类型命名
+
+| 端点 | 请求体 | 响应 data |
+|---|---|---|
+| `send_group_forward_msg` | `SendGroupForwardMsgJSONBody` | `SendGroupForwardMsgData` |
+| `get_login_info` | `GetLoginInfoJSONBody` | `OB11User` (spec 里就是 `$ref`) |
+| `delete_msg` | `DeleteMsgJSONBody` | `DeleteMsgData` |
+
+请求体字段大多是可空指针 + `omitempty`, 数字类 ID 在 spec 里是 `string`
+(例如 `GroupID *string`), 调用方传 int 时需要显式转换。
+
 ## 刷新流程
 
 ```bash
@@ -38,7 +49,11 @@ go test ./api/napcat/            # 跑一致性测试
    推断 (`PostSendGroupMsg`), 又长又难用。`sync_spec.py` 把 path 当作端点名直接注入
    (`/send_group_forward_msg` -> `SendGroupForwardMsg`), 生成的类型就是
    `SendGroupForwardMsgJSONBody` / `SendGroupForwardMsgJSONRequestBody`。
-2. **少量字段下划线与驼峰双写** (`category_id` 与 `categoryId`, `reverse_order` 与 `reverseOrder`),
+2. **响应 data 是匿名内联 schema** (`allOf[BaseResponse, {data: {...}}]`), 只生成 models 时
+   不会产出 Go 类型, 调用方没法强类型解析。脚本给每个 data 打上 `x-go-type-name`,
+   生成 `<OperationID>Data` (如 `SendGroupForwardMsgData`); data 本身是 `$ref` 的端点
+   (如 `get_login_info` -> `OB11User`) 保持原样。
+3. **少量字段下划线与驼峰双写** (`category_id` 与 `categoryId`, `reverse_order` 与 `reverseOrder`),
    会生成同名字段导致编译失败。脚本只在两个字段的 schema 除 description 外完全一致时丢弃
    非下划线形式, 并把丢弃记录写进 `version.json`; schema 不一致会直接报错要求人工确认。
 

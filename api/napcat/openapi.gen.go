@@ -4633,6 +4633,9 @@ type OcrImageLegacyJSONBody struct {
 	Image string `json:"image"`
 }
 
+// OcrImageLegacyData defines parameters for OcrImageLegacy.
+type OcrImageLegacyData = map[string]interface{}
+
 // OcrImageLegacy200JSONResponseBodyStream defines parameters for OcrImageLegacy.
 type OcrImageLegacy200JSONResponseBodyStream string
 
@@ -4657,6 +4660,9 @@ type ArkSharePeerJSONBody struct {
 	UserID *string `json:"user_id,omitempty"`
 }
 
+// ArkSharePeerData defines parameters for ArkSharePeer.
+type ArkSharePeerData = map[string]interface{}
+
 // ArkSharePeer200JSONResponseBodyStream defines parameters for ArkSharePeer.
 type ArkSharePeer200JSONResponseBodyStream string
 
@@ -4668,6 +4674,9 @@ type DelGroupNoticeJSONBody struct {
 	// NoticeID 公告ID
 	NoticeID string `json:"notice_id"`
 }
+
+// DelGroupNoticeData defines parameters for DelGroupNotice.
+type DelGroupNoticeData = map[string]interface{}
 
 // DelGroupNotice200JSONResponseBodyStream defines parameters for DelGroupNotice.
 type DelGroupNotice200JSONResponseBodyStream string
@@ -4847,11 +4856,17 @@ type AddCustomFaceJSONBody_PackageID struct {
 	union json.RawMessage
 }
 
+// AddCustomFaceData defines parameters for AddCustomFace.
+type AddCustomFaceData = map[string]interface{}
+
 // AddCustomFace200JSONResponseBodyStream defines parameters for AddCustomFace.
 type AddCustomFace200JSONResponseBodyStream string
 
 // BotExitJSONBody defines parameters for BotExit.
 type BotExitJSONBody = map[string]interface{}
+
+// BotExitData defines parameters for BotExit.
+type BotExitData = map[string]interface{}
 
 // BotExit200JSONResponseBodyStream defines parameters for BotExit.
 type BotExit200JSONResponseBodyStream string
@@ -4859,11 +4874,23 @@ type BotExit200JSONResponseBodyStream string
 // CanSendImageJSONBody defines parameters for CanSendImage.
 type CanSendImageJSONBody = map[string]interface{}
 
+// CanSendImageData defines parameters for CanSendImage.
+type CanSendImageData struct {
+	// Yes 是否可以发送
+	Yes bool `json:"yes"`
+}
+
 // CanSendImage200JSONResponseBodyStream defines parameters for CanSendImage.
 type CanSendImage200JSONResponseBodyStream string
 
 // CanSendRecordJSONBody defines parameters for CanSendRecord.
 type CanSendRecordJSONBody = map[string]interface{}
+
+// CanSendRecordData defines parameters for CanSendRecord.
+type CanSendRecordData struct {
+	// Yes 是否可以发送
+	Yes bool `json:"yes"`
+}
 
 // CanSendRecord200JSONResponseBodyStream defines parameters for CanSendRecord.
 type CanSendRecord200JSONResponseBodyStream string
@@ -4882,6 +4909,9 @@ type CancelGroupAlbumMediaLikeJSONBody struct {
 	// Lloc lloc，若对整个上传操作则不填
 	Lloc *string `json:"lloc,omitempty"`
 }
+
+// CancelGroupAlbumMediaLikeData defines parameters for CancelGroupAlbumMediaLike.
+type CancelGroupAlbumMediaLikeData = map[string]interface{}
 
 // CancelGroupAlbumMediaLike200JSONResponseBodyStream defines parameters for CancelGroupAlbumMediaLike.
 type CancelGroupAlbumMediaLike200JSONResponseBodyStream string
@@ -4921,6 +4951,9 @@ type CancelOnlineFileJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// CancelOnlineFileData defines parameters for CancelOnlineFile.
+type CancelOnlineFileData = map[string]interface{}
+
 // CancelOnlineFile200JSONResponseBodyStream defines parameters for CancelOnlineFile.
 type CancelOnlineFile200JSONResponseBodyStream string
 
@@ -4928,6 +4961,12 @@ type CancelOnlineFile200JSONResponseBodyStream string
 type CheckURLSafelyJSONBody struct {
 	// URL 要检查的 URL
 	URL string `json:"url"`
+}
+
+// CheckUrlSafelyData defines parameters for CheckURLSafely.
+type CheckUrlSafelyData struct {
+	// Level 安全等级 (1: 安全, 2: 未知, 3: 危险)
+	Level float32 `json:"level"`
 }
 
 // CheckURLSafely200JSONResponseBodyStream defines parameters for CheckURLSafely.
@@ -4962,6 +5001,9 @@ type ClickInlineKeyboardButtonJSONBody struct {
 	// MsgSeq 消息序列号
 	MsgSeq string `json:"msg_seq"`
 }
+
+// ClickInlineKeyboardButtonData defines parameters for ClickInlineKeyboardButton.
+type ClickInlineKeyboardButtonData = map[string]interface{}
 
 // ClickInlineKeyboardButton200JSONResponseBodyStream defines parameters for ClickInlineKeyboardButton.
 type ClickInlineKeyboardButton200JSONResponseBodyStream string
@@ -5001,6 +5043,9 @@ type CreateCollectionJSONBody struct {
 	RawData string `json:"rawData"`
 }
 
+// CreateCollectionData defines parameters for CreateCollection.
+type CreateCollectionData = map[string]interface{}
+
 // CreateCollection200JSONResponseBodyStream defines parameters for CreateCollection.
 type CreateCollection200JSONResponseBodyStream string
 
@@ -5027,6 +5072,9 @@ type CreateFlashTaskJSONBody_Files struct {
 	union json.RawMessage
 }
 
+// CreateFlashTaskData defines parameters for CreateFlashTask.
+type CreateFlashTaskData = map[string]interface{}
+
 // CreateFlashTask200JSONResponseBodyStream defines parameters for CreateFlashTask.
 type CreateFlashTask200JSONResponseBodyStream string
 
@@ -5040,6 +5088,15 @@ type CreateGroupFileFolderJSONBody struct {
 
 	// Name 文件夹名称
 	Name *string `json:"name,omitempty"`
+}
+
+// CreateGroupFileFolderData defines parameters for CreateGroupFileFolder.
+type CreateGroupFileFolderData struct {
+	// GroupItem 群项信息
+	GroupItem map[string]interface{} `json:"groupItem"`
+
+	// Result 操作结果
+	Result map[string]interface{} `json:"result"`
 }
 
 // CreateGroupFileFolder200JSONResponseBodyStream defines parameters for CreateGroupFileFolder.
@@ -5056,6 +5113,9 @@ type DelGroupAlbumMediaJSONBody struct {
 	// Lloc 媒体ID (lloc)
 	Lloc string `json:"lloc"`
 }
+
+// DelGroupAlbumMediaData defines parameters for DelGroupAlbumMedia.
+type DelGroupAlbumMediaData = map[string]interface{}
 
 // DelGroupAlbumMedia200JSONResponseBodyStream defines parameters for DelGroupAlbumMedia.
 type DelGroupAlbumMedia200JSONResponseBodyStream string
@@ -5101,6 +5161,9 @@ type DeleteCustomFaceJSONBody_ResID struct {
 	union json.RawMessage
 }
 
+// DeleteCustomFaceData defines parameters for DeleteCustomFace.
+type DeleteCustomFaceData = map[string]interface{}
+
 // DeleteCustomFace200JSONResponseBodyStream defines parameters for DeleteCustomFace.
 type DeleteCustomFace200JSONResponseBodyStream string
 
@@ -5129,6 +5192,9 @@ type DeleteEssenceMsgJSONBodyMessageID1 = string
 type DeleteEssenceMsgJSONBody_MessageID struct {
 	union json.RawMessage
 }
+
+// DeleteEssenceMsgData defines parameters for DeleteEssenceMsg.
+type DeleteEssenceMsgData = map[string]interface{}
 
 // DeleteEssenceMsg200JSONResponseBodyStream defines parameters for DeleteEssenceMsg.
 type DeleteEssenceMsg200JSONResponseBodyStream string
@@ -5170,6 +5236,9 @@ type DeleteFriendJSONBody_UserID struct {
 	union json.RawMessage
 }
 
+// DeleteFriendData defines parameters for DeleteFriend.
+type DeleteFriendData = interface{}
+
 // DeleteFriend200JSONResponseBodyStream defines parameters for DeleteFriend.
 type DeleteFriend200JSONResponseBodyStream string
 
@@ -5181,6 +5250,9 @@ type DeleteGroupFileJSONBody struct {
 	// GroupID 群号
 	GroupID string `json:"group_id"`
 }
+
+// DeleteGroupFileData defines parameters for DeleteGroupFile.
+type DeleteGroupFileData = map[string]interface{}
 
 // DeleteGroupFile200JSONResponseBodyStream defines parameters for DeleteGroupFile.
 type DeleteGroupFile200JSONResponseBodyStream string
@@ -5196,6 +5268,9 @@ type DeleteGroupFolderJSONBody struct {
 	// GroupID 群号
 	GroupID string `json:"group_id"`
 }
+
+// DeleteGroupFolderData defines parameters for DeleteGroupFolder.
+type DeleteGroupFolderData = map[string]interface{}
 
 // DeleteGroupFolder200JSONResponseBodyStream defines parameters for DeleteGroupFolder.
 type DeleteGroupFolder200JSONResponseBodyStream string
@@ -5244,6 +5319,9 @@ type DoGroupAlbumCommentJSONBody struct {
 	Lloc string `json:"lloc"`
 }
 
+// DoGroupAlbumCommentData defines parameters for DoGroupAlbumComment.
+type DoGroupAlbumCommentData = map[string]interface{}
+
 // DoGroupAlbumComment200JSONResponseBodyStream defines parameters for DoGroupAlbumComment.
 type DoGroupAlbumComment200JSONResponseBodyStream string
 
@@ -5273,6 +5351,12 @@ type DownloadFileJSONBody_Headers struct {
 	union json.RawMessage
 }
 
+// DownloadFileData defines parameters for DownloadFile.
+type DownloadFileData struct {
+	// File 文件路径
+	File string `json:"file"`
+}
+
 // DownloadFile200JSONResponseBodyStream defines parameters for DownloadFile.
 type DownloadFile200JSONResponseBodyStream string
 
@@ -5287,6 +5371,9 @@ type DownloadFileImageStreamJSONBody struct {
 	// FileID 文件 ID
 	FileID *string `json:"file_id,omitempty"`
 }
+
+// DownloadFileImageStreamData defines parameters for DownloadFileImageStream.
+type DownloadFileImageStreamData = map[string]interface{}
 
 // DownloadFileImageStream200JSONResponseBodyStream defines parameters for DownloadFileImageStream.
 type DownloadFileImageStream200JSONResponseBodyStream string
@@ -5306,6 +5393,9 @@ type DownloadFileRecordStreamJSONBody struct {
 	OutFormat *string `json:"out_format,omitempty"`
 }
 
+// DownloadFileRecordStreamData defines parameters for DownloadFileRecordStream.
+type DownloadFileRecordStreamData = map[string]interface{}
+
 // DownloadFileRecordStream200JSONResponseBodyStream defines parameters for DownloadFileRecordStream.
 type DownloadFileRecordStream200JSONResponseBodyStream string
 
@@ -5321,6 +5411,9 @@ type DownloadFileStreamJSONBody struct {
 	FileID *string `json:"file_id,omitempty"`
 }
 
+// DownloadFileStreamData defines parameters for DownloadFileStream.
+type DownloadFileStreamData = map[string]interface{}
+
 // DownloadFileStream200JSONResponseBodyStream defines parameters for DownloadFileStream.
 type DownloadFileStream200JSONResponseBodyStream string
 
@@ -5329,6 +5422,9 @@ type DownloadFilesetJSONBody struct {
 	// FilesetID 文件集 ID
 	FilesetID string `json:"fileset_id"`
 }
+
+// DownloadFilesetData defines parameters for DownloadFileset.
+type DownloadFilesetData = map[string]interface{}
 
 // DownloadFileset200JSONResponseBodyStream defines parameters for DownloadFileset.
 type DownloadFileset200JSONResponseBodyStream string
@@ -5369,6 +5465,9 @@ type FetchCustomFaceDetailJSONBodyCount1 = string
 type FetchCustomFaceDetailJSONBody_Count struct {
 	union json.RawMessage
 }
+
+// FetchCustomFaceDetailData defines parameters for FetchCustomFaceDetail.
+type FetchCustomFaceDetailData = map[string]interface{}
 
 // FetchCustomFaceDetail200JSONResponseBodyStream defines parameters for FetchCustomFaceDetail.
 type FetchCustomFaceDetail200JSONResponseBodyStream string
@@ -5435,6 +5534,36 @@ type FetchEmojiLikeJSONBody_MessageID struct {
 	union json.RawMessage
 }
 
+// FetchEmojiLikeData defines parameters for FetchEmojiLike.
+type FetchEmojiLikeData struct {
+	// Cookie 分页Cookie
+	Cookie string `json:"cookie"`
+
+	// EmojiLikesList 表情回应列表
+	EmojiLikesList []struct {
+		// HeadURL 头像URL
+		HeadURL string `json:"headUrl"`
+
+		// NickName 昵称
+		NickName string `json:"nickName"`
+
+		// TinyID TinyID
+		TinyID string `json:"tinyId"`
+	} `json:"emojiLikesList"`
+
+	// ErrMsg 错 误信息
+	ErrMsg string `json:"errMsg"`
+
+	// IsFirstPage 是否第一页
+	IsFirstPage bool `json:"isFirstPage"`
+
+	// IsLastPage 是否最后一页
+	IsLastPage bool `json:"isLastPage"`
+
+	// Result 结果状态码
+	Result float32 `json:"result"`
+}
+
 // FetchEmojiLike200JSONResponseBodyStream defines parameters for FetchEmojiLike.
 type FetchEmojiLike200JSONResponseBodyStream string
 
@@ -5453,6 +5582,12 @@ type FetchPttTextJSONBodyMessageID1 = string
 // FetchPttTextJSONBody_MessageID defines parameters for FetchPttText.
 type FetchPttTextJSONBody_MessageID struct {
 	union json.RawMessage
+}
+
+// FetchPttTextData defines parameters for FetchPttText.
+type FetchPttTextData struct {
+	// Text 得到的文本
+	Text string `json:"text"`
 }
 
 // FetchPttText200JSONResponseBodyStream defines parameters for FetchPttText.
@@ -5566,6 +5701,12 @@ type GetAiRecord200JSONResponseBodyStream string
 // GetClientkeyJSONBody defines parameters for GetClientkey.
 type GetClientkeyJSONBody = map[string]interface{}
 
+// GetClientkeyData defines parameters for GetClientkey.
+type GetClientkeyData struct {
+	// Clientkey 客户端Key
+	Clientkey *string `json:"clientkey,omitempty"`
+}
+
 // GetClientkey200JSONResponseBodyStream defines parameters for GetClientkey.
 type GetClientkey200JSONResponseBodyStream string
 
@@ -5578,6 +5719,9 @@ type GetCollectionListJSONBody struct {
 	Count string `json:"count"`
 }
 
+// GetCollectionListData defines parameters for GetCollectionList.
+type GetCollectionListData = map[string]interface{}
+
 // GetCollectionList200JSONResponseBodyStream defines parameters for GetCollectionList.
 type GetCollectionList200JSONResponseBodyStream string
 
@@ -5585,6 +5729,15 @@ type GetCollectionList200JSONResponseBodyStream string
 type GetCookiesJSONBody struct {
 	// Domain 需要获取 cookies 的域名
 	Domain string `json:"domain"`
+}
+
+// GetCookiesData defines parameters for GetCookies.
+type GetCookiesData struct {
+	// Bkn CSRF Token
+	Bkn string `json:"bkn"`
+
+	// Cookies Cookies
+	Cookies string `json:"cookies"`
 }
 
 // GetCookies200JSONResponseBodyStream defines parameters for GetCookies.
@@ -5596,11 +5749,26 @@ type GetCredentialsJSONBody struct {
 	Domain string `json:"domain"`
 }
 
+// GetCredentialsData defines parameters for GetCredentials.
+type GetCredentialsData struct {
+	// Cookies Cookies
+	Cookies string `json:"cookies"`
+
+	// Token CSRF Token
+	Token float32 `json:"token"`
+}
+
 // GetCredentials200JSONResponseBodyStream defines parameters for GetCredentials.
 type GetCredentials200JSONResponseBodyStream string
 
 // GetCsrfTokenJSONBody defines parameters for GetCsrfToken.
 type GetCsrfTokenJSONBody = map[string]interface{}
+
+// GetCsrfTokenData defines parameters for GetCsrfToken.
+type GetCsrfTokenData struct {
+	// Token CSRF Token
+	Token float32 `json:"token"`
+}
 
 // GetCsrfToken200JSONResponseBodyStream defines parameters for GetCsrfToken.
 type GetCsrfToken200JSONResponseBodyStream string
@@ -5610,6 +5778,9 @@ type GetDoubtFriendsAddRequestJSONBody struct {
 	// Count 获取数量
 	Count float32 `json:"count"`
 }
+
+// GetDoubtFriendsAddRequestData defines parameters for GetDoubtFriendsAddRequest.
+type GetDoubtFriendsAddRequestData = map[string]interface{}
 
 // GetDoubtFriendsAddRequest200JSONResponseBodyStream defines parameters for GetDoubtFriendsAddRequest.
 type GetDoubtFriendsAddRequest200JSONResponseBodyStream string
@@ -5630,6 +5801,18 @@ type GetEmojiLikesJSONBody struct {
 
 	// MessageID 消息ID，可以传递长ID或短ID
 	MessageID string `json:"message_id"`
+}
+
+// GetEmojiLikesData defines parameters for GetEmojiLikes.
+type GetEmojiLikesData struct {
+	// EmojiLikeList 表情回应列表
+	EmojiLikeList []struct {
+		// NickName 昵称?
+		NickName string `json:"nick_name"`
+
+		// UserID 点击者QQ号
+		UserID string `json:"user_id"`
+	} `json:"emoji_like_list"`
 }
 
 // GetEmojiLikes200JSONResponseBodyStream defines parameters for GetEmojiLikes.
@@ -5653,6 +5836,24 @@ type GetFileJSONBody struct {
 	FileID *string `json:"file_id,omitempty"`
 }
 
+// GetFileData defines parameters for GetFile.
+type GetFileData struct {
+	// Base64 Base64编码
+	Base64 *string `json:"base64,omitempty"`
+
+	// File 本地路径
+	File *string `json:"file,omitempty"`
+
+	// FileName 文件名
+	FileName *string `json:"file_name,omitempty"`
+
+	// FileSize 文件大小
+	FileSize *string `json:"file_size,omitempty"`
+
+	// URL 下载URL
+	URL *string `json:"url,omitempty"`
+}
+
 // GetFile200JSONResponseBodyStream defines parameters for GetFile.
 type GetFile200JSONResponseBodyStream string
 
@@ -5660,6 +5861,12 @@ type GetFile200JSONResponseBodyStream string
 type GetFilesetIDJSONBody struct {
 	// ShareCode 分享码或分享链接
 	ShareCode string `json:"share_code"`
+}
+
+// GetFilesetIdData defines parameters for GetFilesetID.
+type GetFilesetIdData struct {
+	// FilesetID 文件集 ID
+	FilesetID string `json:"fileset_id"`
 }
 
 // GetFilesetID200JSONResponseBodyStream defines parameters for GetFilesetID.
@@ -5671,6 +5878,9 @@ type GetFilesetInfoJSONBody struct {
 	FilesetID string `json:"fileset_id"`
 }
 
+// GetFilesetInfoData defines parameters for GetFilesetInfo.
+type GetFilesetInfoData = map[string]interface{}
+
 // GetFilesetInfo200JSONResponseBodyStream defines parameters for GetFilesetInfo.
 type GetFilesetInfo200JSONResponseBodyStream string
 
@@ -5679,6 +5889,9 @@ type GetFlashFileListJSONBody struct {
 	// FilesetID 文件集 ID
 	FilesetID string `json:"fileset_id"`
 }
+
+// GetFlashFileListData defines parameters for GetFlashFileList.
+type GetFlashFileListData = map[string]interface{}
 
 // GetFlashFileList200JSONResponseBodyStream defines parameters for GetFlashFileList.
 type GetFlashFileList200JSONResponseBodyStream string
@@ -5695,6 +5908,9 @@ type GetFlashFileURLJSONBody struct {
 	FilesetID string `json:"fileset_id"`
 }
 
+// GetFlashFileUrlData defines parameters for GetFlashFileURL.
+type GetFlashFileUrlData = map[string]interface{}
+
 // GetFlashFileURL200JSONResponseBodyStream defines parameters for GetFlashFileURL.
 type GetFlashFileURL200JSONResponseBodyStream string
 
@@ -5705,6 +5921,12 @@ type GetForwardMsgJSONBody struct {
 
 	// MessageID 消息ID
 	MessageID *string `json:"message_id,omitempty"`
+}
+
+// GetForwardMsgData defines parameters for GetForwardMsg.
+type GetForwardMsgData struct {
+	// Messages 消息列表
+	Messages *[]interface{} `json:"messages,omitempty"`
 }
 
 // GetForwardMsg200JSONResponseBodyStream defines parameters for GetForwardMsg.
@@ -5754,6 +5976,12 @@ type GetFriendMsgHistoryJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// GetFriendMsgHistoryData defines parameters for GetFriendMsgHistory.
+type GetFriendMsgHistoryData struct {
+	// Messages 消息列表
+	Messages []interface{} `json:"messages"`
+}
+
 // GetFriendMsgHistory200JSONResponseBodyStream defines parameters for GetFriendMsgHistory.
 type GetFriendMsgHistory200JSONResponseBodyStream string
 
@@ -5775,6 +6003,9 @@ type GetGroupAlbumMediaListJSONBody struct {
 	GroupID string `json:"group_id"`
 }
 
+// GetGroupAlbumMediaListData defines parameters for GetGroupAlbumMediaList.
+type GetGroupAlbumMediaListData = map[string]interface{}
+
 // GetGroupAlbumMediaList200JSONResponseBodyStream defines parameters for GetGroupAlbumMediaList.
 type GetGroupAlbumMediaList200JSONResponseBodyStream string
 
@@ -5782,6 +6013,18 @@ type GetGroupAlbumMediaList200JSONResponseBodyStream string
 type GetGroupAtAllRemainJSONBody struct {
 	// GroupID 群号
 	GroupID string `json:"group_id"`
+}
+
+// GetGroupAtAllRemainData defines parameters for GetGroupAtAllRemain.
+type GetGroupAtAllRemainData struct {
+	// CanAtAll 是否可以艾特全体
+	CanAtAll bool `json:"can_at_all"`
+
+	// RemainAtAllCountForGroup 群艾特全体剩余次数
+	RemainAtAllCountForGroup float32 `json:"remain_at_all_count_for_group"`
+
+	// RemainAtAllCountForUin 个人艾特全体剩余次数
+	RemainAtAllCountForUin float32 `json:"remain_at_all_count_for_uin"`
 }
 
 // GetGroupAtAllRemain200JSONResponseBodyStream defines parameters for GetGroupAtAllRemain.
@@ -5793,6 +6036,27 @@ type GetGroupDetailInfoJSONBody struct {
 	GroupID string `json:"group_id"`
 }
 
+// GetGroupDetailInfoData defines parameters for GetGroupDetailInfo.
+type GetGroupDetailInfoData struct {
+	// GroupAllShut 全员禁言状态
+	GroupAllShut float32 `json:"group_all_shut"`
+
+	// GroupID 群号
+	GroupID float32 `json:"group_id"`
+
+	// GroupName 群名称
+	GroupName string `json:"group_name"`
+
+	// GroupRemark 群备注
+	GroupRemark string `json:"group_remark"`
+
+	// MaxMemberCount 最大成员数量
+	MaxMemberCount float32 `json:"max_member_count"`
+
+	// MemberCount 成员数量
+	MemberCount float32 `json:"member_count"`
+}
+
 // GetGroupDetailInfo200JSONResponseBodyStream defines parameters for GetGroupDetailInfo.
 type GetGroupDetailInfo200JSONResponseBodyStream string
 
@@ -5800,6 +6064,21 @@ type GetGroupDetailInfo200JSONResponseBodyStream string
 type GetGroupFileSystemInfoJSONBody struct {
 	// GroupID 群号
 	GroupID string `json:"group_id"`
+}
+
+// GetGroupFileSystemInfoData defines parameters for GetGroupFileSystemInfo.
+type GetGroupFileSystemInfoData struct {
+	// FileCount 文件总数
+	FileCount float32 `json:"file_count"`
+
+	// LimitCount 文件上限
+	LimitCount float32 `json:"limit_count"`
+
+	// TotalSpace 总空间
+	TotalSpace float32 `json:"total_space"`
+
+	// UsedSpace 已使用空间
+	UsedSpace float32 `json:"used_space"`
 }
 
 // GetGroupFileSystemInfo200JSONResponseBodyStream defines parameters for GetGroupFileSystemInfo.
@@ -5812,6 +6091,12 @@ type GetGroupFileURLJSONBody struct {
 
 	// GroupID 群号
 	GroupID string `json:"group_id"`
+}
+
+// GetGroupFileUrlData defines parameters for GetGroupFileURL.
+type GetGroupFileUrlData struct {
+	// URL 文件下载链接
+	URL *string `json:"url,omitempty"`
 }
 
 // GetGroupFileURL200JSONResponseBodyStream defines parameters for GetGroupFileURL.
@@ -5843,6 +6128,15 @@ type GetGroupFilesByFolderJSONBody_FileCount struct {
 	union json.RawMessage
 }
 
+// GetGroupFilesByFolderData defines parameters for GetGroupFilesByFolder.
+type GetGroupFilesByFolderData struct {
+	// Files 文件列表
+	Files []interface{} `json:"files"`
+
+	// Folders 文件夹列表
+	Folders []interface{} `json:"folders"`
+}
+
 // GetGroupFilesByFolder200JSONResponseBodyStream defines parameters for GetGroupFilesByFolder.
 type GetGroupFilesByFolder200JSONResponseBodyStream string
 
@@ -5858,6 +6152,30 @@ type GetGroupHonorInfoJSONBody struct {
 // GetGroupHonorInfoJSONBodyType defines parameters for GetGroupHonorInfo.
 type GetGroupHonorInfoJSONBodyType string
 
+// GetGroupHonorInfoData defines parameters for GetGroupHonorInfo.
+type GetGroupHonorInfoData struct {
+	// CurrentTalkative 当前龙王
+	CurrentTalkative map[string]interface{} `json:"current_talkative"`
+
+	// EmotionList 快乐源泉列表
+	EmotionList []interface{} `json:"emotion_list"`
+
+	// GroupID 群号
+	GroupID float32 `json:"group_id"`
+
+	// LegendList 群聊炽热列表
+	LegendList []interface{} `json:"legend_list"`
+
+	// PerformerList 群聊之火列表
+	PerformerList []interface{} `json:"performer_list"`
+
+	// StrongNewbieList 冒尖小春笋列表
+	StrongNewbieList []interface{} `json:"strong_newbie_list"`
+
+	// TalkativeList 龙王列表
+	TalkativeList []interface{} `json:"talkative_list"`
+}
+
 // GetGroupHonorInfo200JSONResponseBodyStream defines parameters for GetGroupHonorInfo.
 type GetGroupHonorInfo200JSONResponseBodyStream string
 
@@ -5869,6 +6187,18 @@ type GetGroupIgnoreAddRequest200JSONResponseBodyStream string
 
 // GetGroupIgnoredNotifiesJSONBody defines parameters for GetGroupIgnoredNotifies.
 type GetGroupIgnoredNotifiesJSONBody = map[string]interface{}
+
+// GetGroupIgnoredNotifiesData defines parameters for GetGroupIgnoredNotifies.
+type GetGroupIgnoredNotifiesData struct {
+	// InvitedRequest 邀请请求列表
+	InvitedRequest []interface{} `json:"InvitedRequest"`
+
+	// InvitedRequests 邀请请求列表
+	InvitedRequests []interface{} `json:"invited_requests"`
+
+	// JoinRequests 加入请求列表
+	JoinRequests []interface{} `json:"join_requests"`
+}
 
 // GetGroupIgnoredNotifies200JSONResponseBodyStream defines parameters for GetGroupIgnoredNotifies.
 type GetGroupIgnoredNotifies200JSONResponseBodyStream string
@@ -5887,6 +6217,9 @@ type GetGroupInfoExJSONBody struct {
 	// GroupID 群号
 	GroupID string `json:"group_id"`
 }
+
+// GetGroupInfoExData defines parameters for GetGroupInfoEx.
+type GetGroupInfoExData = map[string]interface{}
 
 // GetGroupInfoEx200JSONResponseBodyStream defines parameters for GetGroupInfoEx.
 type GetGroupInfoEx200JSONResponseBodyStream string
@@ -5984,6 +6317,12 @@ type GetGroupMsgHistoryJSONBody struct {
 	ReverseOrder bool `json:"reverse_order"`
 }
 
+// GetGroupMsgHistoryData defines parameters for GetGroupMsgHistory.
+type GetGroupMsgHistoryData struct {
+	// Messages 消息列表
+	Messages []interface{} `json:"messages"`
+}
+
 // GetGroupMsgHistory200JSONResponseBodyStream defines parameters for GetGroupMsgHistory.
 type GetGroupMsgHistory200JSONResponseBodyStream string
 
@@ -6005,6 +6344,15 @@ type GetGroupRootFilesJSONBodyFileCount1 = string
 // GetGroupRootFilesJSONBody_FileCount defines parameters for GetGroupRootFiles.
 type GetGroupRootFilesJSONBody_FileCount struct {
 	union json.RawMessage
+}
+
+// GetGroupRootFilesData defines parameters for GetGroupRootFiles.
+type GetGroupRootFilesData struct {
+	// Files 文件列表
+	Files []interface{} `json:"files"`
+
+	// Folders 文件夹列表
+	Folders []interface{} `json:"folders"`
 }
 
 // GetGroupRootFiles200JSONResponseBodyStream defines parameters for GetGroupRootFiles.
@@ -6056,6 +6404,18 @@ type GetGroupSystemMsgJSONBody_Count struct {
 	union json.RawMessage
 }
 
+// GetGroupSystemMsgData defines parameters for GetGroupSystemMsg.
+type GetGroupSystemMsgData struct {
+	// InvitedRequest 进群邀请列表 (兼容)
+	InvitedRequest []OB11Notify `json:"InvitedRequest"`
+
+	// InvitedRequests 进群邀请列表
+	InvitedRequests []OB11Notify `json:"invited_requests"`
+
+	// JoinRequests 进群申请列表
+	JoinRequests []OB11Notify `json:"join_requests"`
+}
+
 // GetGroupSystemMsg200JSONResponseBodyStream defines parameters for GetGroupSystemMsg.
 type GetGroupSystemMsg200JSONResponseBodyStream string
 
@@ -6078,6 +6438,24 @@ type GetImageJSONBody struct {
 
 	// FileID 文件ID
 	FileID *string `json:"file_id,omitempty"`
+}
+
+// GetImageData defines parameters for GetImage.
+type GetImageData struct {
+	// Base64 Base64编码
+	Base64 *string `json:"base64,omitempty"`
+
+	// File 本地路径
+	File *string `json:"file,omitempty"`
+
+	// FileName 文件名
+	FileName *string `json:"file_name,omitempty"`
+
+	// FileSize 文件大小
+	FileSize *string `json:"file_size,omitempty"`
+
+	// URL 下载URL
+	URL *string `json:"url,omitempty"`
 }
 
 // GetImage200JSONResponseBodyStream defines parameters for GetImage.
@@ -6172,6 +6550,12 @@ type GetMiniAppArkJSONBody1 struct {
 	WithShareTicket string `json:"withShareTicket"`
 }
 
+// GetMiniAppArkData defines parameters for GetMiniAppArk.
+type GetMiniAppArkData struct {
+	// Data Ark数据
+	Data map[string]interface{} `json:"data"`
+}
+
 // GetMiniAppArk200JSONResponseBodyStream defines parameters for GetMiniAppArk.
 type GetMiniAppArk200JSONResponseBodyStream string
 
@@ -6214,6 +6598,45 @@ type GetMsg200JSONResponseBody_Data_UserID struct {
 	union json.RawMessage
 }
 
+// GetMsgData defines parameters for GetMsg.
+type GetMsgData struct {
+	// EmojiLikesList 表情回应列表
+	EmojiLikesList *[]interface{} `json:"emoji_likes_list,omitempty"`
+
+	// Font 字体
+	Font float32 `json:"font"`
+
+	// GroupID 群号
+	GroupID *GetMsg200JSONResponseBody_Data_GroupID `json:"group_id,omitempty"`
+
+	// Message 消息内容
+	Message map[string]interface{} `json:"message"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// MessageSeq 消息序号
+	MessageSeq float32 `json:"message_seq"`
+
+	// MessageType 消息类型
+	MessageType string `json:"message_type"`
+
+	// RawMessage 原始消息内容
+	RawMessage string `json:"raw_message"`
+
+	// RealID 真实ID
+	RealID float32 `json:"real_id"`
+
+	// Sender 发送者
+	Sender map[string]interface{} `json:"sender"`
+
+	// Time 发送时间
+	Time float32 `json:"time"`
+
+	// UserID 发送者QQ号
+	UserID GetMsg200JSONResponseBody_Data_UserID `json:"user_id"`
+}
+
 // GetMsg200JSONResponseBodyStream defines parameters for GetMsg.
 type GetMsg200JSONResponseBodyStream string
 
@@ -6229,6 +6652,9 @@ type GetOnlineFileMsgJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// GetOnlineFileMsgData defines parameters for GetOnlineFileMsg.
+type GetOnlineFileMsgData = map[string]interface{}
+
 // GetOnlineFileMsg200JSONResponseBodyStream defines parameters for GetOnlineFileMsg.
 type GetOnlineFileMsg200JSONResponseBodyStream string
 
@@ -6236,6 +6662,12 @@ type GetOnlineFileMsg200JSONResponseBodyStream string
 type GetPrivateFileURLJSONBody struct {
 	// FileID 文件ID
 	FileID string `json:"file_id"`
+}
+
+// GetPrivateFileUrlData defines parameters for GetPrivateFileURL.
+type GetPrivateFileUrlData struct {
+	// URL 文件下载链接
+	URL *string `json:"url,omitempty"`
 }
 
 // GetPrivateFileURL200JSONResponseBodyStream defines parameters for GetPrivateFileURL.
@@ -6275,6 +6707,45 @@ type GetProfileLikeJSONBody_Start struct {
 	union json.RawMessage
 }
 
+// GetProfileLikeData defines parameters for GetProfileLike.
+type GetProfileLikeData struct {
+	FavoriteInfo struct {
+		// LastTime 最后点赞时间
+		LastTime float32 `json:"last_time"`
+
+		// TodayCount 今日点赞数
+		TodayCount float32 `json:"today_count"`
+
+		// TotalCount 总点赞数
+		TotalCount float32 `json:"total_count"`
+
+		// UserInfos 点赞用户信息
+		UserInfos []interface{} `json:"userInfos"`
+	} `json:"favoriteInfo"`
+
+	// Time 时间
+	Time string `json:"time"`
+
+	// UID 用户UID
+	UID      string `json:"uid"`
+	VoteInfo struct {
+		// LastVisitTime 最后访问时间
+		LastVisitTime float32 `json:"last_visit_time"`
+
+		// NewCount 新增点赞数
+		NewCount float32 `json:"new_count"`
+
+		// NewNearbyCount 新增附近点赞数
+		NewNearbyCount float32 `json:"new_nearby_count"`
+
+		// TotalCount 总点赞数
+		TotalCount float32 `json:"total_count"`
+
+		// UserInfos 点赞用户信息
+		UserInfos []interface{} `json:"userInfos"`
+	} `json:"voteInfo"`
+}
+
 // GetProfileLike200JSONResponseBodyStream defines parameters for GetProfileLike.
 type GetProfileLike200JSONResponseBodyStream string
 
@@ -6285,6 +6756,18 @@ type GetQunAlbumListJSONBody struct {
 
 	// GroupID 群号
 	GroupID string `json:"group_id"`
+}
+
+// GetQunAlbumListData defines parameters for GetQunAlbumList.
+type GetQunAlbumListData struct {
+	// AlbumList 群相册列表
+	AlbumList []interface{} `json:"album_list"`
+
+	// AttachInfo 分页附加信息，传入下一次请求以获取更多数据
+	AttachInfo string `json:"attach_info"`
+
+	// HasMore 是否有更多数据
+	HasMore bool `json:"has_more"`
 }
 
 // GetQunAlbumList200JSONResponseBodyStream defines parameters for GetQunAlbumList.
@@ -6322,6 +6805,24 @@ type GetRecordJSONBody struct {
 	OutFormat string `json:"out_format"`
 }
 
+// GetRecordData defines parameters for GetRecord.
+type GetRecordData struct {
+	// Base64 Base64编码
+	Base64 *string `json:"base64,omitempty"`
+
+	// File 本地路径
+	File *string `json:"file,omitempty"`
+
+	// FileName 文件名
+	FileName *string `json:"file_name,omitempty"`
+
+	// FileSize 文件大小
+	FileSize *string `json:"file_size,omitempty"`
+
+	// URL 下载URL
+	URL *string `json:"url,omitempty"`
+}
+
 // GetRecord200JSONResponseBodyStream defines parameters for GetRecord.
 type GetRecord200JSONResponseBodyStream string
 
@@ -6333,6 +6834,21 @@ type GetRkey200JSONResponseBodyStream string
 
 // GetRkeyServerJSONBody defines parameters for GetRkeyServer.
 type GetRkeyServerJSONBody = map[string]interface{}
+
+// GetRkeyServerData defines parameters for GetRkeyServer.
+type GetRkeyServerData struct {
+	// ExpiredTime 过期时间
+	ExpiredTime *float32 `json:"expired_time,omitempty"`
+
+	// GroupRkey 群聊 RKey
+	GroupRkey *string `json:"group_rkey,omitempty"`
+
+	// Name 名称
+	Name string `json:"name"`
+
+	// PrivateRkey 私聊 RKey
+	PrivateRkey *string `json:"private_rkey,omitempty"`
+}
 
 // GetRkeyServer200JSONResponseBodyStream defines parameters for GetRkeyServer.
 type GetRkeyServer200JSONResponseBodyStream string
@@ -6349,11 +6865,26 @@ type GetShareLinkJSONBody struct {
 	FilesetID string `json:"fileset_id"`
 }
 
+// GetShareLinkData defines parameters for GetShareLink.
+type GetShareLinkData = map[string]interface{}
+
 // GetShareLink200JSONResponseBodyStream defines parameters for GetShareLink.
 type GetShareLink200JSONResponseBodyStream string
 
 // GetStatusJSONBody defines parameters for GetStatus.
 type GetStatusJSONBody = map[string]interface{}
+
+// GetStatusData defines parameters for GetStatus.
+type GetStatusData struct {
+	// Good 状态是否良好
+	Good bool `json:"good"`
+
+	// Online 是否在线
+	Online bool `json:"online"`
+
+	// Stat 统计信息
+	Stat map[string]interface{} `json:"stat"`
+}
 
 // GetStatus200JSONResponseBodyStream defines parameters for GetStatus.
 type GetStatus200JSONResponseBodyStream string
@@ -6378,6 +6909,54 @@ type GetStrangerInfoJSONBody_NoCache struct {
 	union json.RawMessage
 }
 
+// GetStrangerInfoData defines parameters for GetStrangerInfo.
+type GetStrangerInfoData struct {
+	// Age 年龄
+	Age float32 `json:"age"`
+
+	// IsVip 是否VIP
+	IsVip bool `json:"is_vip"`
+
+	// IsYearsVip 是否年费VIP
+	IsYearsVip bool `json:"is_years_vip"`
+
+	// LoginDays 登录天数
+	LoginDays float32 `json:"login_days"`
+
+	// LongNick 个性签名
+	LongNick string `json:"long_nick"`
+
+	// Nickname 昵称
+	Nickname string `json:"nickname"`
+
+	// Qid QID
+	Qid string `json:"qid"`
+
+	// QqLevel QQ等级
+	QqLevel float32 `json:"qqLevel"`
+
+	// RegTime 注册时间
+	RegTime float32 `json:"reg_time"`
+
+	// Remark 备注
+	Remark string `json:"remark"`
+
+	// Sex 性别
+	Sex string `json:"sex"`
+
+	// Status 状态
+	Status float32 `json:"status"`
+
+	// UID UID
+	UID string `json:"uid"`
+
+	// UserID 用户QQ
+	UserID float32 `json:"user_id"`
+
+	// VipLevel VIP等级
+	VipLevel float32 `json:"vip_level"`
+}
+
 // GetStrangerInfo200JSONResponseBodyStream defines parameters for GetStrangerInfo.
 type GetStrangerInfo200JSONResponseBodyStream string
 
@@ -6389,6 +6968,18 @@ type GetUnidirectionalFriendList200JSONResponseBodyStream string
 
 // GetVersionInfoJSONBody defines parameters for GetVersionInfo.
 type GetVersionInfoJSONBody = map[string]interface{}
+
+// GetVersionInfoData defines parameters for GetVersionInfo.
+type GetVersionInfoData struct {
+	// AppName 应用名称
+	AppName string `json:"app_name"`
+
+	// AppVersion 应用版本
+	AppVersion string `json:"app_version"`
+
+	// ProtocolVersion 协议版本
+	ProtocolVersion string `json:"protocol_version"`
+}
 
 // GetVersionInfo200JSONResponseBodyStream defines parameters for GetVersionInfo.
 type GetVersionInfo200JSONResponseBodyStream string
@@ -6501,6 +7092,12 @@ type MoveGroupFileJSONBody struct {
 	TargetParentDirectory string `json:"target_parent_directory"`
 }
 
+// MoveGroupFileData defines parameters for MoveGroupFile.
+type MoveGroupFileData struct {
+	// Ok 是否成功
+	Ok bool `json:"ok"`
+}
+
 // MoveGroupFile200JSONResponseBodyStream defines parameters for MoveGroupFile.
 type MoveGroupFile200JSONResponseBodyStream string
 
@@ -6522,6 +7119,15 @@ type NcGetUserStatusJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// NcGetUserStatusData defines parameters for NcGetUserStatus.
+type NcGetUserStatusData struct {
+	// ExtStatus 扩展状态
+	ExtStatus float32 `json:"ext_status"`
+
+	// Status 在线状态
+	Status float32 `json:"status"`
+}
+
 // NcGetUserStatus200JSONResponseBodyStream defines parameters for NcGetUserStatus.
 type NcGetUserStatus200JSONResponseBodyStream string
 
@@ -6530,6 +7136,9 @@ type OcrImageJSONBody struct {
 	// Image 图片路径、URL或Base64
 	Image string `json:"image"`
 }
+
+// OcrImageData defines parameters for OcrImage.
+type OcrImageData = map[string]interface{}
 
 // OcrImage200JSONResponseBodyStream defines parameters for OcrImage.
 type OcrImage200JSONResponseBodyStream string
@@ -6546,6 +7155,9 @@ type ReceiveOnlineFileJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// ReceiveOnlineFileData defines parameters for ReceiveOnlineFile.
+type ReceiveOnlineFileData = map[string]interface{}
+
 // ReceiveOnlineFile200JSONResponseBodyStream defines parameters for ReceiveOnlineFile.
 type ReceiveOnlineFile200JSONResponseBodyStream string
 
@@ -6560,6 +7172,9 @@ type RefuseOnlineFileJSONBody struct {
 	// UserID 用户 QQ
 	UserID string `json:"user_id"`
 }
+
+// RefuseOnlineFileData defines parameters for RefuseOnlineFile.
+type RefuseOnlineFileData = map[string]interface{}
 
 // RefuseOnlineFile200JSONResponseBodyStream defines parameters for RefuseOnlineFile.
 type RefuseOnlineFile200JSONResponseBodyStream string
@@ -6579,6 +7194,12 @@ type RenameGroupFileJSONBody struct {
 	NewName string `json:"new_name"`
 }
 
+// RenameGroupFileData defines parameters for RenameGroupFile.
+type RenameGroupFileData struct {
+	// Ok 是否成功
+	Ok bool `json:"ok"`
+}
+
 // RenameGroupFile200JSONResponseBodyStream defines parameters for RenameGroupFile.
 type RenameGroupFile200JSONResponseBodyStream string
 
@@ -6594,6 +7215,9 @@ type SendArkShareJSONBody struct {
 	UserID *string `json:"user_id,omitempty"`
 }
 
+// SendArkShareData defines parameters for SendArkShare.
+type SendArkShareData = map[string]interface{}
+
 // SendArkShare200JSONResponseBodyStream defines parameters for SendArkShare.
 type SendArkShare200JSONResponseBodyStream string
 
@@ -6608,6 +7232,9 @@ type SendFlashMsgJSONBody struct {
 	// UserID 用户 QQ
 	UserID *string `json:"user_id,omitempty"`
 }
+
+// SendFlashMsgData defines parameters for SendFlashMsg.
+type SendFlashMsgData = map[string]interface{}
 
 // SendFlashMsg200JSONResponseBodyStream defines parameters for SendFlashMsg.
 type SendFlashMsg200JSONResponseBodyStream string
@@ -6661,6 +7288,18 @@ type SendForwardMsgJSONBody_AutoEscape struct {
 // SendForwardMsgJSONBodyMessageType defines parameters for SendForwardMsg.
 type SendForwardMsgJSONBodyMessageType string
 
+// SendForwardMsgData defines parameters for SendForwardMsg.
+type SendForwardMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
+
 // SendForwardMsg200JSONResponseBodyStream defines parameters for SendForwardMsg.
 type SendForwardMsg200JSONResponseBodyStream string
 
@@ -6674,6 +7313,12 @@ type SendGroupAiRecordJSONBody struct {
 
 	// Text 语音文本内容
 	Text string `json:"text"`
+}
+
+// SendGroupAiRecordData defines parameters for SendGroupAiRecord.
+type SendGroupAiRecordData struct {
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
 }
 
 // SendGroupAiRecord200JSONResponseBodyStream defines parameters for SendGroupAiRecord.
@@ -6737,6 +7382,18 @@ type SendGroupForwardMsgJSONBody_AutoEscape struct {
 // SendGroupForwardMsgJSONBodyMessageType defines parameters for SendGroupForwardMsg.
 type SendGroupForwardMsgJSONBodyMessageType string
 
+// SendGroupForwardMsgData defines parameters for SendGroupForwardMsg.
+type SendGroupForwardMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
+
 // SendGroupForwardMsg200JSONResponseBodyStream defines parameters for SendGroupForwardMsg.
 type SendGroupForwardMsg200JSONResponseBodyStream string
 
@@ -6788,6 +7445,18 @@ type SendGroupMsgJSONBody_AutoEscape struct {
 
 // SendGroupMsgJSONBodyMessageType defines parameters for SendGroupMsg.
 type SendGroupMsgJSONBodyMessageType string
+
+// SendGroupMsgData defines parameters for SendGroupMsg.
+type SendGroupMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
 
 // SendGroupMsg200JSONResponseBodyStream defines parameters for SendGroupMsg.
 type SendGroupMsg200JSONResponseBodyStream string
@@ -6873,6 +7542,18 @@ type SendMsgJSONBody_AutoEscape struct {
 // SendMsgJSONBodyMessageType defines parameters for SendMsg.
 type SendMsgJSONBodyMessageType string
 
+// SendMsgData defines parameters for SendMsg.
+type SendMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
+
 // SendMsg200JSONResponseBodyStream defines parameters for SendMsg.
 type SendMsg200JSONResponseBodyStream string
 
@@ -6888,6 +7569,9 @@ type SendOnlineFileJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// SendOnlineFileData defines parameters for SendOnlineFile.
+type SendOnlineFileData = map[string]interface{}
+
 // SendOnlineFile200JSONResponseBodyStream defines parameters for SendOnlineFile.
 type SendOnlineFile200JSONResponseBodyStream string
 
@@ -6902,6 +7586,9 @@ type SendOnlineFolderJSONBody struct {
 	// UserID 用户 QQ
 	UserID string `json:"user_id"`
 }
+
+// SendOnlineFolderData defines parameters for SendOnlineFolder.
+type SendOnlineFolderData = map[string]interface{}
 
 // SendOnlineFolder200JSONResponseBodyStream defines parameters for SendOnlineFolder.
 type SendOnlineFolder200JSONResponseBodyStream string
@@ -6928,6 +7615,9 @@ type SendPacketJSONBodyRsp1 = bool
 type SendPacketJSONBody_Rsp struct {
 	union json.RawMessage
 }
+
+// SendPacketData defines parameters for SendPacket.
+type SendPacketData = string
 
 // SendPacket200JSONResponseBodyStream defines parameters for SendPacket.
 type SendPacket200JSONResponseBodyStream string
@@ -6996,6 +7686,18 @@ type SendPrivateForwardMsgJSONBody_AutoEscape struct {
 // SendPrivateForwardMsgJSONBodyMessageType defines parameters for SendPrivateForwardMsg.
 type SendPrivateForwardMsgJSONBodyMessageType string
 
+// SendPrivateForwardMsgData defines parameters for SendPrivateForwardMsg.
+type SendPrivateForwardMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
+
 // SendPrivateForwardMsg200JSONResponseBodyStream defines parameters for SendPrivateForwardMsg.
 type SendPrivateForwardMsg200JSONResponseBodyStream string
 
@@ -7048,6 +7750,18 @@ type SendPrivateMsgJSONBody_AutoEscape struct {
 // SendPrivateMsgJSONBodyMessageType defines parameters for SendPrivateMsg.
 type SendPrivateMsgJSONBodyMessageType string
 
+// SendPrivateMsgData defines parameters for SendPrivateMsg.
+type SendPrivateMsgData struct {
+	// ForwardID 转发消息的 forward_id
+	ForwardID *string `json:"forward_id,omitempty"`
+
+	// MessageID 消息ID
+	MessageID float32 `json:"message_id"`
+
+	// ResID 转发消息的 res_id
+	ResID *string `json:"res_id,omitempty"`
+}
+
 // SendPrivateMsg200JSONResponseBodyStream defines parameters for SendPrivateMsg.
 type SendPrivateMsg200JSONResponseBodyStream string
 
@@ -7088,6 +7802,12 @@ type SendQzoneMsgJSONBody_UgcRight struct {
 	union json.RawMessage
 }
 
+// SendQzoneMsgData defines parameters for SendQzoneMsg.
+type SendQzoneMsgData struct {
+	// Tid 说说Tid
+	Tid string `json:"tid"`
+}
+
 // SendQzoneMsg200JSONResponseBodyStream defines parameters for SendQzoneMsg.
 type SendQzoneMsg200JSONResponseBodyStream string
 
@@ -7116,6 +7836,9 @@ type SetCustomFaceDescJSONBodyEmojiID1 = string
 type SetCustomFaceDescJSONBody_EmojiID struct {
 	union json.RawMessage
 }
+
+// SetCustomFaceDescData defines parameters for SetCustomFaceDesc.
+type SetCustomFaceDescData = map[string]interface{}
 
 // SetCustomFaceDesc200JSONResponseBodyStream defines parameters for SetCustomFaceDesc.
 type SetCustomFaceDesc200JSONResponseBodyStream string
@@ -7166,6 +7889,9 @@ type SetDoubtFriendsAddRequestJSONBody struct {
 	Flag string `json:"flag"`
 }
 
+// SetDoubtFriendsAddRequestData defines parameters for SetDoubtFriendsAddRequest.
+type SetDoubtFriendsAddRequestData = interface{}
+
 // SetDoubtFriendsAddRequest200JSONResponseBodyStream defines parameters for SetDoubtFriendsAddRequest.
 type SetDoubtFriendsAddRequest200JSONResponseBodyStream string
 
@@ -7185,6 +7911,9 @@ type SetEssenceMsgJSONBodyMessageID1 = string
 type SetEssenceMsgJSONBody_MessageID struct {
 	union json.RawMessage
 }
+
+// SetEssenceMsgData defines parameters for SetEssenceMsg.
+type SetEssenceMsgData = map[string]interface{}
 
 // SetEssenceMsg200JSONResponseBodyStream defines parameters for SetEssenceMsg.
 type SetEssenceMsg200JSONResponseBodyStream string
@@ -7314,6 +8043,9 @@ type SetGroupAlbumMediaLikeJSONBody struct {
 	// Lloc lloc，若对整个上传操作则不填
 	Lloc *string `json:"lloc,omitempty"`
 }
+
+// SetGroupAlbumMediaLikeData defines parameters for SetGroupAlbumMediaLike.
+type SetGroupAlbumMediaLikeData = map[string]interface{}
 
 // SetGroupAlbumMediaLike200JSONResponseBodyStream defines parameters for SetGroupAlbumMediaLike.
 type SetGroupAlbumMediaLike200JSONResponseBodyStream string
@@ -7500,6 +8232,12 @@ type SetGroupPortraitJSONBody struct {
 	GroupID string `json:"group_id"`
 }
 
+// SetGroupPortraitData defines parameters for SetGroupPortrait.
+type SetGroupPortraitData struct {
+	ErrMsg string  `json:"errMsg"`
+	Result float32 `json:"result"`
+}
+
 // SetGroupPortrait200JSONResponseBodyStream defines parameters for SetGroupPortrait.
 type SetGroupPortrait200JSONResponseBodyStream string
 
@@ -7627,6 +8365,9 @@ type SetInputStatusJSONBody struct {
 	UserID string `json:"user_id"`
 }
 
+// SetInputStatusData defines parameters for SetInputStatus.
+type SetInputStatusData = map[string]interface{}
+
 // SetInputStatus200JSONResponseBodyStream defines parameters for SetInputStatus.
 type SetInputStatus200JSONResponseBodyStream string
 
@@ -7674,6 +8415,9 @@ type SetMsgEmojiLikeJSONBodySet1 = string
 type SetMsgEmojiLikeJSONBody_Set struct {
 	union json.RawMessage
 }
+
+// SetMsgEmojiLikeData defines parameters for SetMsgEmojiLike.
+type SetMsgEmojiLikeData = map[string]interface{}
 
 // SetMsgEmojiLike200JSONResponseBodyStream defines parameters for SetMsgEmojiLike.
 type SetMsgEmojiLike200JSONResponseBodyStream string
@@ -7758,6 +8502,9 @@ type SetQqProfileJSONBody_Sex struct {
 	union json.RawMessage
 }
 
+// SetQqProfileData defines parameters for SetQqProfile.
+type SetQqProfileData = map[string]interface{}
+
 // SetQqProfile200JSONResponseBodyStream defines parameters for SetQqProfile.
 type SetQqProfile200JSONResponseBodyStream string
 
@@ -7773,6 +8520,9 @@ type SetSelfLongnickJSONBody struct {
 	LongNick string `json:"longNick"`
 }
 
+// SetSelfLongnickData defines parameters for SetSelfLongnick.
+type SetSelfLongnickData = map[string]interface{}
+
 // SetSelfLongnick200JSONResponseBodyStream defines parameters for SetSelfLongnick.
 type SetSelfLongnick200JSONResponseBodyStream string
 
@@ -7781,6 +8531,9 @@ type TestDownloadStreamJSONBody struct {
 	// Error 是否触发测试错误
 	Error *bool `json:"error,omitempty"`
 }
+
+// TestDownloadStreamData defines parameters for TestDownloadStream.
+type TestDownloadStreamData = map[string]interface{}
 
 // TestDownloadStream200JSONResponseBodyStream defines parameters for TestDownloadStream.
 type TestDownloadStream200JSONResponseBodyStream string
@@ -7794,12 +8547,24 @@ type TransGroupFileJSONBody struct {
 	GroupID string `json:"group_id"`
 }
 
+// TransGroupFileData defines parameters for TransGroupFile.
+type TransGroupFileData struct {
+	// Ok 是否成功
+	Ok bool `json:"ok"`
+}
+
 // TransGroupFile200JSONResponseBodyStream defines parameters for TransGroupFile.
 type TransGroupFile200JSONResponseBodyStream string
 
 // TranslateEn2ZhJSONBody defines parameters for TranslateEn2Zh.
 type TranslateEn2ZhJSONBody struct {
 	// Words 待翻译单词列表
+	Words []string `json:"words"`
+}
+
+// TranslateEn2zhData defines parameters for TranslateEn2Zh.
+type TranslateEn2zhData struct {
+	// Words 翻译结果列表
 	Words []string `json:"words"`
 }
 
@@ -7842,6 +8607,9 @@ type UploadFileStreamJSONBody struct {
 	VerifyOnly *bool `json:"verify_only,omitempty"`
 }
 
+// UploadFileStreamData defines parameters for UploadFileStream.
+type UploadFileStreamData = map[string]interface{}
+
 // UploadFileStream200JSONResponseBodyStream defines parameters for UploadFileStream.
 type UploadFileStream200JSONResponseBodyStream string
 
@@ -7866,6 +8634,12 @@ type UploadGroupFileJSONBody struct {
 	UploadFile bool `json:"upload_file"`
 }
 
+// UploadGroupFileData defines parameters for UploadGroupFile.
+type UploadGroupFileData struct {
+	// FileID 文件 ID
+	FileID *string `json:"file_id"`
+}
+
 // UploadGroupFile200JSONResponseBodyStream defines parameters for UploadGroupFile.
 type UploadGroupFile200JSONResponseBodyStream string
 
@@ -7884,6 +8658,9 @@ type UploadImageToQunAlbumJSONBody struct {
 	GroupID string `json:"group_id"`
 }
 
+// UploadImageToQunAlbumData defines parameters for UploadImageToQunAlbum.
+type UploadImageToQunAlbumData = map[string]interface{}
+
 // UploadImageToQunAlbum200JSONResponseBodyStream defines parameters for UploadImageToQunAlbum.
 type UploadImageToQunAlbum200JSONResponseBodyStream string
 
@@ -7900,6 +8677,12 @@ type UploadPrivateFileJSONBody struct {
 
 	// UserID 用户 QQ
 	UserID string `json:"user_id"`
+}
+
+// UploadPrivateFileData defines parameters for UploadPrivateFile.
+type UploadPrivateFileData struct {
+	// FileID 文件 ID
+	FileID *string `json:"file_id"`
 }
 
 // UploadPrivateFile200JSONResponseBodyStream defines parameters for UploadPrivateFile.

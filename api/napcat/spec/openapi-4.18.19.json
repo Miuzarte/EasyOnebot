@@ -72,7 +72,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CleanStreamTempFileData"
             }
            }
           }
@@ -170,7 +171,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DownloadFileStreamData"
             }
            }
           }
@@ -275,7 +277,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DownloadFileRecordStreamData"
             }
            }
           }
@@ -373,7 +376,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DownloadFileImageStreamData"
             }
            }
           }
@@ -463,7 +467,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "TestDownloadStreamData"
             }
            }
           }
@@ -601,7 +606,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "UploadFileStreamData"
             }
            }
           }
@@ -709,7 +715,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DelGroupAlbumMediaData"
             }
            }
           }
@@ -818,7 +825,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetGroupAlbumMediaLikeData"
             }
            }
           }
@@ -927,7 +935,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "CancelGroupAlbumMediaLikeData"
             }
            }
           }
@@ -1037,7 +1046,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DoGroupAlbumCommentData"
             }
            }
           }
@@ -1140,7 +1150,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetGroupAlbumMediaListData"
             }
            }
           }
@@ -1263,7 +1274,8 @@
               "album_list",
               "attach_info",
               "has_more"
-             ]
+             ],
+             "x-go-type-name": "GetQunAlbumListData"
             }
            }
           }
@@ -1382,7 +1394,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "UploadImageToQunAlbumData"
             }
            }
           }
@@ -1490,7 +1503,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetGroupTodoData"
             }
            }
           }
@@ -1588,7 +1602,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CompleteGroupTodoData"
             }
            }
           }
@@ -1686,7 +1701,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CancelGroupTodoData"
             }
            }
           }
@@ -1802,7 +1818,8 @@
               "max_member_count",
               "group_all_shut",
               "group_remark"
-             ]
+             ],
+             "x-go-type-name": "GetGroupDetailInfoData"
             }
            }
           }
@@ -1920,7 +1937,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupKickMembersData"
             }
            }
           }
@@ -2016,7 +2034,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupAddOptionData"
             }
            }
           }
@@ -2106,7 +2125,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupRobotAddOptionData"
             }
            }
           }
@@ -2196,7 +2216,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupSearchData"
             }
            }
           }
@@ -2284,7 +2305,8 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetDoubtFriendsAddRequestData"
             }
            }
           }
@@ -2367,7 +2389,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetDoubtFriendsAddRequestData"
             }
            }
           }
@@ -2472,7 +2495,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetFriendRemarkData"
             }
            }
           }
@@ -2573,7 +2597,8 @@
                "created_at",
                "ttl"
               ]
-             }
+             },
+             "x-go-type-name": "GetRkeyData"
             }
            }
           }
@@ -2681,7 +2706,8 @@
              "required": [
               "name"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetRkeyServerData"
             }
            }
           }
@@ -2782,7 +2808,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupRemarkData"
             }
            }
           }
@@ -2864,7 +2891,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetGroupInfoExData"
             }
            }
           }
@@ -3056,7 +3084,8 @@
               "isFirstPage",
               "result",
               "errMsg"
-             ]
+             ],
+             "x-go-type-name": "FetchEmojiLikeData"
             }
            }
           }
@@ -3205,7 +3234,8 @@
              "required": [
               "emoji_like_list"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetEmojiLikesData"
             }
            }
           }
@@ -3318,7 +3348,8 @@
              "required": [
               "text"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "FetchPttTextData"
             }
            }
           }
@@ -3433,7 +3464,8 @@
                "description": "Base64编码",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetFileData"
             }
            }
           }
@@ -3544,7 +3576,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetQqProfileData"
             }
            }
           }
@@ -3626,7 +3659,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "string"
+             "type": "string",
+             "x-go-type-name": "ArkShareGroupData"
             }
            }
           }
@@ -3726,7 +3760,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "ArkSharePeerData"
             }
            }
           }
@@ -3818,7 +3853,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "string"
+             "type": "string",
+             "x-go-type-name": "SendGroupArkShareData"
             }
            }
           }
@@ -3918,7 +3954,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SendArkShareData"
             }
            }
           }
@@ -4016,7 +4053,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "CreateCollectionData"
             }
            }
           }
@@ -4109,7 +4147,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetSelfLongnickData"
             }
            }
           }
@@ -4207,7 +4246,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "ForwardFriendSingleMsgData"
             }
            }
           }
@@ -4305,7 +4345,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "ForwardGroupSingleMsgData"
             }
            }
           }
@@ -4399,7 +4440,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "MarkGroupMsgAsReadData"
             }
            }
           }
@@ -4493,7 +4535,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "MarkPrivateMsgAsReadData"
             }
            }
           }
@@ -4575,7 +4618,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetQqAvatarData"
             }
            }
           }
@@ -4674,7 +4718,8 @@
              },
              "required": [
               "words"
-             ]
+             ],
+             "x-go-type-name": "TranslateEn2zhData"
             }
            }
           }
@@ -4797,7 +4842,8 @@
              "required": [
               "files",
               "folders"
-             ]
+             ],
+             "x-go-type-name": "GetGroupRootFilesData"
             }
            }
           }
@@ -4890,7 +4936,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupSignData"
             }
            }
           }
@@ -4972,7 +5019,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SendGroupSignData"
             }
            }
           }
@@ -5050,7 +5098,8 @@
                "description": "客户端Key",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetClientkeyData"
             }
            }
           }
@@ -5169,7 +5218,8 @@
              },
              "required": [
               "ok"
-             ]
+             ],
+             "x-go-type-name": "MoveGroupFileData"
             }
            }
           }
@@ -5288,7 +5338,8 @@
              },
              "required": [
               "ok"
-             ]
+             ],
+             "x-go-type-name": "RenameGroupFileData"
             }
            }
           }
@@ -5395,7 +5446,8 @@
              },
              "required": [
               "ok"
-             ]
+             ],
+             "x-go-type-name": "TransGroupFileData"
             }
            }
           }
@@ -5521,7 +5573,8 @@
                "time",
                "rank"
               ]
-             }
+             },
+             "x-go-type-name": "GetGroupSignedListData"
             }
            }
           }
@@ -5648,7 +5701,8 @@
              },
              "required": [
               "tid"
-             ]
+             ],
+             "x-go-type-name": "SendQzoneMsgData"
             }
            }
           }
@@ -5740,7 +5794,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "DeleteQzoneMsgData"
             }
            }
           }
@@ -5834,7 +5889,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupMemberInvitePolicyData"
             }
            }
           }
@@ -5931,7 +5987,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupMemberPermissionsData"
             }
            }
           }
@@ -6019,7 +6076,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupNewMemberHistoryVisibilityData"
             }
            }
           }
@@ -6115,7 +6173,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendLikeData"
             }
            }
           }
@@ -6283,7 +6342,8 @@
               "raw_message",
               "font",
               "user_id"
-             ]
+             ],
+             "x-go-type-name": "GetMsgData"
             }
            }
           }
@@ -6470,7 +6530,8 @@
              "type": "array",
              "items": {
               "$ref": "#/components/schemas/OB11User"
-             }
+             },
+             "x-go-type-name": "GetFriendListData"
             }
            }
           }
@@ -6571,7 +6632,8 @@
              "type": "array",
              "items": {
               "$ref": "#/components/schemas/OB11Group"
-             }
+             },
+             "x-go-type-name": "GetGroupListData"
             }
            }
           }
@@ -6774,7 +6836,8 @@
             "data": {
              "description": "业务数据",
              "type": "array",
-             "items": {}
+             "items": {},
+             "x-go-type-name": "GetGroupMemberListData"
             }
            }
           }
@@ -7059,7 +7122,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendGroupMsgData"
             }
            }
           }
@@ -7226,7 +7290,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendPrivateMsgData"
             }
            }
           }
@@ -7394,7 +7459,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendMsgData"
             }
            }
           }
@@ -7493,7 +7559,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "DeleteMsgData"
             }
            }
           }
@@ -7605,7 +7672,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupAddRequestData"
             }
            }
           }
@@ -7704,7 +7772,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetFriendAddRequestData"
             }
            }
           }
@@ -7798,7 +7867,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupLeaveData"
             }
            }
           }
@@ -7889,7 +7959,8 @@
               "app_name",
               "protocol_version",
               "app_version"
-             ]
+             ],
+             "x-go-type-name": "GetVersionInfoData"
             }
            }
           }
@@ -7982,7 +8053,8 @@
              "required": [
               "yes"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CanSendRecordData"
             }
            }
           }
@@ -8073,7 +8145,8 @@
              "required": [
               "yes"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CanSendImageData"
             }
            }
           }
@@ -8174,7 +8247,8 @@
               "good",
               "stat"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetStatusData"
             }
            }
           }
@@ -8280,7 +8354,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupWholeBanData"
             }
            }
           }
@@ -8382,7 +8457,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupBanData"
             }
            }
           }
@@ -8482,7 +8558,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupKickData"
             }
            }
           }
@@ -8582,7 +8659,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupAdminData"
             }
            }
           }
@@ -8670,7 +8748,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupNameData"
             }
            }
           }
@@ -8763,7 +8842,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupCardData"
             }
            }
           }
@@ -8868,7 +8948,8 @@
                "description": "Base64编码",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetImageData"
             }
            }
           }
@@ -8992,7 +9073,8 @@
                "description": "Base64编码",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetRecordData"
             }
            }
           }
@@ -9117,7 +9199,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetMsgEmojiLikeData"
             }
            }
           }
@@ -9223,7 +9306,8 @@
               "cookies",
               "bkn"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetCookiesData"
             }
            }
           }
@@ -9349,7 +9433,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetOnlineStatusData"
             }
            }
           }
@@ -9422,7 +9507,8 @@
             "data": {
              "description": "业务数据",
              "type": "array",
-             "items": {}
+             "items": {},
+             "x-go-type-name": "GetRobotUinRangeData"
             }
            }
           }
@@ -9537,7 +9623,8 @@
                "categoryMbCount",
                "buddyList"
               ]
-             }
+             },
+             "x-go-type-name": "GetFriendsWithCategoryData"
             }
            }
           }
@@ -9656,7 +9743,8 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "DeleteFriendData"
             }
            }
           }
@@ -9747,7 +9835,8 @@
              "required": [
               "level"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CheckUrlSafelyData"
             }
            }
           }
@@ -9833,7 +9922,8 @@
             "data": {
              "description": "业务数据",
              "type": "array",
-             "items": {}
+             "items": {},
+             "x-go-type-name": "GetOnlineClientsData"
             }
            }
           }
@@ -9915,7 +10005,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "OcrImageData"
             }
            }
           }
@@ -10012,7 +10103,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "OcrImageLegacyData"
             }
            }
           }
@@ -10169,7 +10261,8 @@
               "legend_list",
               "emotion_list",
               "strong_newbie_list"
-             ]
+             ],
+             "x-go-type-name": "GetGroupHonorInfoData"
             }
            }
           }
@@ -10339,7 +10432,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendGroupNoticeData"
             }
            }
           }
@@ -10477,7 +10571,8 @@
                "notice_id",
                "message"
               ]
-             }
+             },
+             "x-go-type-name": "GetGroupNoticeData"
             }
            }
           }
@@ -10630,7 +10725,8 @@
                "operator_time",
                "content"
               ]
-             }
+             },
+             "x-go-type-name": "GetEssenceMsgListData"
             }
            }
           }
@@ -10749,7 +10845,8 @@
               "can_at_all",
               "remain_at_all_count_for_group",
               "remain_at_all_count_for_uin"
-             ]
+             ],
+             "x-go-type-name": "GetGroupAtAllRemainData"
             }
            }
           }
@@ -10918,7 +11015,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendForwardMsgData"
             }
            }
           }
@@ -11085,7 +11183,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendGroupForwardMsgData"
             }
            }
           }
@@ -11252,7 +11351,8 @@
              "required": [
               "message_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendPrivateForwardMsgData"
             }
            }
           }
@@ -11436,7 +11536,8 @@
               "remark",
               "status",
               "login_days"
-             ]
+             ],
+             "x-go-type-name": "GetStrangerInfoData"
             }
            }
           }
@@ -11560,7 +11661,8 @@
              },
              "required": [
               "file"
-             ]
+             ],
+             "x-go-type-name": "DownloadFileData"
             }
            }
           }
@@ -11642,7 +11744,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetGuildListData"
             }
            }
           }
@@ -11749,7 +11852,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "MarkMsgAsReadData"
             }
            }
           }
@@ -11873,7 +11977,8 @@
              "required": [
               "file_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "UploadGroupFileData"
             }
            }
           }
@@ -12012,7 +12117,8 @@
              },
              "required": [
               "messages"
-             ]
+             ],
+             "x-go-type-name": "GetGroupMsgHistoryData"
             }
            }
           }
@@ -12112,7 +12218,8 @@
                "type": "array",
                "items": {}
               }
-             }
+             },
+             "x-go-type-name": "GetForwardMsgData"
             }
            }
           }
@@ -12251,7 +12358,8 @@
              },
              "required": [
               "messages"
-             ]
+             ],
+             "x-go-type-name": "GetFriendMsgHistoryData"
             }
            }
           }
@@ -12499,7 +12607,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "HandleQuickOperationLegacyData"
             }
            }
           }
@@ -12594,7 +12703,8 @@
               "invited_requests",
               "InvitedRequest",
               "join_requests"
-             ]
+             ],
+             "x-go-type-name": "GetGroupIgnoredNotifiesData"
             }
            }
           }
@@ -12704,7 +12814,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DeleteEssenceMsgData"
             }
            }
           }
@@ -12793,7 +12904,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetEssenceMsgData"
             }
            }
           }
@@ -12935,7 +13047,8 @@
                "sendMemberName",
                "peerName"
               ]
-             }
+             },
+             "x-go-type-name": "GetRecentContactData"
             }
            }
           }
@@ -13209,7 +13322,8 @@
               "time",
               "favoriteInfo",
               "voteInfo"
-             ]
+             ],
+             "x-go-type-name": "GetProfileLikeData"
             }
            }
           }
@@ -13333,7 +13447,8 @@
              "required": [
               "result",
               "errMsg"
-             ]
+             ],
+             "x-go-type-name": "SetGroupPortraitData"
             }
            }
           }
@@ -13437,7 +13552,8 @@
              "type": "array",
              "items": {
               "type": "string"
-             }
+             },
+             "x-go-type-name": "FetchCustomFaceData"
             }
            }
           }
@@ -13537,7 +13653,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "FetchCustomFaceDetailData"
             }
            }
           }
@@ -13669,7 +13786,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "AddCustomFaceData"
             }
            }
           }
@@ -13796,7 +13914,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DeleteCustomFaceData"
             }
            }
           }
@@ -13903,7 +14022,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetCustomFaceDescData"
             }
            }
           }
@@ -14019,7 +14139,8 @@
              "required": [
               "file_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "UploadPrivateFileData"
             }
            }
           }
@@ -14103,7 +14224,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetGuildServiceProfileData"
             }
            }
           }
@@ -14219,7 +14341,8 @@
               "required": [
                "variants"
               ]
-             }
+             },
+             "x-go-type-name": "GetModelShowData"
             }
            }
           }
@@ -14304,7 +14427,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetModelShowData"
             }
            }
           }
@@ -14392,7 +14516,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SetInputStatusData"
             }
            }
           }
@@ -14473,7 +14598,8 @@
              "required": [
               "token"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetCsrfTokenData"
             }
            }
           }
@@ -14579,7 +14705,8 @@
               "cookies",
               "token"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetCredentialsData"
             }
            }
           }
@@ -14678,7 +14805,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DelGroupNoticeData"
             }
            }
           }
@@ -14766,7 +14894,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DeleteGroupFileData"
             }
            }
           }
@@ -14871,7 +15000,8 @@
              "required": [
               "result",
               "groupItem"
-             ]
+             ],
+             "x-go-type-name": "CreateGroupFileFolderData"
             }
            }
           }
@@ -14973,7 +15103,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DeleteGroupFolderData"
             }
            }
           }
@@ -15079,7 +15210,8 @@
               "limit_count",
               "used_space",
               "total_space"
-             ]
+             ],
+             "x-go-type-name": "GetGroupFileSystemInfoData"
             }
            }
           }
@@ -15212,7 +15344,8 @@
              "required": [
               "files",
               "folders"
-             ]
+             ],
+             "x-go-type-name": "GetGroupFilesByFolderData"
             }
            }
           }
@@ -15295,7 +15428,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "NcGetPacketStatusData"
             }
            }
           }
@@ -15367,7 +15501,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SetRestartData"
             }
            }
           }
@@ -15457,7 +15592,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GroupPokeData"
             }
            }
           }
@@ -15547,7 +15683,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "FriendPokeData"
             }
            }
           }
@@ -15643,7 +15780,8 @@
              "required": [
               "status",
               "ext_status"
-             ]
+             ],
+             "x-go-type-name": "NcGetUserStatusData"
             }
            }
           }
@@ -15727,7 +15865,8 @@
             "data": {
              "description": "业务数据",
              "type": "array",
-             "items": {}
+             "items": {},
+             "x-go-type-name": "NcGetRkeyData"
             }
            }
           }
@@ -15835,7 +15974,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "null"
+             "type": "null",
+             "x-go-type-name": "SetGroupSpecialTitleData"
             }
            }
           }
@@ -15945,7 +16085,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "string"
+             "type": "string",
+             "x-go-type-name": "SetDiyOnlineStatusData"
             }
            }
           }
@@ -16036,7 +16177,8 @@
             "data": {
              "description": "业务数据",
              "type": "array",
-             "items": {}
+             "items": {},
+             "x-go-type-name": "GetGroupShutListData"
             }
            }
           }
@@ -16145,7 +16287,8 @@
                "description": "文件下载链接",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetGroupFileUrlData"
             }
            }
           }
@@ -16372,7 +16515,8 @@
              },
              "required": [
               "data"
-             ]
+             ],
+             "x-go-type-name": "GetMiniAppArkData"
             }
            }
           }
@@ -16478,7 +16622,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "string"
+             "type": "string",
+             "x-go-type-name": "GetAiRecordData"
             }
            }
           }
@@ -16589,7 +16734,8 @@
              },
              "required": [
               "message_id"
-             ]
+             ],
+             "x-go-type-name": "SendGroupAiRecordData"
             }
            }
           }
@@ -16723,7 +16869,8 @@
                "type",
                "characters"
               ]
-             }
+             },
+             "x-go-type-name": "GetAiCharactersData"
             }
            }
           }
@@ -16852,7 +16999,8 @@
               {
                "type": "null"
               }
-             ]
+             ],
+             "x-go-type-name": "SendPacketData"
             }
            }
           }
@@ -16950,7 +17098,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "SendPokeData"
             }
            }
           }
@@ -17068,7 +17217,8 @@
               "InvitedRequest",
               "join_requests"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetGroupSystemMsgData"
             }
            }
           }
@@ -17153,7 +17303,8 @@
             "data": {
              "type": "object",
              "properties": {},
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "BotExitData"
             }
            }
           }
@@ -17262,7 +17413,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "ClickInlineKeyboardButtonData"
             }
            }
           }
@@ -17351,7 +17503,8 @@
                "description": "文件下载链接",
                "type": "string"
               }
-             }
+             },
+             "x-go-type-name": "GetPrivateFileUrlData"
             }
            }
           }
@@ -17465,7 +17618,8 @@
                "age",
                "source"
               ]
-             }
+             },
+             "x-go-type-name": "GetUnidirectionalFriendListData"
             }
            }
           }
@@ -17553,7 +17707,8 @@
            "properties": {
             "data": {
              "type": "null",
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "CleanCacheData"
             }
            }
           }
@@ -17673,7 +17828,8 @@
                "checked",
                "actor"
               ]
-             }
+             },
+             "x-go-type-name": "GetGroupIgnoreAddRequestData"
             }
            }
           }
@@ -17782,7 +17938,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetCollectionListData"
             }
            }
           }
@@ -17941,7 +18098,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "CreateFlashTaskData"
             }
            }
           }
@@ -18033,7 +18191,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetFlashFileListData"
             }
            }
           }
@@ -18136,7 +18295,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetFlashFileUrlData"
             }
            }
           }
@@ -18237,7 +18397,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SendFlashMsgData"
             }
            }
           }
@@ -18329,7 +18490,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetShareLinkData"
             }
            }
           }
@@ -18419,7 +18581,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetFilesetInfoData"
             }
            }
           }
@@ -18512,7 +18675,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "GetOnlineFileMsgData"
             }
            }
           }
@@ -18605,7 +18769,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SendOnlineFileData"
             }
            }
           }
@@ -18697,7 +18862,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "SendOnlineFolderData"
             }
            }
           }
@@ -18791,7 +18957,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "ReceiveOnlineFileData"
             }
            }
           }
@@ -18884,7 +19051,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "RefuseOnlineFileData"
             }
            }
           }
@@ -18972,7 +19140,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "CancelOnlineFileData"
             }
            }
           }
@@ -19054,7 +19223,8 @@
            "properties": {
             "data": {
              "description": "业务数据",
-             "type": "object"
+             "type": "object",
+             "x-go-type-name": "DownloadFilesetData"
             }
            }
           }
@@ -19145,7 +19315,8 @@
              "required": [
               "fileset_id"
              ],
-             "description": "业务数据"
+             "description": "业务数据",
+             "x-go-type-name": "GetFilesetIdData"
             }
            }
           }

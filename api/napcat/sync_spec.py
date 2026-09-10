@@ -165,6 +165,47 @@ def dedupe_properties(spec: dict) -> list[tuple[str, str, str]]:
     return dropped
 
 
+def name_response_data(spec: dict) -> list[str]:
+    """给每个端点的响应 data 内联 schema 起名字, 返回命名的类型列表
+
+    NapCat 的响应形如 allOf[BaseResponse, {data: <匿名对象>}], 匿名对象在只生成 models 时
+    不会产出 Go 类型, 调用方就没法强类型解析 data。用 oapi-codegen 支持的
+    x-go-type-name 扩展直接命名, 生成 <OperationID>Data。
+    """
+    named: list[str] = []
+    for path, ops in spec["paths"].items():
+        for op in ops.values():
+            if not isinstance(op, dict):
+                continue
+            oid = op.get("operationId")
+            if not oid:
+                continue
+            for resp in (op.get("responses") or {}).values():
+                if not isinstance(resp, dict):
+                    continue
+                for content in (resp.get("content") or {}).values():
+                    schema = content.get("schema") if isinstance(content, dict) else None
+                    if not isinstance(schema, dict):
+                        continue
+                    for part in schema.get("allOf", []):
+                        props = part.get("properties") if isinstance(part, dict) else None
+                        data = props.get("data") if isinstance(props, dict) else None
+                        if not isinstance(data, dict):
+                            continue
+                        # data 是 $ref 时不用命名 (已经有名字了)
+                        if "$ref" in data:
+                            continue
+                        name = to_go_name(oid) + "Data"
+                        data["x-go-type-name"] = name
+                        named.append(name)
+    return named
+
+
+def to_go_name(s: str) -> str:
+    parts = re.split(r"[^0-9A-Za-z]+", s)
+    return "".join(p[:1].upper() + p[1:] for p in parts if p)
+
+
 def main() -> int:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     check_only = "--check" in sys.argv
@@ -185,6 +226,7 @@ def main() -> int:
     spec = json.loads(raw)
     injected = inject_operation_ids(spec)
     dropped = dedupe_properties(spec)
+    named = name_response_data(spec)
 
     SPEC_DIR.mkdir(parents=True, exist_ok=True)
     raw_path = SPEC_DIR / f"openapi-raw-{version}.json"
@@ -200,6 +242,7 @@ def main() -> int:
         "paths": paths,
         "schemas": schemas,
         "operationIdsInjected": injected,
+        "responseDataTypesNamed": len(named),
         "aliasedEndpoints": ALIAS_ENDPOINTS,
         "droppedDuplicateProperties": [
             {"location": loc, "goName": g, "droppedJSONName": name} for loc, g, name in dropped
@@ -216,7 +259,7 @@ def main() -> int:
 
     print(f"上游版本 {version} (最新 {latest})")
     print(f"  {raw_path.name}: 原样保存, {len(raw)} 字节")
-    print(f"  {path.name}: 注入 {injected} 个 operationId, {paths} 端点 / {schemas} schema")
+    print(f"  {path.name}: 注入 {injected} 个 operationId, 命名 {len(named)} 个响应 data 类型, {paths} 端点 / {schemas} schema")
     for loc, g, name in dropped:
         print(f"    去除重复属性 {name} (Go 名 {g}) @ {loc}")
     print(f"  version.json: 记录来源与指纹")

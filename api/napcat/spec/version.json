@@ -5,6 +5,7 @@
   "paths": 175,
   "schemas": 39,
   "operationIdsInjected": 175,
+  "responseDataTypesNamed": 171,
   "aliasedEndpoints": {
     "/.ocr_image": "OcrImageLegacy",
     "/.handle_quick_operation": "HandleQuickOperationLegacy"
