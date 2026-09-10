@@ -1,0 +1,31 @@
+{
+  "version": "4.18.19",
+  "openapi": "3.1.0",
+  "title": "NapCat OneBot 11 HTTP API",
+  "paths": 175,
+  "schemas": 39,
+  "operationIdsInjected": 175,
+  "aliasedEndpoints": {
+    "/.ocr_image": "OcrImageLegacy",
+    "/.handle_quick_operation": "HandleQuickOperationLegacy"
+  },
+  "droppedDuplicateProperties": [
+    {
+      "location": "/paths//get_group_msg_history/post/requestBody/content/application/json/schema",
+      "goName": "ReverseOrder",
+      "droppedJSONName": "reverseOrder"
+    },
+    {
+      "location": "/paths//get_friend_msg_history/post/requestBody/content/application/json/schema",
+      "goName": "ReverseOrder",
+      "droppedJSONName": "reverseOrder"
+    },
+    {
+      "location": "/components/schemas/OB11User",
+      "goName": "CategoryId",
+      "droppedJSONName": "categoryId"
+    }
+  ],
+  "source": "https://raw.githubusercontent.com/NapNeko/NapCatDocs/main/src/api/4.18.19/openapi.json",
+  "latest": "4.18.19"
+}

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json
+#
+# NapCat OneBot 11 的类型定义生成配置
+#
+# 只生成 models: NapCat 的 spec 是 HTTP-over-POST 形式的, 而本项目走 WebSocket,
+# 生成出来的 HTTP client 用不上 (而且是 5 万行的无用负载), 所以只取类型。
+package: napcat
+output: openapi.gen.go
+generate:
+  models: true
+output-options:
+  skip-prune: false
+  # NapCat spec 不带 SSE/JSONL 语义, 关掉 streaming 探测, 否则每个响应都会多出一组
+  # Xxx200JSONResponseBodyStream 类型 (实测 1745 个)
+  streaming-content-types: ["^$"]
+  # 生成的字段名尽量贴近端点名 (SendGroupForwardMsg)
+  name-normalizer: ToCamelCaseWithInitialisms
