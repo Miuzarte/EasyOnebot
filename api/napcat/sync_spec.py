@@ -58,8 +58,10 @@ def latest_version() -> str:
 def to_operation_id(path: str) -> str:
     """path -> operationId
 
-    直接取整条 path 去掉 '/' 后首字母大写, 不按 '_' 拆词:
-    NapCat 的 path 本身就是端点名 (/send_group_forward_msg -> SendGroupForwardMsg)。
+    端点名按 '_' 拆词后转大驼峰, 与 oapi-codegen 生成类型名时的规范化保持一致
+    (/send_group_forward_msg -> SendGroupForwardMsg, 生成 SendGroupForwardMsgJSONBody),
+    这样调用方可以用同一个字符串既做类型名前缀又做查表键。
+
     少数带前导点的旧路由在 ALIAS_ENDPOINTS 里显式改名。
     """
     if path in ALIAS_ENDPOINTS:
@@ -67,7 +69,7 @@ def to_operation_id(path: str) -> str:
     s = path.lstrip("/")
     if not s:
         raise ValueError("空 path")
-    return s[:1].upper() + s[1:]
+    return "".join(p[:1].upper() + p[1:] for p in s.split("_") if p)
 
 
 def inject_operation_ids(spec: dict) -> int:
@@ -165,14 +167,18 @@ def dedupe_properties(spec: dict) -> list[tuple[str, str, str]]:
     return dropped
 
 
-def name_response_data(spec: dict) -> list[str]:
-    """给每个端点的响应 data 内联 schema 起名字, 返回命名的类型列表
+def extract_response_models(spec: dict) -> list[str]:
+    """把每个端点成功响应的 data schema 提成 components.schemas 里的命名模型
 
-    NapCat 的响应形如 allOf[BaseResponse, {data: <匿名对象>}], 匿名对象在只生成 models 时
-    不会产出 Go 类型, 调用方就没法强类型解析 data。用 oapi-codegen 支持的
-    x-go-type-name 扩展直接命名, 生成 <OperationID>Data。
+    oapi-codegen 在只生成 models 时不会为 paths 里内联的响应 schema 产出 Go 类型,
+    响应体就成了 map[string]interface{}, 调用方无法严格解码。这里把 data 的内联
+    schema 搬进 components (名字固定为 <OperationID>Data, 与上面 x-go-type-name 一致),
+    再把原位改成 $ref —— 语义完全等价, 只是让生成器看得见。
+
+    返回新建的组件名列表。
     """
-    named: list[str] = []
+    created: list[str] = []
+    components = spec.setdefault("components", {}).setdefault("schemas", {})
     for path, ops in spec["paths"].items():
         for op in ops.values():
             if not isinstance(op, dict):
@@ -190,15 +196,121 @@ def name_response_data(spec: dict) -> list[str]:
                     for part in schema.get("allOf", []):
                         props = part.get("properties") if isinstance(part, dict) else None
                         data = props.get("data") if isinstance(props, dict) else None
-                        if not isinstance(data, dict):
-                            continue
-                        # data 是 $ref 时不用命名 (已经有名字了)
-                        if "$ref" in data:
+                        if not isinstance(data, dict) or "$ref" in data:
                             continue
                         name = to_go_name(oid) + "Data"
-                        data["x-go-type-name"] = name
-                        named.append(name)
-    return named
+                        existing = components.get(name)
+                        if existing is not None and json.dumps(
+                            existing, sort_keys=True
+                        ) != json.dumps(data, sort_keys=True):
+                            raise SystemExit(
+                                f"{path}: 组件 {name} 已存在且内容不同, 需要人工处理"
+                            )
+                        if existing is None:
+                            body = dict(data)
+                            body.pop("x-go-type-name", None)
+                            components[name] = body
+                            created.append(name)
+                        data.clear()
+                        data["$ref"] = f"#/components/schemas/{name}"
+    return created
+
+
+# 上游把 ID / 时间戳一律声明成 `type: number` (无 format), oapi-codegen 会映射成
+# float32 —— QQ 号、消息 id、时间戳都远超 float32 的 24 位有效精度, 严格解码会出错。
+# 这些字段实际都是整数, 用 x-go-type 钉成 int64。
+#
+# 口径: 只覆盖"整数语义"的字段。像 age / chunk_size / count 这类安全的小整数不动,
+# 真正的浮点字段一个都不动。按字段名匹配 (同名在不同 schema 里语义一致)。
+INT64_FIELDS = {
+    "message_id",
+    "real_id",
+    "message_seq",
+    "group_id",
+    "user_id",
+    "target_id",
+    "self_id",
+    "sender_id",
+    "invitor_uin",
+    "actor",
+    "emoji_package_id",
+    "time",
+    "join_time",
+    "last_sent_time",
+    "title_expire_time",
+    "shut_up_timestamp",
+    "login_days",
+    "expired_time",
+    "created_at",
+    "seq",
+}
+
+
+def apply_int64_overrides(spec: dict) -> int:
+    """把 [INT64_FIELDS] 里的 number 字段钉成 int64, 返回改动处数"""
+    n = 0
+
+    def walk(node):
+        nonlocal n
+        if isinstance(node, dict):
+            props = node.get("properties")
+            if isinstance(props, dict):
+                for k, v in props.items():
+                    if not isinstance(v, dict):
+                        continue
+                    if k in INT64_FIELDS and v.get("type") == "number" and "x-go-type" not in v:
+                        v["x-go-type"] = "int64"
+                        n += 1
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    walk(spec)
+    return n
+
+
+# 上游个别字段的类型与 NapCat 实际返回不一致, 或过于笼统 (只有 description 没有结构),
+# 严格解码会失败。这里按 "组件名.字段名" 覆盖成正确 schema, 覆盖项在 version.json 里留痕。
+#
+# 依据是实测: 对一个真实 NapCat 实例调 get_msg, message 返回消息段数组, sender 返回对象。
+SCHEMA_OVERRIDES = {
+    "GetMsgData.message": {
+        "description": "消息内容 (消息段数组)",
+        "type": "array",
+        "items": {"$ref": "#/components/schemas/OB11MessageData"},
+    },
+    "GetMsgData.sender": {
+        "description": "发送者",
+        "type": "object",
+        "properties": {
+            "user_id": {"description": "发送者 QQ 号", "type": "number", "x-go-type": "int64"},
+            "nickname": {"description": "昵称", "type": "string"},
+            "card": {"description": "群名片", "type": "string"},
+            "role": {"description": "群角色", "type": "string"},
+            "level": {"description": "等级", "type": "string"},
+            "title": {"description": "头衔", "type": "string"},
+        },
+    },
+}
+
+
+def apply_schema_overrides(spec: dict) -> list[str]:
+    """把 [SCHEMA_OVERRIDES] 应用到组件属性上, 返回实际生效的键"""
+    applied: list[str] = []
+    components = spec.get("components", {}).get("schemas", {})
+    for key, schema in SCHEMA_OVERRIDES.items():
+        comp, _, prop = key.partition(".")
+        node = components.get(comp)
+        if not isinstance(node, dict):
+            raise SystemExit(f"schema 覆盖 {key}: 组件 {comp} 不存在")
+        props = node.get("properties")
+        if not isinstance(props, dict) or prop not in props:
+            raise SystemExit(f"schema 覆盖 {key}: 字段不存在")
+        props[prop] = json.loads(json.dumps(schema))
+        applied.append(key)
+    return applied
 
 
 def to_go_name(s: str) -> str:
@@ -226,7 +338,9 @@ def main() -> int:
     spec = json.loads(raw)
     injected = inject_operation_ids(spec)
     dropped = dedupe_properties(spec)
-    named = name_response_data(spec)
+    created = extract_response_models(spec)
+    overrides = apply_int64_overrides(spec)
+    schema_overrides = apply_schema_overrides(spec)
 
     SPEC_DIR.mkdir(parents=True, exist_ok=True)
     raw_path = SPEC_DIR / f"openapi-raw-{version}.json"
@@ -242,7 +356,9 @@ def main() -> int:
         "paths": paths,
         "schemas": schemas,
         "operationIdsInjected": injected,
-        "responseDataTypesNamed": len(named),
+        "responseModelComponentsCreated": len(created),
+        "int64FieldOverrides": overrides,
+        "schemaOverrides": schema_overrides,
         "aliasedEndpoints": ALIAS_ENDPOINTS,
         "droppedDuplicateProperties": [
             {"location": loc, "goName": g, "droppedJSONName": name} for loc, g, name in dropped
@@ -259,7 +375,7 @@ def main() -> int:
 
     print(f"上游版本 {version} (最新 {latest})")
     print(f"  {raw_path.name}: 原样保存, {len(raw)} 字节")
-    print(f"  {path.name}: 注入 {injected} 个 operationId, 命名 {len(named)} 个响应 data 类型, {paths} 端点 / {schemas} schema")
+    print(f"  {path.name}: 注入 {injected} 个 operationId, 提取 {len(created)} 个响应模型组件, int64 覆盖 {overrides} 处, {paths} 端点 / {schemas} schema")
     for loc, g, name in dropped:
         print(f"    去除重复属性 {name} (Go 名 {g}) @ {loc}")
     print(f"  version.json: 记录来源与指纹")

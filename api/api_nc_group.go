@@ -5,7 +5,7 @@ import "strconv"
 /*
 DelGroupNotice 删除群公告
 
-https://lagrange-onebot.apifox.cn/236975967e0
+见 NapCat 端点 [_del_group_notice] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -25,7 +25,7 @@ type validateDelGroupNotice struct {
 }
 
 // DelGroupNotice 删除群公告
-func (c LgrCaller) DelGroupNotice(groupId int, noticeId string) error {
+func (c NcCaller) DelGroupNotice(groupId int, noticeId string) error {
 	err := validate.Struct(&validateDelGroupNotice{groupId, noticeId})
 	if err != nil {
 		return err
@@ -36,7 +36,7 @@ func (c LgrCaller) DelGroupNotice(groupId int, noticeId string) error {
 /*
 GetAiRecord 获取群 Ai 语音
 
-https://lagrange-onebot.apifox.cn/236976005e0
+见 NapCat 端点 [get_ai_record] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -72,7 +72,7 @@ type validateGetAiRecord struct {
 type GetAiRecordResp = string // 语音 Url
 
 // GetAiRecord 获取群 Ai 语音
-func (c LgrCaller) GetAiRecord(character string, groupId int, text string, chatType ...int) (GetAiRecordResp, error) {
+func (c NcCaller) GetAiRecord(character string, groupId int, text string, chatType ...int) (GetAiRecordResp, error) {
 	err := validate.Struct(&validateGetAiRecord{character, groupId, text, chatType})
 	if err != nil {
 		return "", err
@@ -81,12 +81,12 @@ func (c LgrCaller) GetAiRecord(character string, groupId int, text string, chatT
 }
 
 // func GetGroupHonorInfo(groupId int, typ string) *Request
-// std: [GetGroupHonorInfo] https://lagrange-onebot.apifox.cn/236976055e0
+// 见 NapCat 端点 [_get_group_notice] (docs/onebot-napcat-endpoints.md)
 
 /*
 GetGroupNotice 获取群公告
 
-https://lagrange-onebot.apifox.cn/236976194e0
+见 NapCat 端点 [_get_group_notice] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -117,7 +117,7 @@ type NoticeImg struct {
 }
 
 // GetGroupNotice 获取群公告
-func (c LgrCaller) GetGroupNotice(groupId int) (GetGroupNoticeResp, error) {
+func (c NcCaller) GetGroupNotice(groupId int) (GetGroupNoticeResp, error) {
 	err := validate.idGt0(groupId)
 	if err != nil {
 		return nil, err
@@ -126,14 +126,12 @@ func (c LgrCaller) GetGroupNotice(groupId int) (GetGroupNoticeResp, error) {
 }
 
 // func SetGroupAdmin(groupId, userId int, enable bool) *Request
-// std: [SetGroupAdmin] https://lagrange-onebot.apifox.cn/236978274e0
+// 见 NapCat 端点 [set_group_ban] (docs/onebot-napcat-endpoints.md)
 // func SetGroupBan(userId, groupId, duration int) *Request
-// std: [SetGroupBan] https://lagrange-onebot.apifox.cn/236978290e0
+// std: [SetGroupBan]
 
 /*
 SetGroupBotStatus 设置群Bot发言状态
-
-https://lagrange-onebot.apifox.cn/236980735e0
 
 参数:
 
@@ -157,7 +155,7 @@ type validateSetGroupBotStatus struct {
 type SetGroupBotStatusResp = int // 机器人 ID < >=0 >
 
 // SetGroupBotStatus 设置群Bot发言状态
-func (c LgrCaller) SetGroupBotStatus(groupId, botId int, enable bool) (SetGroupBotStatusResp, error) {
+func (c NcCaller) SetGroupBotStatus(groupId, botId int, enable bool) (SetGroupBotStatusResp, error) {
 	err := validate.Struct(&validateSetGroupBotStatus{groupId, botId})
 	if err != nil {
 		return 0, err
@@ -167,8 +165,6 @@ func (c LgrCaller) SetGroupBotStatus(groupId, botId int, enable bool) (SetGroupB
 
 /*
 SendGroupBotCallback 调用群机器人回调
-
-https://lagrange-onebot.apifox.cn/236980749e0
 
 参数:
 
@@ -199,7 +195,7 @@ type validateSendGroupBotCallback struct {
 }
 
 // SendGroupBotCallback 调用群机器人回调
-func (c LgrCaller) SendGroupBotCallback(groupId, botId int, datas ...string) (SetGroupBotStatusResp, error) {
+func (c NcCaller) SendGroupBotCallback(groupId, botId int, datas ...string) (SetGroupBotStatusResp, error) {
 	err := validate.Struct(&validateSendGroupBotCallback{groupId, botId, datas})
 	if err != nil {
 		return 0, err
@@ -208,16 +204,16 @@ func (c LgrCaller) SendGroupBotCallback(groupId, botId int, datas ...string) (Se
 }
 
 // func SetGroupCard(userId, groupId int, card string) *Request
-// std: [SetGroupCard] https://lagrange-onebot.apifox.cn/236980775e0
+// 见 NapCat 端点 [set_group_kick] (docs/onebot-napcat-endpoints.md)
 // func SetGroupKick(userId, groupId int, rejectAddRequest bool) *Request
-// std: [SetGroupKick] https://lagrange-onebot.apifox.cn/236980790e0
+// 见 NapCat 端点 [set_group_leave] (docs/onebot-napcat-endpoints.md)
 // func SetGroupLeave(groupId int, isDismiss bool) *Request
-// std: [SetGroupLeave] https://lagrange-onebot.apifox.cn/236980810e0
+// 见 NapCat 端点 [_send_group_notice] (docs/onebot-napcat-endpoints.md)
 
 /*
 SendGroupNotice 发送群公告
 
-https://lagrange-onebot.apifox.cn/236980823e0
+见 NapCat 端点 [_send_group_notice] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -242,7 +238,7 @@ type validateSendGroupNotice struct {
 
 type SendGroupNoticeResp = string // 公告 ID
 
-func (c LgrCaller) SendGroupNotice(groupId int, content string, image any) (SendGroupNoticeResp, error) {
+func (c NcCaller) SendGroupNotice(groupId int, content string, image any) (SendGroupNoticeResp, error) {
 	err := validate.Struct(&validateSendGroupNotice{groupId, content, image})
 	if err != nil {
 		return "", err
@@ -251,12 +247,12 @@ func (c LgrCaller) SendGroupNotice(groupId int, content string, image any) (Send
 }
 
 // func SetGroupName(groupId int, groupName string) *Request
-// std: [SetGroupName] https://lagrange-onebot.apifox.cn/236980841e0
+// 见 NapCat 端点 [set_group_portrait] (docs/onebot-napcat-endpoints.md)
 
 /*
 SetGroupPortrait 设置群头像
 
-https://lagrange-onebot.apifox.cn/236980850e0
+见 NapCat 端点 [set_group_portrait] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -276,7 +272,7 @@ type validateSetGroupPortrait struct {
 	File    any `validate:"required"`
 }
 
-func (c LgrCaller) SetGroupPortrait(groupId int, file any) error {
+func (c NcCaller) SetGroupPortrait(groupId int, file any) error {
 	err := validate.Struct(&validateSetGroupPortrait{groupId, file})
 	if err != nil {
 		return err
@@ -286,8 +282,6 @@ func (c LgrCaller) SetGroupPortrait(groupId int, file any) error {
 
 /*
 SetGroupReaction 表情回复操作
-
-https://lagrange-onebot.apifox.cn/236981369e0
 
 参数:
 
@@ -312,7 +306,7 @@ type validateSetGroupReaction struct {
 	Code      string `validate:"required"`
 }
 
-func (c LgrCaller) SetGroupReaction(groupId, messageId int, code string, isAdd bool) error {
+func (c NcCaller) SetGroupReaction(groupId, messageId int, code string, isAdd bool) error {
 	err := validate.Struct(&validateSetGroupReaction{groupId, messageId, code})
 	if err != nil {
 		return err
@@ -321,6 +315,6 @@ func (c LgrCaller) SetGroupReaction(groupId, messageId int, code string, isAdd b
 }
 
 // func SetGroupSpecialTitle(groupId, userId int, specialTitle string, duration int) *Request
-// std: [SetGroupSpecialTitle] https://lagrange-onebot.apifox.cn/236981401e0
+// 见 NapCat 端点 [set_group_whole_ban] (docs/onebot-napcat-endpoints.md)
 // func SetGroupWholeBan(groupId int, enable string) *Request
-// std: [SetGroupWholeBan] https://lagrange-onebot.apifox.cn/236981414e0
+// std: [SetGroupWholeBan]

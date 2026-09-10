@@ -7,7 +7,7 @@ import (
 	"github.com/Miuzarte/EasyOnebot/internal/utils"
 )
 
-type eventRecalls_Lgr struct {
+type eventRecalls_Nc struct {
 	noticeBotOffline  []func(*event.NoticeBotOffline)
 	noticeBotOnline   []func(*event.NoticeBotOnline)
 	noticeEssence     []func(*event.NoticeEssence)
@@ -46,7 +46,7 @@ func (b *Bot) OnOfflineFile(handler func(*event.NoticeOfflineFile)) *Bot {
 	return b
 }
 
-func (b *Bot) doEventRecall_Lgr(typedEvent any) {
+func (b *Bot) doEventRecall_Nc(typedEvent any) {
 	i := new(int)
 	defer func() {
 		if err := recover(); err != nil {

@@ -34,7 +34,7 @@ const ( // level 2
 	TYPE_L2_META_HEARTBEAT Level2Type = "heartbeat" // 心跳 [MetaEventHeartbeat]
 )
 
-const ( // level 2 (lagrange)
+const ( // level 2 (NapCat 扩展)
 	TYPE_L2_NOTICE_BOT_OFFLINE  Level2Type = "bot_offline"  // [NoticeBotOffline]
 	TYPE_L2_NOTICE_BOT_ONLINE   Level2Type = "bot_online"   // [NoticeBotOnline]
 	TYPE_L2_NOTICE_ESSENCE      Level2Type = "essence"      // [NoticeEssence]
@@ -79,7 +79,7 @@ const ( // level 3
 	TYPE_L3_META_LIFECYCLE_CONNECT Level3Type = "connect"
 )
 
-const ( // level 3 (lagrange)
+const ( // level 3 (NapCat 扩展)
 	TYPE_L3_NOTICE_REACTION_ADD    Level3Type = "add"
 	TYPE_L3_NOTICE_REACTION_REMOVE Level3Type = "remove"
 )

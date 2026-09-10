@@ -27,6 +27,7 @@ type Ctx struct {
 	Submatches   regSubmatches // ONLY exists when using `OnRegexpFindAllStringSubmatch`
 	submatchesMu sync.Mutex
 	MixCaller
+	Bot *Bot `json:"-"` // ctx 便捷方法内部走 Bot.NapCat() 类型化调用; 含 func 字段, 不能进 JSON
 }
 
 func (c *Ctx) String() string {

@@ -340,7 +340,7 @@ func Node3[msgT MessageT, numT NumberT](userId numT, nickname string, content ms
 	return Segment{
 		Type: TYPE_NODE,
 		Data: map[string]any{
-			"user_id":  numTToString(userId), // 需要字符串类型 https://lagrange-onebot.apifox.cn/236981913e0
+			"user_id":  numTToString(userId), // 需要字符串类型: NapCat 的合并转发节点要求 uin 是字符串
 			"nickname": nickname,
 			"content":  content,
 		},

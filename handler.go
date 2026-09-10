@@ -145,6 +145,7 @@ func (b *Bot) classifyEvent(e *event.Event) {
 			case event.TYPE_L3_NOTICE_NOTIFY_POKE:
 				b.statistics.noticeNotifyPoke++
 				nnp := utils.AnyCopy[event.NoticeNotifyPoke](e)
+				normalizePoke(nnp)
 				typedEvent = nnp
 
 			case event.TYPE_L3_NOTICE_NOTIFY_LUCKY_KING:
@@ -158,32 +159,32 @@ func (b *Bot) classifyEvent(e *event.Event) {
 				typedEvent = nnh
 			}
 
-		case event.TYPE_L2_NOTICE_BOT_OFFLINE: // lagrange
+		case event.TYPE_L2_NOTICE_BOT_OFFLINE: // NapCat 扩展
 			b.statistics.noticeBotOffline++
 			noff := utils.AnyCopy[event.NoticeBotOffline](e)
 			typedEvent = noff
 
-		case event.TYPE_L2_NOTICE_BOT_ONLINE: // lagrange
+		case event.TYPE_L2_NOTICE_BOT_ONLINE: // NapCat 扩展
 			b.statistics.noticeBotOnline++
 			non := utils.AnyCopy[event.NoticeBotOnline](e)
 			typedEvent = non
 
-		case event.TYPE_L2_NOTICE_ESSENCE: // lagrange
+		case event.TYPE_L2_NOTICE_ESSENCE: // NapCat 扩展
 			b.statistics.noticeEssence++
 			ne := utils.AnyCopy[event.NoticeEssence](e)
 			typedEvent = ne
 
-		case event.TYPE_L2_NOTICE_GROUP_NAME: // lagrange
+		case event.TYPE_L2_NOTICE_GROUP_NAME: // NapCat 扩展
 			b.statistics.noticeGroupName++
 			ngn := utils.AnyCopy[event.NoticeGroupName](e)
 			typedEvent = ngn
 
-		case event.TYPE_L2_NOTICE_REACTION: // lagrange
+		case event.TYPE_L2_NOTICE_REACTION: // NapCat 扩展
 			b.statistics.noticeReaction++
 			nr := utils.AnyCopy[event.NoticeReaction](e)
 			typedEvent = nr
 
-		case event.TYPE_L2_NOTICE_OFFLINE_FILE: // lagrange
+		case event.TYPE_L2_NOTICE_OFFLINE_FILE: // NapCat 扩展
 			b.statistics.noticeOfflineFile++
 			nofff := utils.AnyCopy[event.NoticeOfflineFile](e)
 			typedEvent = nofff
@@ -224,7 +225,7 @@ func (b *Bot) classifyEvent(e *event.Event) {
 }
 
 func (b *Bot) toCtx(e *event.Event) (ctx *Ctx) {
-	ctx = &Ctx{Event: e, MixCaller: b.Call()}
+	ctx = &Ctx{Event: e, MixCaller: b.Call(), Bot: b}
 
 	ctx.FilteredStranger = slices.Contains(b.filter.strangers, e.UserId)
 	ctx.FilteredGroup = slices.Contains(b.filter.groups, e.GroupId)
@@ -680,7 +681,7 @@ func (b *Bot) FormatEvent(e any) string {
 // statistics 统计
 type statistics struct {
 	statistics_Std
-	statistics_Lgr
+	statistics_Nc
 }
 
 type statistics_Std struct {
@@ -711,11 +712,26 @@ type statistics_Std struct {
 	metaEventHeartbeat int // 心跳包数量
 }
 
-type statistics_Lgr struct {
+type statistics_Nc struct {
 	noticeBotOffline  int
 	noticeBotOnline   int
 	noticeEssence     int
 	noticeGroupName   int
 	noticeReaction    int
 	noticeOfflineFile int
+}
+
+// normalizePoke 统一 poke 通知的发起者字段
+//
+// NapCat 的 poke 事件里 user_id 与 target_id 都是被戳方, 发起方是 sender_id;
+// OneBot 11 标准的实现不带 sender_id, 那种实现里 user_id 才是发起方。
+// 归一化后消费方 (OnNoticeNotifyPoke) 统一读 SenderId。
+// 详见 docs/napcat-protocol-differences.md
+func normalizePoke(p *event.NoticeNotifyPoke) {
+	if p == nil {
+		return
+	}
+	if p.SenderId == 0 {
+		p.SenderId = p.UserId
+	}
 }

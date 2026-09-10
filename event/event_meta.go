@@ -27,7 +27,7 @@ type MetaEventHeartbeat struct {
 
 	// 到下次心跳的间隔，单位毫秒
 	Interval int `json:"interval" mapstructure:"interval"`
-	// 状态信息 // check [Status] / [Status_Lgr] for more details
+	// 状态信息 // check [Status] / [Status_Nc] for more details
 	Status map[string]any `json:"status" mapstructure:"status"`
 }
 

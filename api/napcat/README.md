@@ -28,6 +28,8 @@
 请求体字段大多是可空指针 + `omitempty`, 数字类 ID 在 spec 里是 `string`
 (例如 `GroupID *string`), 调用方传 int 时需要显式转换。
 
+取指针用 Go 1.26+ 的 `new(expr)` (例如 `GroupID: new("123")`), 不再需要自定义 `Ptr` 辅助函数。
+
 ## 刷新流程
 
 ```bash

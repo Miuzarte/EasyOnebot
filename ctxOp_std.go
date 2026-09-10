@@ -1,32 +1,21 @@
 package EasyOnebot
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/Miuzarte/EasyOnebot/api"
+	"github.com/Miuzarte/EasyOnebot/api/napcat"
 	"github.com/Miuzarte/EasyOnebot/message"
 )
 
-// SendPrivateMsg 发送私聊消息至 Event.UserId
-func (c *Ctx) SendPrivateMsg(msg any, autoEscape ...bool) (*api.SendAnyMsgResp, error) {
-	return c.Std.SendPrivateMsg(c.Event.UserId, msg, autoEscape...)
-}
-
-// SendGroupMsg 发送群聊消息至 Event.GroupId
-func (c *Ctx) SendGroupMsg(msg any, autoEscape ...bool) (*api.SendAnyMsgResp, error) {
-	return c.Std.SendGroupMsg(c.Event.GroupId, msg, autoEscape...)
-}
-
-// SendMsg 发送消息至 Event.MessageType, Event.UserId, Event.GroupId
-func (c *Ctx) SendMsg(msg any, autoEscape ...bool) (*api.SendAnyMsgResp, error) {
-	return c.Std.SendMsg(c.Event.MessageType, c.Event.UserId, c.Event.GroupId, msg, autoEscape...)
-}
-
-// DeleteMsg 撤回 Event.MessageId
-func (c *Ctx) DeleteMsg() error {
-	err, _ := c.Std.DeleteMsgSf(c.Event.MessageId)
-	return err
-}
+// 本文件是 ctx 在 Event 上下文上的一键操作。
+//
+// 能表达成 spec 类型的调用都走 [Bot.NapCat] (严格解码);
+// 仍用 api.* 响应的两类是刻意的:
+//   - get_msg / get_forward_msg: 生成类型里 message/messages 是 []interface{},
+//     而 api 侧已经解成 message.SegmentArray, 对业务更有用
+//   - get_cookies / get_csrf_token / get_credentials 等低频端点暂未迁移
 
 // GetMsg 获取 Event.MessageId
 func (c *Ctx) GetMsg() (*api.GetMsgResp, error) {
@@ -36,6 +25,8 @@ func (c *Ctx) GetMsg() (*api.GetMsgResp, error) {
 }
 
 // GetForwardMsg 获取合并转发消息 Event.MessageId
+//
+// 生成类型里 messages 只是 []interface{}, 这里沿用 api 侧的 SegmentArray 解析。
 func (c *Ctx) GetForwardMsg() (*api.GetForwardMsgResp, error) {
 	seg := c.ParsedSegments.GetFirstType(message.TYPE_FORWARD)
 	if seg == nil {
@@ -50,107 +41,176 @@ func (c *Ctx) GetForwardMsg() (*api.GetForwardMsgResp, error) {
 
 // SendLike 发送好友赞至 Event.UserId
 func (c *Ctx) SendLike(times int) error {
-	return c.Std.SendLike(c.Event.UserId, times)
+	body := napcat.SendLikeJSONBody{
+		UserID: fmt.Sprint(c.Event.UserId),
+		Times:  napcat.BoxTo[int, napcat.SendLikeJSONBody_Times](times),
+	}
+	_, err := c.Bot.NapCat().SendLike(body)
+	return err
 }
 
 // SetGroupKick 群组 Event.GroupId 踢 Event.UserId
 func (c *Ctx) SetGroupKick(rejectAddRequest bool) error {
-	return c.Std.SetGroupKick(c.Event.GroupId, c.Event.UserId, rejectAddRequest)
+	body := napcat.SetGroupKickJSONBody{
+		GroupID:          fmt.Sprint(c.Event.GroupId),
+		UserID:           fmt.Sprint(c.Event.UserId),
+		RejectAddRequest: new(napcat.BoxTo[bool, napcat.SetGroupKickJSONBody_RejectAddRequest](rejectAddRequest)),
+	}
+	_, err := c.Bot.NapCat().SetGroupKick(body)
+	return err
 }
 
 // SetGroupBan 群组 Event.GroupId 单人禁言 Event.UserId
 func (c *Ctx) SetGroupBan(duration time.Duration) error {
-	return c.Std.SetGroupBan(c.Event.GroupId, c.Event.UserId, duration)
-}
-
-// SetGroupAnonymousBan 群组 Event.GroupId 匿名用户禁言
-func (c *Ctx) SetGroupAnonymousBan(duration time.Duration) error {
-	return c.Std.SetGroupAnonymousBan(c.Event.GroupId, c.Event.Anonymous, c.Event.Flag, duration)
+	body := napcat.SetGroupBanJSONBody{
+		GroupID:  fmt.Sprint(c.Event.GroupId),
+		UserID:   fmt.Sprint(c.Event.UserId),
+		Duration: napcat.BoxTo[int64, napcat.SetGroupBanJSONBody_Duration](int64(duration / time.Second)),
+	}
+	_, err := c.Bot.NapCat().SetGroupBan(body)
+	return err
 }
 
 // SetGroupWholeBan 群组 Event.GroupId 全员禁言
 func (c *Ctx) SetGroupWholeBan(enable bool) error {
-	return c.Std.SetGroupWholeBan(c.Event.GroupId, enable)
+	body := napcat.SetGroupWholeBanJSONBody{
+		GroupID: fmt.Sprint(c.Event.GroupId),
+		Enable:  new(napcat.BoxTo[bool, napcat.SetGroupWholeBanJSONBody_Enable](enable)),
+	}
+	_, err := c.Bot.NapCat().SetGroupWholeBan(body)
+	return err
 }
 
 // SetGroupAdmin 群组 Event.GroupId 设置管理员 Event.UserId
 func (c *Ctx) SetGroupAdmin(enable bool) error {
-	return c.Std.SetGroupAdmin(c.Event.GroupId, c.Event.UserId, enable)
+	body := napcat.SetGroupAdminJSONBody{
+		GroupID: fmt.Sprint(c.Event.GroupId),
+		UserID:  fmt.Sprint(c.Event.UserId),
+		Enable:  new(napcat.BoxTo[bool, napcat.SetGroupAdminJSONBody_Enable](enable)),
+	}
+	_, err := c.Bot.NapCat().SetGroupAdmin(body)
+	return err
 }
 
-// SetGroupAnonymous 群组 Event.GroupId 匿名
-func (c *Ctx) SetGroupAnonymous(enable bool) error {
-	return c.Std.SetGroupAnonymous(c.Event.GroupId, enable)
-}
-
-// SetGroupCard 设置 Event.GroupId Event.UserId 群名片（群备注）
+// SetGroupCard 设置 Event.GroupId Event.UserId 群名片 (群备注)
 func (c *Ctx) SetGroupCard(card string) error {
-	return c.Std.SetGroupCard(c.Event.GroupId, c.Event.UserId, card)
+	body := napcat.SetGroupCardJSONBody{
+		GroupID: fmt.Sprint(c.Event.GroupId),
+		UserID:  fmt.Sprint(c.Event.UserId),
+		Card:    new(card),
+	}
+	_, err := c.Bot.NapCat().SetGroupCard(body)
+	return err
 }
 
 // SetGroupName 设置群 Event.GroupId 名
 func (c *Ctx) SetGroupName(name string) error {
-	return c.Std.SetGroupName(c.Event.GroupId, name)
+	body := napcat.SetGroupNameJSONBody{
+		GroupID:   fmt.Sprint(c.Event.GroupId),
+		GroupName: name,
+	}
+	_, err := c.Bot.NapCat().SetGroupName(body)
+	return err
 }
 
 // SetGroupLeave 退出群组 Event.GroupId
 func (c *Ctx) SetGroupLeave(isDismiss bool) error {
-	return c.Std.SetGroupLeave(c.Event.GroupId, isDismiss)
+	body := napcat.SetGroupLeaveJSONBody{
+		GroupID:   fmt.Sprint(c.Event.GroupId),
+		IsDismiss: new(napcat.BoxTo[bool, napcat.SetGroupLeaveJSONBody_IsDismiss](isDismiss)),
+	}
+	_, err := c.Bot.NapCat().SetGroupLeave(body)
+	return err
 }
 
-// SetGroupSpecialTitle 设置群组 Event.GroupId c.Event.UserId 专属头衔
+// SetGroupSpecialTitle 设置群组 Event.GroupId Event.UserId 专属头衔
 func (c *Ctx) SetGroupSpecialTitle(specialTitle string, duration time.Duration) error {
-	return c.Std.SetGroupSpecialTitle(c.Event.GroupId, c.Event.UserId, specialTitle, duration)
+	body := napcat.SetGroupSpecialTitleJSONBody{
+		GroupID:      fmt.Sprint(c.Event.GroupId),
+		UserID:       fmt.Sprint(c.Event.UserId),
+		SpecialTitle: specialTitle,
+	}
+	_, err := c.Bot.NapCat().SetGroupSpecialTitle(body)
+	return err
 }
 
 // SetFriendAddRequest 处理加好友请求 Event.Flag
 func (c *Ctx) SetFriendAddRequest(approve bool, remark string) error {
-	return c.Std.SetFriendAddRequest(c.Event.Flag, approve, remark)
+	body := napcat.SetFriendAddRequestJSONBody{
+		Flag:    c.Event.Flag,
+		Approve: new(napcat.BoxTo[bool, napcat.SetFriendAddRequestJSONBody_Approve](approve)),
+		Remark:  new(remark),
+	}
+	_, err := c.Bot.NapCat().SetFriendAddRequest(body)
+	return err
 }
 
-// SetGroupAddRequest 处理加群请求／邀请 Event.Flag Event.SubType
+// SetGroupAddRequest 处理加群请求 / 邀请 Event.Flag Event.SubType
 func (c *Ctx) SetGroupAddRequest(approve bool, reason string) error {
-	return c.Std.SetGroupAddRequest(c.Event.Flag, c.Event.SubType, approve, reason)
+	body := napcat.SetGroupAddRequestJSONBody{
+		Flag:    c.Event.Flag,
+		Approve: new(napcat.BoxTo[bool, napcat.SetGroupAddRequestJSONBody_Approve](approve)),
+		Reason:  new(reason),
+	}
+	_, err := c.Bot.NapCat().SetGroupAddRequest(body)
+	return err
 }
 
 // GetLoginInfo 获取登录号信息
-func (c *Ctx) GetLoginInfo() (*api.GetLoginInfoResp, error) {
-	return c.Std.GetLoginInfo()
+func (c *Ctx) GetLoginInfo() (napcat.OB11User, error) {
+	return c.Bot.NapCat().GetLoginInfo()
 }
 
 // GetStrangerInfo 获取陌生人 Event.UserId 信息
-func (c *Ctx) GetStrangerInfo(noCache bool) (*api.GetStrangerInfoResp, error) {
-	return c.Std.GetStrangerInfo(c.Event.UserId, noCache)
+func (c *Ctx) GetStrangerInfo(noCache bool) (napcat.GetStrangerInfoData, error) {
+	body := napcat.GetStrangerInfoJSONBody{
+		UserID:  fmt.Sprint(c.Event.UserId),
+		NoCache: napcat.BoxTo[bool, napcat.GetStrangerInfoJSONBody_NoCache](noCache),
+	}
+	return c.Bot.NapCat().GetStrangerInfo(body)
 }
 
 // GetFriendList 获取好友列表
-func (c *Ctx) GetFriendList() (api.GetFriendListResp, error) {
-	return c.Std.GetFriendList()
+func (c *Ctx) GetFriendList() (napcat.GetFriendListData, error) {
+	return c.Bot.NapCat().GetFriendList()
 }
 
 // GetGroupInfo 获取群 Event.GroupId 信息
-func (c *Ctx) GetGroupInfo(noCache bool) (*api.GetGroupInfoResp, error) {
-	return c.Std.GetGroupInfo(c.Event.GroupId, noCache)
+func (c *Ctx) GetGroupInfo(noCache bool) (napcat.OB11Group, error) {
+	_ = noCache // NapCat 的 get_group_info 没有 no_cache 参数
+	body := napcat.GetGroupInfoJSONBody{GroupID: fmt.Sprint(c.Event.GroupId)}
+	return c.Bot.NapCat().GetGroupInfo(body)
 }
 
 // GetGroupList 获取群列表
-func (c *Ctx) GetGroupList() (api.GetGroupListResp, error) {
-	return c.Std.GetGroupList()
+func (c *Ctx) GetGroupList() (napcat.GetGroupListData, error) {
+	return c.Bot.NapCat().GetGroupList()
 }
 
 // GetGroupMemberInfo 获取群 Event.GroupId 成员 Event.UserId 信息
-func (c *Ctx) GetGroupMemberInfo(noCache bool) (*api.GetGroupMemberInfoResp, error) {
-	return c.Std.GetGroupMemberInfo(c.Event.GroupId, c.Event.UserId, noCache)
+func (c *Ctx) GetGroupMemberInfo(noCache bool) (napcat.OB11GroupMember, error) {
+	body := napcat.GetGroupMemberInfoJSONBody{
+		GroupID: fmt.Sprint(c.Event.GroupId),
+		UserID:  fmt.Sprint(c.Event.UserId),
+	}
+	if noCache {
+		body.NoCache = new(napcat.BoxTo[bool, napcat.GetGroupMemberInfoJSONBody_NoCache](true))
+	}
+	return c.Bot.NapCat().GetGroupMemberInfo(body)
 }
 
 // GetGroupMemberList 获取群 Event.GroupId 成员列表
-func (c *Ctx) GetGroupMemberList() (api.GetGroupMemberListResp, error) {
-	return c.Std.GetGroupMemberList(c.Event.GroupId)
+func (c *Ctx) GetGroupMemberList() (napcat.GetGroupMemberListData, error) {
+	return c.Bot.NapCat().GetGroupMemberList(napcat.GetGroupMemberListJSONBody{GroupID: fmt.Sprint(c.Event.GroupId)})
 }
 
 // GetGroupHonorInfo 获取群 Event.GroupId 荣誉信息
-func (c *Ctx) GetGroupHonorInfo(typ string) (*api.GetGroupHonorInfoResp, error) {
-	return c.Std.GetGroupHonorInfo(c.Event.GroupId, typ)
+func (c *Ctx) GetGroupHonorInfo(typ string) (napcat.GetGroupHonorInfoData, error) {
+	body := napcat.GetGroupHonorInfoJSONBody{
+		GroupID: fmt.Sprint(c.Event.GroupId),
+		Type:    new(napcat.BoxTo[string, napcat.GetGroupHonorInfoJSONBodyType](typ)),
+	}
+	return c.Bot.NapCat().GetGroupHonorInfo(body)
 }
 
 // GetCookies 获取 Cookies
@@ -168,38 +228,34 @@ func (c *Ctx) GetCredentials(domain string) (*api.GetCredentialsResp, error) {
 	return c.Std.GetCredentials(domain)
 }
 
-// GetRecord 获取语音
+// GetRecord 获取语音 (未实现)
 func (c *Ctx) GetRecord(outFormat string) (*api.GetRecordResp, error) {
 	panic("todo: not implemented")
-	// var file string // todo: parse from c.Event.RawMessage
-	// return c.Std.GetRecord(file, outFormat)
 }
 
-// GetImage 获取图片
+// GetImage 获取图片 (未实现)
 func (c *Ctx) GetImage() (*api.GetImageResp, error) {
 	panic("todo: not implemented")
-	// var file string // todo: parse from c.Event.RawMessage
-	// return c.Std.GetImage(file)
 }
 
 // CanSendImage 是否可以发送图片
-func (c *Ctx) CanSendImage() (*api.CanSendImageResp, error) {
-	return c.Std.CanSendImage()
+func (c *Ctx) CanSendImage() (napcat.CanSendImageData, error) {
+	return c.Bot.NapCat().CanSendImage(napcat.CanSendImageJSONBody{})
 }
 
 // CanSendRecord 是否可以发送语音
-func (c *Ctx) CanSendRecord() (*api.CanSendRecordResp, error) {
-	return c.Std.CanSendRecord()
+func (c *Ctx) CanSendRecord() (napcat.CanSendRecordData, error) {
+	return c.Bot.NapCat().CanSendRecord(napcat.CanSendRecordJSONBody{})
 }
 
 // GetStatus 获取运行状态
-func (c *Ctx) GetStatus() (*api.GetStatusResp, error) {
-	return c.Std.GetStatus()
+func (c *Ctx) GetStatus() (napcat.GetStatusData, error) {
+	return c.Bot.NapCat().GetStatus(napcat.GetStatusJSONBody{})
 }
 
 // GetVersionInfo 获取版本信息
-func (c *Ctx) GetVersionInfo() (*api.GetVersionInfoResp, error) {
-	return c.Std.GetVersionInfo()
+func (c *Ctx) GetVersionInfo() (napcat.GetVersionInfoData, error) {
+	return c.Bot.NapCat().GetVersionInfo(napcat.GetVersionInfoJSONBody{})
 }
 
 // SetRestart 重启 OneBot 实现
@@ -209,5 +265,6 @@ func (c *Ctx) SetRestart(delay time.Duration) error {
 
 // CleanCache 清理缓存
 func (c *Ctx) CleanCache() error {
-	return c.Std.CleanCache()
+	_, err := c.Bot.NapCat().CleanCache(napcat.CleanCacheJSONBody{})
+	return err
 }

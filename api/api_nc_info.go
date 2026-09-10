@@ -1,17 +1,17 @@
 package api
 
 /*
-GetFriendList_Lgr 获取好友列表
+GetFriendList_Nc 获取好友列表
 
 std: [GetFriendList]
 
-https://lagrange-onebot.apifox.cn/236981445e0
+见 NapCat 端点 [get_friend_list] (docs/onebot-napcat-endpoints.md)
 */
-func GetFriendList_Lgr() *Request {
+func GetFriendList_Nc() *Request {
 	return NewReq("get_friend_list", nil)
 }
 
-type GetFriendListResp_Lgr []struct {
+type GetFriendListResult []struct {
 	UserId   int    `json:"user_id" mapstructure:"user_id"`   // Uin
 	Qid      string `json:"q_id" mapstructure:"q_id"`         // QID (可选)
 	Nickname string `json:"nickname" mapstructure:"nickname"` // 昵称
@@ -23,31 +23,31 @@ type GetFriendListResp_Lgr []struct {
 }
 
 // func GetGroupInfo(groupId int, noCache ...bool) *Request
-// std: [GetGroupInfo] https://lagrange-onebot.apifox.cn/236981449e0
+// 见 NapCat 端点 [get_group_list] (docs/onebot-napcat-endpoints.md)
 // func GetGroupList(noCache ...bool) *Request
-// std: [GetGroupList] https://lagrange-onebot.apifox.cn/236981452e0
+// 见 NapCat 端点 [get_group_member_info] (docs/onebot-napcat-endpoints.md)
 // func GetGroupMemberInfo(groupId, userId int, noCache ...bool) *Request
-// std: [GetGroupMemberInfo] https://lagrange-onebot.apifox.cn/236981473e0
+// 见 NapCat 端点 [get_group_member_list] (docs/onebot-napcat-endpoints.md)
 // func GetGroupMemberList(groupId int) *Request
-// std: [GetGroupMemberList] https://lagrange-onebot.apifox.cn/236981479e0
+// 见 NapCat 端点 [get_login_info] (docs/onebot-napcat-endpoints.md)
 // func GetLoginInfo() *Request
-// std: [GetLoginInfo] https://lagrange-onebot.apifox.cn/236981487e0
-// func GetStatus_Lgr() *Request
-// std: [GetStatus] https://lagrange-onebot.apifox.cn/236981584e0
+// 见 NapCat 端点 [get_status] (docs/onebot-napcat-endpoints.md)
+// func GetStatus_Nc() *Request
+// 见 NapCat 端点 [get_stranger_info] (docs/onebot-napcat-endpoints.md)
 
 /*
-GetStrangerInfo_Lgr 获取陌生人信息
+GetStrangerInfo_Nc 获取陌生人信息
 
 std: [GetStrangerInfo]
 
-https://lagrange-onebot.apifox.cn/236981590e0
+见 NapCat 端点 [get_stranger_info] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
 	userId: 用户 Uin
 	noCache: <默认值: false>
 */
-func GetStrangerInfo_Lgr(userId int, noCache ...bool) *Request {
+func GetStrangerInfo_Nc(userId int, noCache ...bool) *Request {
 	if len(noCache) == 0 {
 		return NewReq("get_stranger_info", map[string]any{
 			"user_id": userId,
@@ -60,12 +60,12 @@ func GetStrangerInfo_Lgr(userId int, noCache ...bool) *Request {
 	}
 }
 
-type validateGetStrangerInfo_Lgr struct {
+type validateGetStrangerInfo struct {
 	UserId  int    `validate:"gt=0"`
 	NoCache []bool `validate:"omitempty"`
 }
 
-type GetStrangerInfoResp_Lgr struct {
+type GetStrangerInfoResult struct {
 	UserId       int         `json:"user_id" mapstructure:"user_id"`           // 用户 Uin
 	Qid          string      `json:"q_id" mapstructure:"q_id"`                 // QID (可选)
 	Nickname     string      `json:"nickname" mapstructure:"nickname"`         // 昵称
@@ -94,14 +94,14 @@ type Business struct {
 	Type   int     `json:"type" mapstructure:"type"`
 }
 
-// GetStrangerInfo_Lgr 获取陌生人信息
-func (c LgrCaller) GetStrangerInfo_Lgr(userId int, noCache ...bool) (*GetStrangerInfoResp_Lgr, error) {
-	err := validate.Struct(&validateGetStrangerInfo_Lgr{userId, noCache})
+// GetStrangerInfo_Nc 获取陌生人信息
+func (c NcCaller) GetStrangerInfo(userId int, noCache ...bool) (*GetStrangerInfoResult, error) {
+	err := validate.Struct(&validateGetStrangerInfo{userId, noCache})
 	if err != nil {
 		return nil, err
 	}
-	return DecodeResponse[GetStrangerInfoResp_Lgr](c.PostReq(GetStrangerInfo_Lgr(userId, noCache...)))
+	return DecodeResponse[GetStrangerInfoResult](c.PostReq(GetStrangerInfo_Nc(userId, noCache...)))
 }
 
 // func GetVersionInfo() *Request
-// std: [GetVersionInfo] https://lagrange-onebot.apifox.cn/236981622e0
+// std: [GetVersionInfo]

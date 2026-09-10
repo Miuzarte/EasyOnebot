@@ -74,6 +74,9 @@ func (r *redisClient) scanGet(ctx context.Context, match string) redisResult {
 
 func (r *redisClient) lPush(ctx context.Context, key string, value any) error {
 	var elems []string
+	if value == nil {
+		return nil
+	}
 	vValue := reflect.ValueOf(value)
 	switch reflect.TypeOf(value).Kind() {
 	case reflect.Slice, reflect.Array:
@@ -207,6 +210,9 @@ func anyToString(value any) (string, error) {
 		return string(j), nil
 	}
 
+	if value == nil { // reflect.ValueOf(nil) 是无效值, 取 Kind 会 panic
+		return "", nil
+	}
 	vValue := reflect.ValueOf(value)
 	switch vValue.Kind() {
 	case reflect.String:

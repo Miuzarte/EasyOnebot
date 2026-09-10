@@ -970,7 +970,7 @@ GetCookies 获取 Cookies
 
 https://github.com/botuniverse/onebot-11/blob/master/api/public.md#get_cookies-%E8%8E%B7%E5%8F%96-cookies
 
-https://lagrange-onebot.apifox.cn/236975000e0
+见 NapCat 端点 [get_cookies] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -1000,7 +1000,7 @@ GetCsrfToken 获取 CSRF Token
 
 https://github.com/botuniverse/onebot-11/blob/master/api/public.md#get_csrf_token-%E8%8E%B7%E5%8F%96-csrf-token
 
-https://lagrange-onebot.apifox.cn/236975210e0
+见 NapCat 端点 [get_csrf_token] (docs/onebot-napcat-endpoints.md)
 */
 func GetCsrfToken() *Request {
 	return NewReq("get_csrf_token", nil)
@@ -1023,7 +1023,7 @@ https://github.com/botuniverse/onebot-11/blob/master/api/public.md#get_credentia
 
 即上面两个接口的合并。
 
-https://lagrange-onebot.apifox.cn/236975179e0
+见 NapCat 端点 [get_credentials] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -1208,7 +1208,7 @@ https://github.com/botuniverse/onebot-11/blob/master/api/public.md#set_restart-%
 
 由于重启 OneBot 实现同时需要重启 API 服务，这意味着当前的 API 请求会被中断，因此需要异步地重启，接口返回的 `status` 是 `async`。
 
-https://lagrange-onebot.apifox.cn/236975473e0
+见 NapCat 端点 [set_restart] (docs/onebot-napcat-endpoints.md)
 
 参数:
 

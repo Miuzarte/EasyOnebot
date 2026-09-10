@@ -71,9 +71,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "CleanStreamTempFileData"
+             "$ref": "#/components/schemas/CleanStreamTempFileData"
             }
            }
           }
@@ -108,7 +106,7 @@
      }
     },
     "security": [],
-    "operationId": "Clean_stream_temp_file"
+    "operationId": "CleanStreamTempFile"
    }
   },
   "/download_file_stream": {
@@ -170,9 +168,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DownloadFileStreamData"
+             "$ref": "#/components/schemas/DownloadFileStreamData"
             }
            }
           }
@@ -210,7 +206,7 @@
      }
     },
     "security": [],
-    "operationId": "Download_file_stream"
+    "operationId": "DownloadFileStream"
    }
   },
   "/download_file_record_stream": {
@@ -276,9 +272,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DownloadFileRecordStreamData"
+             "$ref": "#/components/schemas/DownloadFileRecordStreamData"
             }
            }
           }
@@ -313,7 +307,7 @@
      }
     },
     "security": [],
-    "operationId": "Download_file_record_stream"
+    "operationId": "DownloadFileRecordStream"
    }
   },
   "/download_file_image_stream": {
@@ -375,9 +369,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DownloadFileImageStreamData"
+             "$ref": "#/components/schemas/DownloadFileImageStreamData"
             }
            }
           }
@@ -412,7 +404,7 @@
      }
     },
     "security": [],
-    "operationId": "Download_file_image_stream"
+    "operationId": "DownloadFileImageStream"
    }
   },
   "/test_download_stream": {
@@ -466,9 +458,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "TestDownloadStreamData"
+             "$ref": "#/components/schemas/TestDownloadStreamData"
             }
            }
           }
@@ -503,7 +493,7 @@
      }
     },
     "security": [],
-    "operationId": "Test_download_stream"
+    "operationId": "TestDownloadStream"
    }
   },
   "/upload_file_stream": {
@@ -605,9 +595,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "UploadFileStreamData"
+             "$ref": "#/components/schemas/UploadFileStreamData"
             }
            }
           }
@@ -646,7 +634,7 @@
      }
     },
     "security": [],
-    "operationId": "Upload_file_stream"
+    "operationId": "UploadFileStream"
    }
   },
   "/del_group_album_media": {
@@ -714,9 +702,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DelGroupAlbumMediaData"
+             "$ref": "#/components/schemas/DelGroupAlbumMediaData"
             }
            }
           }
@@ -751,7 +737,7 @@
      }
     },
     "security": [],
-    "operationId": "Del_group_album_media"
+    "operationId": "DelGroupAlbumMedia"
    }
   },
   "/set_group_album_media_like": {
@@ -824,9 +810,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetGroupAlbumMediaLikeData"
+             "$ref": "#/components/schemas/SetGroupAlbumMediaLikeData"
             }
            }
           }
@@ -861,7 +845,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_album_media_like"
+    "operationId": "SetGroupAlbumMediaLike"
    }
   },
   "/cancel_group_album_media_like": {
@@ -934,9 +918,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "CancelGroupAlbumMediaLikeData"
+             "$ref": "#/components/schemas/CancelGroupAlbumMediaLikeData"
             }
            }
           }
@@ -971,7 +953,7 @@
      }
     },
     "security": [],
-    "operationId": "Cancel_group_album_media_like"
+    "operationId": "CancelGroupAlbumMediaLike"
    }
   },
   "/do_group_album_comment": {
@@ -1045,9 +1027,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DoGroupAlbumCommentData"
+             "$ref": "#/components/schemas/DoGroupAlbumCommentData"
             }
            }
           }
@@ -1082,7 +1062,7 @@
      }
     },
     "security": [],
-    "operationId": "Do_group_album_comment"
+    "operationId": "DoGroupAlbumComment"
    }
   },
   "/get_group_album_media_list": {
@@ -1149,9 +1129,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetGroupAlbumMediaListData"
+             "$ref": "#/components/schemas/GetGroupAlbumMediaListData"
             }
            }
           }
@@ -1191,7 +1169,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_album_media_list"
+    "operationId": "GetGroupAlbumMediaList"
    }
   },
   "/get_qun_album_list": {
@@ -1253,29 +1231,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "album_list": {
-               "description": "群相册列表",
-               "type": "array",
-               "items": {}
-              },
-              "attach_info": {
-               "description": "分页附加信息，传入下一次请求以获取更多数据",
-               "type": "string"
-              },
-              "has_more": {
-               "description": "是否有更多数据",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "album_list",
-              "attach_info",
-              "has_more"
-             ],
-             "x-go-type-name": "GetQunAlbumListData"
+             "$ref": "#/components/schemas/GetQunAlbumListData"
             }
            }
           }
@@ -1319,7 +1275,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_qun_album_list"
+    "operationId": "GetQunAlbumList"
    }
   },
   "/upload_image_to_qun_album": {
@@ -1393,9 +1349,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "UploadImageToQunAlbumData"
+             "$ref": "#/components/schemas/UploadImageToQunAlbumData"
             }
            }
           }
@@ -1430,7 +1384,7 @@
      }
     },
     "security": [],
-    "operationId": "Upload_image_to_qun_album"
+    "operationId": "UploadImageToQunAlbum"
    }
   },
   "/set_group_todo": {
@@ -1502,9 +1456,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SetGroupTodoData"
+             "$ref": "#/components/schemas/SetGroupTodoData"
             }
            }
           }
@@ -1529,7 +1481,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_todo"
+    "operationId": "SetGroupTodo"
    }
   },
   "/complete_group_todo": {
@@ -1601,9 +1553,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "CompleteGroupTodoData"
+             "$ref": "#/components/schemas/CompleteGroupTodoData"
             }
            }
           }
@@ -1628,7 +1578,7 @@
      }
     },
     "security": [],
-    "operationId": "Complete_group_todo"
+    "operationId": "CompleteGroupTodo"
    }
   },
   "/cancel_group_todo": {
@@ -1700,9 +1650,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "CancelGroupTodoData"
+             "$ref": "#/components/schemas/CancelGroupTodoData"
             }
            }
           }
@@ -1727,7 +1675,7 @@
      }
     },
     "security": [],
-    "operationId": "Cancel_group_todo"
+    "operationId": "CancelGroupTodo"
    }
   },
   "/get_group_detail_info": {
@@ -1783,43 +1731,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "group_id": {
-               "description": "群号",
-               "type": "number"
-              },
-              "group_name": {
-               "description": "群名称",
-               "type": "string"
-              },
-              "member_count": {
-               "description": "成员数量",
-               "type": "number"
-              },
-              "max_member_count": {
-               "description": "最大成员数量",
-               "type": "number"
-              },
-              "group_all_shut": {
-               "description": "全员禁言状态",
-               "type": "number"
-              },
-              "group_remark": {
-               "description": "群备注",
-               "type": "string"
-              }
-             },
-             "required": [
-              "group_id",
-              "group_name",
-              "member_count",
-              "max_member_count",
-              "group_all_shut",
-              "group_remark"
-             ],
-             "x-go-type-name": "GetGroupDetailInfoData"
+             "$ref": "#/components/schemas/GetGroupDetailInfoData"
             }
            }
           }
@@ -1857,7 +1769,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_detail_info"
+    "operationId": "GetGroupDetailInfo"
    }
   },
   "/set_group_kick_members": {
@@ -1936,9 +1848,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupKickMembersData"
+             "$ref": "#/components/schemas/SetGroupKickMembersData"
             }
            }
           }
@@ -1963,7 +1873,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_kick_members"
+    "operationId": "SetGroupKickMembers"
    }
   },
   "/set_group_add_option": {
@@ -2033,9 +1943,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupAddOptionData"
+             "$ref": "#/components/schemas/SetGroupAddOptionData"
             }
            }
           }
@@ -2060,7 +1968,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_add_option"
+    "operationId": "SetGroupAddOption"
    }
   },
   "/set_group_robot_add_option": {
@@ -2124,9 +2032,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupRobotAddOptionData"
+             "$ref": "#/components/schemas/SetGroupRobotAddOptionData"
             }
            }
           }
@@ -2151,7 +2057,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_robot_add_option"
+    "operationId": "SetGroupRobotAddOption"
    }
   },
   "/set_group_search": {
@@ -2215,9 +2121,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupSearchData"
+             "$ref": "#/components/schemas/SetGroupSearchData"
             }
            }
           }
@@ -2242,7 +2146,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_search"
+    "operationId": "SetGroupSearch"
    }
   },
   "/set_doubt_friends_add_request": {
@@ -2305,8 +2209,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "x-go-type-name": "SetDoubtFriendsAddRequestData"
+             "$ref": "#/components/schemas/SetDoubtFriendsAddRequestData"
             }
            }
           }
@@ -2331,7 +2234,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_doubt_friends_add_request"
+    "operationId": "SetDoubtFriendsAddRequest"
    }
   },
   "/get_doubt_friends_add_request": {
@@ -2388,9 +2291,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetDoubtFriendsAddRequestData"
+             "$ref": "#/components/schemas/GetDoubtFriendsAddRequestData"
             }
            }
           }
@@ -2432,7 +2333,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_doubt_friends_add_request"
+    "operationId": "GetDoubtFriendsAddRequest"
    }
   },
   "/set_friend_remark": {
@@ -2494,9 +2395,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SetFriendRemarkData"
+             "$ref": "#/components/schemas/SetFriendRemarkData"
             }
            }
           }
@@ -2523,7 +2422,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_friend_remark"
+    "operationId": "SetFriendRemark"
    }
   },
   "/get_rkey": {
@@ -2569,36 +2468,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "type": {
-                "description": "类型 (private/group)",
-                "type": "string"
-               },
-               "rkey": {
-                "description": "RKey",
-                "type": "string"
-               },
-               "created_at": {
-                "description": "创建时间",
-                "type": "number"
-               },
-               "ttl": {
-                "description": "有效期",
-                "type": "number"
-               }
-              },
-              "required": [
-               "type",
-               "rkey",
-               "created_at",
-               "ttl"
-              ]
-             },
-             "x-go-type-name": "GetRkeyData"
+             "$ref": "#/components/schemas/GetRkeyData"
             }
            }
           }
@@ -2638,7 +2508,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_rkey"
+    "operationId": "GetRkey"
    }
   },
   "/get_rkey_server": {
@@ -2684,30 +2554,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "private_rkey": {
-               "description": "私聊 RKey",
-               "type": "string"
-              },
-              "group_rkey": {
-               "description": "群聊 RKey",
-               "type": "string"
-              },
-              "expired_time": {
-               "description": "过期时间",
-               "type": "number"
-              },
-              "name": {
-               "description": "名称",
-               "type": "string"
-              }
-             },
-             "required": [
-              "name"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetRkeyServerData"
+             "$ref": "#/components/schemas/GetRkeyServerData"
             }
            }
           }
@@ -2745,7 +2592,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_rkey_server"
+    "operationId": "GetRkeyServer"
    }
   },
   "/set_group_remark": {
@@ -2807,9 +2654,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupRemarkData"
+             "$ref": "#/components/schemas/SetGroupRemarkData"
             }
            }
           }
@@ -2834,7 +2679,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_remark"
+    "operationId": "SetGroupRemark"
    }
   },
   "/get_group_info_ex": {
@@ -2890,9 +2735,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetGroupInfoExData"
+             "$ref": "#/components/schemas/GetGroupInfoExData"
             }
            }
           }
@@ -2917,7 +2760,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_info_ex"
+    "operationId": "GetGroupInfoEx"
    }
   },
   "/fetch_emoji_like": {
@@ -3027,65 +2870,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "emojiLikesList": {
-               "description": "表情回应列表",
-               "type": "array",
-               "items": {
-                "type": "object",
-                "properties": {
-                 "tinyId": {
-                  "description": "TinyID",
-                  "type": "string"
-                 },
-                 "nickName": {
-                  "description": "昵称",
-                  "type": "string"
-                 },
-                 "headUrl": {
-                  "description": "头像URL",
-                  "type": "string"
-                 }
-                },
-                "required": [
-                 "tinyId",
-                 "nickName",
-                 "headUrl"
-                ]
-               }
-              },
-              "cookie": {
-               "description": "分页Cookie",
-               "type": "string"
-              },
-              "isLastPage": {
-               "description": "是否最后一页",
-               "type": "boolean"
-              },
-              "isFirstPage": {
-               "description": "是否第一页",
-               "type": "boolean"
-              },
-              "result": {
-               "description": "结果状态码",
-               "type": "number"
-              },
-              "errMsg": {
-               "description": "错 误信息",
-               "type": "string"
-              }
-             },
-             "required": [
-              "emojiLikesList",
-              "cookie",
-              "isLastPage",
-              "isFirstPage",
-              "result",
-              "errMsg"
-             ],
-             "x-go-type-name": "FetchEmojiLikeData"
+             "$ref": "#/components/schemas/FetchEmojiLikeData"
             }
            }
           }
@@ -3131,7 +2916,7 @@
      }
     },
     "security": [],
-    "operationId": "Fetch_emoji_like"
+    "operationId": "FetchEmojiLike"
    }
   },
   "/get_emoji_likes": {
@@ -3207,35 +2992,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "emoji_like_list": {
-               "description": "表情回应列表",
-               "type": "array",
-               "items": {
-                "type": "object",
-                "properties": {
-                 "user_id": {
-                  "description": "点击者QQ号",
-                  "type": "string"
-                 },
-                 "nick_name": {
-                  "description": "昵称?",
-                  "type": "string"
-                 }
-                },
-                "required": [
-                 "user_id",
-                 "nick_name"
-                ]
-               }
-              }
-             },
-             "required": [
-              "emoji_like_list"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetEmojiLikesData"
+             "$ref": "#/components/schemas/GetEmojiLikesData"
             }
            }
           }
@@ -3275,7 +3032,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_emoji_likes"
+    "operationId": "GetEmojiLikes"
    }
   },
   "/fetch_ptt_text": {
@@ -3338,18 +3095,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "text": {
-               "description": "得到的文本",
-               "type": "string"
-              }
-             },
-             "required": [
-              "text"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "FetchPttTextData"
+             "$ref": "#/components/schemas/FetchPttTextData"
             }
            }
           }
@@ -3384,7 +3130,7 @@
      }
     },
     "security": [],
-    "operationId": "Fetch_ptt_text"
+    "operationId": "FetchPttText"
    }
   },
   "/get_file": {
@@ -3441,31 +3187,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "file": {
-               "description": "本地路径",
-               "type": "string"
-              },
-              "url": {
-               "description": "下载URL",
-               "type": "string"
-              },
-              "file_size": {
-               "description": "文件大小",
-               "type": "string"
-              },
-              "file_name": {
-               "description": "文件名",
-               "type": "string"
-              },
-              "base64": {
-               "description": "Base64编码",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetFileData"
+             "$ref": "#/components/schemas/GetFileData"
             }
            }
           }
@@ -3503,7 +3225,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_file"
+    "operationId": "GetFile"
    }
   },
   "/set_qq_profile": {
@@ -3575,9 +3297,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetQqProfileData"
+             "$ref": "#/components/schemas/SetQqProfileData"
             }
            }
           }
@@ -3602,7 +3322,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_qq_profile"
+    "operationId": "SetQqProfile"
    }
   },
   "/ArkShareGroup": {
@@ -3658,9 +3378,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "string",
-             "x-go-type-name": "ArkShareGroupData"
+             "$ref": "#/components/schemas/ArkShareGroupData"
             }
            }
           }
@@ -3759,9 +3477,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "ArkSharePeerData"
+             "$ref": "#/components/schemas/ArkSharePeerData"
             }
            }
           }
@@ -3852,9 +3568,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "string",
-             "x-go-type-name": "SendGroupArkShareData"
+             "$ref": "#/components/schemas/SendGroupArkShareData"
             }
            }
           }
@@ -3887,7 +3601,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_group_ark_share"
+    "operationId": "SendGroupArkShare"
    }
   },
   "/send_ark_share": {
@@ -3953,9 +3667,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SendArkShareData"
+             "$ref": "#/components/schemas/SendArkShareData"
             }
            }
           }
@@ -3990,7 +3702,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_ark_share"
+    "operationId": "SendArkShare"
    }
   },
   "/create_collection": {
@@ -4052,9 +3764,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "CreateCollectionData"
+             "$ref": "#/components/schemas/CreateCollectionData"
             }
            }
           }
@@ -4090,7 +3800,7 @@
      }
     },
     "security": [],
-    "operationId": "Create_collection"
+    "operationId": "CreateCollection"
    }
   },
   "/set_self_longnick": {
@@ -4146,9 +3856,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetSelfLongnickData"
+             "$ref": "#/components/schemas/SetSelfLongnickData"
             }
            }
           }
@@ -4173,7 +3881,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_self_longnick"
+    "operationId": "SetSelfLongnick"
    }
   },
   "/forward_friend_single_msg": {
@@ -4245,9 +3953,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "ForwardFriendSingleMsgData"
+             "$ref": "#/components/schemas/ForwardFriendSingleMsgData"
             }
            }
           }
@@ -4272,7 +3978,7 @@
      }
     },
     "security": [],
-    "operationId": "Forward_friend_single_msg"
+    "operationId": "ForwardFriendSingleMsg"
    }
   },
   "/forward_group_single_msg": {
@@ -4344,9 +4050,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "ForwardGroupSingleMsgData"
+             "$ref": "#/components/schemas/ForwardGroupSingleMsgData"
             }
            }
           }
@@ -4371,7 +4075,7 @@
      }
     },
     "security": [],
-    "operationId": "Forward_group_single_msg"
+    "operationId": "ForwardGroupSingleMsg"
    }
   },
   "/mark_group_msg_as_read": {
@@ -4439,9 +4143,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "MarkGroupMsgAsReadData"
+             "$ref": "#/components/schemas/MarkGroupMsgAsReadData"
             }
            }
           }
@@ -4466,7 +4168,7 @@
      }
     },
     "security": [],
-    "operationId": "Mark_group_msg_as_read"
+    "operationId": "MarkGroupMsgAsRead"
    }
   },
   "/mark_private_msg_as_read": {
@@ -4534,9 +4236,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "MarkPrivateMsgAsReadData"
+             "$ref": "#/components/schemas/MarkPrivateMsgAsReadData"
             }
            }
           }
@@ -4561,7 +4261,7 @@
      }
     },
     "security": [],
-    "operationId": "Mark_private_msg_as_read"
+    "operationId": "MarkPrivateMsgAsRead"
    }
   },
   "/set_qq_avatar": {
@@ -4617,9 +4317,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetQqAvatarData"
+             "$ref": "#/components/schemas/SetQqAvatarData"
             }
            }
           }
@@ -4644,7 +4342,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_qq_avatar"
+    "operationId": "SetQqAvatar"
    }
   },
   "/translate_en2zh": {
@@ -4705,21 +4403,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "words": {
-               "description": "翻译结果列表",
-               "type": "array",
-               "items": {
-                "type": "string"
-               }
-              }
-             },
-             "required": [
-              "words"
-             ],
-             "x-go-type-name": "TranslateEn2zhData"
+             "$ref": "#/components/schemas/TranslateEn2zhData"
             }
            }
           }
@@ -4756,7 +4440,7 @@
      }
     },
     "security": [],
-    "operationId": "Translate_en2zh"
+    "operationId": "TranslateEn2zh"
    }
   },
   "/get_group_root_files": {
@@ -4825,25 +4509,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "files": {
-               "description": "文件列表",
-               "type": "array",
-               "items": {}
-              },
-              "folders": {
-               "description": "文件夹列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "files",
-              "folders"
-             ],
-             "x-go-type-name": "GetGroupRootFilesData"
+             "$ref": "#/components/schemas/GetGroupRootFilesData"
             }
            }
           }
@@ -4879,7 +4545,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_root_files"
+    "operationId": "GetGroupRootFiles"
    }
   },
   "/set_group_sign": {
@@ -4935,9 +4601,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupSignData"
+             "$ref": "#/components/schemas/SetGroupSignData"
             }
            }
           }
@@ -4962,7 +4626,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_sign"
+    "operationId": "SetGroupSign"
    }
   },
   "/send_group_sign": {
@@ -5018,9 +4682,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SendGroupSignData"
+             "$ref": "#/components/schemas/SendGroupSignData"
             }
            }
           }
@@ -5045,7 +4707,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_group_sign"
+    "operationId": "SendGroupSign"
    }
   },
   "/get_clientkey": {
@@ -5091,15 +4753,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "clientkey": {
-               "description": "客户端Key",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetClientkeyData"
+             "$ref": "#/components/schemas/GetClientkeyData"
             }
            }
           }
@@ -5134,7 +4788,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_clientkey"
+    "operationId": "GetClientkey"
    }
   },
   "/move_group_file": {
@@ -5208,18 +4862,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "ok": {
-               "description": "是否成功",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "ok"
-             ],
-             "x-go-type-name": "MoveGroupFileData"
+             "$ref": "#/components/schemas/MoveGroupFileData"
             }
            }
           }
@@ -5254,7 +4897,7 @@
      }
     },
     "security": [],
-    "operationId": "Move_group_file"
+    "operationId": "MoveGroupFile"
    }
   },
   "/rename_group_file": {
@@ -5328,18 +4971,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "ok": {
-               "description": "是否成功",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "ok"
-             ],
-             "x-go-type-name": "RenameGroupFileData"
+             "$ref": "#/components/schemas/RenameGroupFileData"
             }
            }
           }
@@ -5374,7 +5006,7 @@
      }
     },
     "security": [],
-    "operationId": "Rename_group_file"
+    "operationId": "RenameGroupFile"
    }
   },
   "/trans_group_file": {
@@ -5436,18 +5068,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "ok": {
-               "description": "是否成功",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "ok"
-             ],
-             "x-go-type-name": "TransGroupFileData"
+             "$ref": "#/components/schemas/TransGroupFileData"
             }
            }
           }
@@ -5482,7 +5103,7 @@
      }
     },
     "security": [],
-    "operationId": "Trans_group_file"
+    "operationId": "TransGroupFile"
    }
   },
   "/get_group_signed_list": {
@@ -5545,36 +5166,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "user_id": {
-                "description": "打卡者QQ",
-                "type": "number"
-               },
-               "nick": {
-                "description": "打卡者昵称",
-                "type": "string"
-               },
-               "time": {
-                "description": "打卡时间",
-                "type": "number"
-               },
-               "rank": {
-                "description": "打卡排名",
-                "type": "number"
-               }
-              },
-              "required": [
-               "user_id",
-               "nick",
-               "time",
-               "rank"
-              ]
-             },
-             "x-go-type-name": "GetGroupSignedListData"
+             "$ref": "#/components/schemas/GetGroupSignedListData"
             }
            }
           }
@@ -5599,7 +5191,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_signed_list"
+    "operationId": "GetGroupSignedList"
    }
   },
   "/send_qzone_msg": {
@@ -5691,18 +5283,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "tid": {
-               "description": "说说Tid",
-               "type": "string"
-              }
-             },
-             "required": [
-              "tid"
-             ],
-             "x-go-type-name": "SendQzoneMsgData"
+             "$ref": "#/components/schemas/SendQzoneMsgData"
             }
            }
           }
@@ -5737,7 +5318,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_qzone_msg"
+    "operationId": "SendQzoneMsg"
    }
   },
   "/delete_qzone_msg": {
@@ -5793,9 +5374,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "DeleteQzoneMsgData"
+             "$ref": "#/components/schemas/DeleteQzoneMsgData"
             }
            }
           }
@@ -5820,7 +5399,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_qzone_msg"
+    "operationId": "DeleteQzoneMsg"
    }
   },
   "/set_group_member_invite_policy": {
@@ -5888,9 +5467,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupMemberInvitePolicyData"
+             "$ref": "#/components/schemas/SetGroupMemberInvitePolicyData"
             }
            }
           }
@@ -5915,7 +5492,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_member_invite_policy"
+    "operationId": "SetGroupMemberInvitePolicy"
    }
   },
   "/set_group_member_permissions": {
@@ -5986,9 +5563,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupMemberPermissionsData"
+             "$ref": "#/components/schemas/SetGroupMemberPermissionsData"
             }
            }
           }
@@ -6013,7 +5588,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_member_permissions"
+    "operationId": "SetGroupMemberPermissions"
    }
   },
   "/set_group_new_member_history_visibility": {
@@ -6075,9 +5650,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupNewMemberHistoryVisibilityData"
+             "$ref": "#/components/schemas/SetGroupNewMemberHistoryVisibilityData"
             }
            }
           }
@@ -6102,7 +5675,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_new_member_history_visibility"
+    "operationId": "SetGroupNewMemberHistoryVisibility"
    }
   },
   "/send_like": {
@@ -6172,9 +5745,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SendLikeData"
+             "$ref": "#/components/schemas/SendLikeData"
             }
            }
           }
@@ -6201,7 +5772,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_like"
+    "operationId": "SendLike"
    }
   },
   "/get_msg": {
@@ -6264,86 +5835,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "time": {
-               "description": "发送时间",
-               "type": "number"
-              },
-              "message_type": {
-               "description": "消息类型",
-               "type": "string"
-              },
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "real_id": {
-               "description": "真实ID",
-               "type": "number"
-              },
-              "message_seq": {
-               "description": "消息序号",
-               "type": "number"
-              },
-              "sender": {
-               "description": "发送者",
-               "type": "object"
-              },
-              "message": {
-               "description": "消息内容",
-               "type": "object"
-              },
-              "raw_message": {
-               "description": "原始消息内容",
-               "type": "string"
-              },
-              "font": {
-               "description": "字体",
-               "type": "number"
-              },
-              "group_id": {
-               "description": "群号",
-               "anyOf": [
-                {
-                 "type": "number"
-                },
-                {
-                 "type": "string"
-                }
-               ]
-              },
-              "user_id": {
-               "description": "发送者QQ号",
-               "anyOf": [
-                {
-                 "type": "number"
-                },
-                {
-                 "type": "string"
-                }
-               ]
-              },
-              "emoji_likes_list": {
-               "description": "表情回应列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "time",
-              "message_type",
-              "message_id",
-              "real_id",
-              "message_seq",
-              "sender",
-              "message",
-              "raw_message",
-              "font",
-              "user_id"
-             ],
-             "x-go-type-name": "GetMsgData"
+             "$ref": "#/components/schemas/GetMsgData"
             }
            }
           }
@@ -6386,7 +5878,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_msg"
+    "operationId": "GetMsg"
    }
   },
   "/get_login_info": {
@@ -6468,7 +5960,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_login_info"
+    "operationId": "GetLoginInfo"
    }
   },
   "/get_friend_list": {
@@ -6526,12 +6018,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "$ref": "#/components/schemas/OB11User"
-             },
-             "x-go-type-name": "GetFriendListData"
+             "$ref": "#/components/schemas/GetFriendListData"
             }
            }
           }
@@ -6570,7 +6057,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_friend_list"
+    "operationId": "GetFriendList"
    }
   },
   "/get_group_list": {
@@ -6628,12 +6115,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "$ref": "#/components/schemas/OB11Group"
-             },
-             "x-go-type-name": "GetGroupListData"
+             "$ref": "#/components/schemas/GetGroupListData"
             }
            }
           }
@@ -6673,7 +6155,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_list"
+    "operationId": "GetGroupList"
    }
   },
   "/get_group_info": {
@@ -6767,7 +6249,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_info"
+    "operationId": "GetGroupInfo"
    }
   },
   "/get_group_member_list": {
@@ -6834,10 +6316,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {},
-             "x-go-type-name": "GetGroupMemberListData"
+             "$ref": "#/components/schemas/GetGroupMemberListData"
             }
            }
           }
@@ -6878,7 +6357,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_member_list"
+    "operationId": "GetGroupMemberList"
    }
   },
   "/get_group_member_info": {
@@ -6990,7 +6469,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_member_info"
+    "operationId": "GetGroupMemberInfo"
    }
   },
   "/send_group_msg": {
@@ -7104,26 +6583,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendGroupMsgData"
+             "$ref": "#/components/schemas/SendGroupMsgData"
             }
            }
           }
@@ -7158,7 +6618,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_group_msg"
+    "operationId": "SendGroupMsg"
    }
   },
   "/send_private_msg": {
@@ -7272,26 +6732,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendPrivateMsgData"
+             "$ref": "#/components/schemas/SendPrivateMsgData"
             }
            }
           }
@@ -7326,7 +6767,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_private_msg"
+    "operationId": "SendPrivateMsg"
    }
   },
   "/send_msg": {
@@ -7441,26 +6882,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendMsgData"
+             "$ref": "#/components/schemas/SendMsgData"
             }
            }
           }
@@ -7495,7 +6917,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_msg"
+    "operationId": "SendMsg"
    }
   },
   "/delete_msg": {
@@ -7558,9 +6980,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "DeleteMsgData"
+             "$ref": "#/components/schemas/DeleteMsgData"
             }
            }
           }
@@ -7585,7 +7005,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_msg"
+    "operationId": "DeleteMsg"
    }
   },
   "/set_group_add_request": {
@@ -7671,9 +7091,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupAddRequestData"
+             "$ref": "#/components/schemas/SetGroupAddRequestData"
             }
            }
           }
@@ -7698,7 +7116,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_add_request"
+    "operationId": "SetGroupAddRequest"
    }
   },
   "/set_friend_add_request": {
@@ -7771,9 +7189,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SetFriendAddRequestData"
+             "$ref": "#/components/schemas/SetFriendAddRequestData"
             }
            }
           }
@@ -7798,7 +7214,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_friend_add_request"
+    "operationId": "SetFriendAddRequest"
    }
   },
   "/set_group_leave": {
@@ -7866,9 +7282,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupLeaveData"
+             "$ref": "#/components/schemas/SetGroupLeaveData"
             }
            }
           }
@@ -7893,7 +7307,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_leave"
+    "operationId": "SetGroupLeave"
    }
   },
   "/get_version_info": {
@@ -7939,28 +7353,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "app_name": {
-               "description": "应用名称",
-               "type": "string"
-              },
-              "protocol_version": {
-               "description": "协议版本",
-               "type": "string"
-              },
-              "app_version": {
-               "description": "应用版本",
-               "type": "string"
-              }
-             },
-             "required": [
-              "app_name",
-              "protocol_version",
-              "app_version"
-             ],
-             "x-go-type-name": "GetVersionInfoData"
+             "$ref": "#/components/schemas/GetVersionInfoData"
             }
            }
           }
@@ -7997,7 +7390,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_version_info"
+    "operationId": "GetVersionInfo"
    }
   },
   "/can_send_record": {
@@ -8043,18 +7436,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "yes": {
-               "description": "是否可以发送",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "yes"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "CanSendRecordData"
+             "$ref": "#/components/schemas/CanSendRecordData"
             }
            }
           }
@@ -8089,7 +7471,7 @@
      }
     },
     "security": [],
-    "operationId": "Can_send_record"
+    "operationId": "CanSendRecord"
    }
   },
   "/can_send_image": {
@@ -8135,18 +7517,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "yes": {
-               "description": "是否可以发送",
-               "type": "boolean"
-              }
-             },
-             "required": [
-              "yes"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "CanSendImageData"
+             "$ref": "#/components/schemas/CanSendImageData"
             }
            }
           }
@@ -8181,7 +7552,7 @@
      }
     },
     "security": [],
-    "operationId": "Can_send_image"
+    "operationId": "CanSendImage"
    }
   },
   "/get_status": {
@@ -8227,28 +7598,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "online": {
-               "description": "是否在线",
-               "type": "boolean"
-              },
-              "good": {
-               "description": "状态是否良好",
-               "type": "boolean"
-              },
-              "stat": {
-               "description": "统计信息",
-               "type": "object"
-              }
-             },
-             "required": [
-              "online",
-              "good",
-              "stat"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetStatusData"
+             "$ref": "#/components/schemas/GetStatusData"
             }
            }
           }
@@ -8285,7 +7635,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_status"
+    "operationId": "GetStatus"
    }
   },
   "/set_group_whole_ban": {
@@ -8353,9 +7703,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupWholeBanData"
+             "$ref": "#/components/schemas/SetGroupWholeBanData"
             }
            }
           }
@@ -8380,7 +7728,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_whole_ban"
+    "operationId": "SetGroupWholeBan"
    }
   },
   "/set_group_ban": {
@@ -8456,9 +7804,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupBanData"
+             "$ref": "#/components/schemas/SetGroupBanData"
             }
            }
           }
@@ -8483,7 +7829,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_ban"
+    "operationId": "SetGroupBan"
    }
   },
   "/set_group_kick": {
@@ -8557,9 +7903,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupKickData"
+             "$ref": "#/components/schemas/SetGroupKickData"
             }
            }
           }
@@ -8584,7 +7928,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_kick"
+    "operationId": "SetGroupKick"
    }
   },
   "/set_group_admin": {
@@ -8658,9 +8002,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupAdminData"
+             "$ref": "#/components/schemas/SetGroupAdminData"
             }
            }
           }
@@ -8685,7 +8027,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_admin"
+    "operationId": "SetGroupAdmin"
    }
   },
   "/set_group_name": {
@@ -8747,9 +8089,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupNameData"
+             "$ref": "#/components/schemas/SetGroupNameData"
             }
            }
           }
@@ -8774,7 +8114,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_name"
+    "operationId": "SetGroupName"
    }
   },
   "/set_group_card": {
@@ -8841,9 +8181,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupCardData"
+             "$ref": "#/components/schemas/SetGroupCardData"
             }
            }
           }
@@ -8868,7 +8206,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_card"
+    "operationId": "SetGroupCard"
    }
   },
   "/get_image": {
@@ -8925,31 +8263,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "file": {
-               "description": "本地路径",
-               "type": "string"
-              },
-              "url": {
-               "description": "下载URL",
-               "type": "string"
-              },
-              "file_size": {
-               "description": "文件大小",
-               "type": "string"
-              },
-              "file_name": {
-               "description": "文件名",
-               "type": "string"
-              },
-              "base64": {
-               "description": "Base64编码",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetImageData"
+             "$ref": "#/components/schemas/GetImageData"
             }
            }
           }
@@ -8985,7 +8299,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_image"
+    "operationId": "GetImage"
    }
   },
   "/get_record": {
@@ -9050,31 +8364,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "file": {
-               "description": "本地路径",
-               "type": "string"
-              },
-              "url": {
-               "description": "下载URL",
-               "type": "string"
-              },
-              "file_size": {
-               "description": "文件大小",
-               "type": "string"
-              },
-              "file_name": {
-               "description": "文件名",
-               "type": "string"
-              },
-              "base64": {
-               "description": "Base64编码",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetRecordData"
+             "$ref": "#/components/schemas/GetRecordData"
             }
            }
           }
@@ -9110,7 +8400,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_record"
+    "operationId": "GetRecord"
    }
   },
   "/set_msg_emoji_like": {
@@ -9198,9 +8488,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetMsgEmojiLikeData"
+             "$ref": "#/components/schemas/SetMsgEmojiLikeData"
             }
            }
           }
@@ -9235,7 +8523,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_msg_emoji_like"
+    "operationId": "SetMsgEmojiLike"
    }
   },
   "/get_cookies": {
@@ -9291,23 +8579,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "cookies": {
-               "description": "Cookies",
-               "type": "string"
-              },
-              "bkn": {
-               "description": "CSRF Token",
-               "type": "string"
-              }
-             },
-             "required": [
-              "cookies",
-              "bkn"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetCookiesData"
+             "$ref": "#/components/schemas/GetCookiesData"
             }
            }
           }
@@ -9343,7 +8615,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_cookies"
+    "operationId": "GetCookies"
    }
   },
   "/set_online_status": {
@@ -9432,9 +8704,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetOnlineStatusData"
+             "$ref": "#/components/schemas/SetOnlineStatusData"
             }
            }
           }
@@ -9459,7 +8729,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_online_status"
+    "operationId": "SetOnlineStatus"
    }
   },
   "/get_robot_uin_range": {
@@ -9505,10 +8775,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {},
-             "x-go-type-name": "GetRobotUinRangeData"
+             "$ref": "#/components/schemas/GetRobotUinRangeData"
             }
            }
           }
@@ -9546,7 +8813,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_robot_uin_range"
+    "operationId": "GetRobotUinRange"
    }
   },
   "/get_friends_with_category": {
@@ -9592,39 +8859,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "categoryId": {
-                "description": "分组ID",
-                "type": "number"
-               },
-               "categoryName": {
-                "description": "分组名称",
-                "type": "string"
-               },
-               "categoryMbCount": {
-                "description": "分组内好友数量",
-                "type": "number"
-               },
-               "buddyList": {
-                "description": "好友列表",
-                "type": "array",
-                "items": {
-                 "$ref": "#/components/schemas/OB11User"
-                }
-               }
-              },
-              "required": [
-               "categoryId",
-               "categoryName",
-               "categoryMbCount",
-               "buddyList"
-              ]
-             },
-             "x-go-type-name": "GetFriendsWithCategoryData"
+             "$ref": "#/components/schemas/GetFriendsWithCategoryData"
             }
            }
           }
@@ -9664,7 +8899,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_friends_with_category"
+    "operationId": "GetFriendsWithCategory"
    }
   },
   "/delete_friend": {
@@ -9743,8 +8978,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "x-go-type-name": "DeleteFriendData"
+             "$ref": "#/components/schemas/DeleteFriendData"
             }
            }
           }
@@ -9769,7 +9003,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_friend"
+    "operationId": "DeleteFriend"
    }
   },
   "/check_url_safely": {
@@ -9825,18 +9059,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "level": {
-               "description": "安全等级 (1: 安全, 2: 未知, 3: 危险)",
-               "type": "number"
-              }
-             },
-             "required": [
-              "level"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "CheckUrlSafelyData"
+             "$ref": "#/components/schemas/CheckUrlSafelyData"
             }
            }
           }
@@ -9871,7 +9094,7 @@
      }
     },
     "security": [],
-    "operationId": "Check_url_safely"
+    "operationId": "CheckUrlSafely"
    }
   },
   "/get_online_clients": {
@@ -9920,10 +9143,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {},
-             "x-go-type-name": "GetOnlineClientsData"
+             "$ref": "#/components/schemas/GetOnlineClientsData"
             }
            }
           }
@@ -9948,7 +9168,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_online_clients"
+    "operationId": "GetOnlineClients"
    }
   },
   "/ocr_image": {
@@ -10004,9 +9224,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "OcrImageData"
+             "$ref": "#/components/schemas/OcrImageData"
             }
            }
           }
@@ -10046,7 +9264,7 @@
      }
     },
     "security": [],
-    "operationId": "Ocr_image"
+    "operationId": "OcrImage"
    }
   },
   "/.ocr_image": {
@@ -10102,9 +9320,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "OcrImageLegacyData"
+             "$ref": "#/components/schemas/OcrImageLegacyData"
             }
            }
           }
@@ -10213,56 +9429,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "group_id": {
-               "description": "群号",
-               "type": "number"
-              },
-              "current_talkative": {
-               "description": "当前龙王",
-               "type": "object",
-               "patternProperties": {
-                "^(.*)$": {}
-               }
-              },
-              "talkative_list": {
-               "description": "龙王列表",
-               "type": "array",
-               "items": {}
-              },
-              "performer_list": {
-               "description": "群聊之火列表",
-               "type": "array",
-               "items": {}
-              },
-              "legend_list": {
-               "description": "群聊炽热列表",
-               "type": "array",
-               "items": {}
-              },
-              "emotion_list": {
-               "description": "快乐源泉列表",
-               "type": "array",
-               "items": {}
-              },
-              "strong_newbie_list": {
-               "description": "冒尖小春笋列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "group_id",
-              "current_talkative",
-              "talkative_list",
-              "performer_list",
-              "legend_list",
-              "emotion_list",
-              "strong_newbie_list"
-             ],
-             "x-go-type-name": "GetGroupHonorInfoData"
+             "$ref": "#/components/schemas/GetGroupHonorInfoData"
             }
            }
           }
@@ -10299,7 +9466,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_honor_info"
+    "operationId": "GetGroupHonorInfo"
    }
   },
   "/_send_group_notice": {
@@ -10431,9 +9598,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SendGroupNoticeData"
+             "$ref": "#/components/schemas/SendGroupNoticeData"
             }
            }
           }
@@ -10458,7 +9623,7 @@
      }
     },
     "security": [],
-    "operationId": "_send_group_notice"
+    "operationId": "SendGroupNotice"
    }
   },
   "/_get_group_notice": {
@@ -10514,65 +9679,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "sender_id": {
-                "description": "发送者QQ",
-                "type": "number"
-               },
-               "publish_time": {
-                "description": "发布时间",
-                "type": "number"
-               },
-               "notice_id": {
-                "description": "公告ID",
-                "type": "string"
-               },
-               "message": {
-                "description": "公告内容",
-                "type": "object",
-                "properties": {
-                 "text": {
-                  "description": "文本内容",
-                  "type": "string"
-                 },
-                 "image": {
-                  "description": "图片列表",
-                  "type": "array",
-                  "items": {}
-                 },
-                 "images": {
-                  "description": "图片列表",
-                  "type": "array",
-                  "items": {}
-                 }
-                },
-                "required": [
-                 "text",
-                 "image",
-                 "images"
-                ]
-               },
-               "settings": {
-                "description": "设置项",
-                "type": "object"
-               },
-               "read_num": {
-                "description": "阅读数",
-                "type": "number"
-               }
-              },
-              "required": [
-               "sender_id",
-               "publish_time",
-               "notice_id",
-               "message"
-              ]
-             },
-             "x-go-type-name": "GetGroupNoticeData"
+             "$ref": "#/components/schemas/GetGroupNoticeData"
             }
            }
           }
@@ -10615,7 +9722,7 @@
      }
     },
     "security": [],
-    "operationId": "_get_group_notice"
+    "operationId": "GetGroupNotice"
    }
   },
   "/get_essence_msg_list": {
@@ -10671,62 +9778,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "msg_seq": {
-                "description": "消息序号",
-                "type": "number"
-               },
-               "msg_random": {
-                "description": "消息随机数",
-                "type": "number"
-               },
-               "sender_id": {
-                "description": "发送者QQ",
-                "type": "number"
-               },
-               "sender_nick": {
-                "description": "发送者昵称",
-                "type": "string"
-               },
-               "operator_id": {
-                "description": "操作者QQ",
-                "type": "number"
-               },
-               "operator_nick": {
-                "description": "操作者昵称",
-                "type": "string"
-               },
-               "message_id": {
-                "description": "消息ID",
-                "type": "number"
-               },
-               "operator_time": {
-                "description": "操作时间",
-                "type": "number"
-               },
-               "content": {
-                "description": "消息内容",
-                "type": "array",
-                "items": {}
-               }
-              },
-              "required": [
-               "msg_seq",
-               "msg_random",
-               "sender_id",
-               "sender_nick",
-               "operator_id",
-               "operator_nick",
-               "message_id",
-               "operator_time",
-               "content"
-              ]
-             },
-             "x-go-type-name": "GetEssenceMsgListData"
+             "$ref": "#/components/schemas/GetEssenceMsgListData"
             }
            }
           }
@@ -10769,7 +9821,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_essence_msg_list"
+    "operationId": "GetEssenceMsgList"
    }
   },
   "/get_group_at_all_remain": {
@@ -10825,28 +9877,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "can_at_all": {
-               "description": "是否可以艾特全体",
-               "type": "boolean"
-              },
-              "remain_at_all_count_for_group": {
-               "description": "群艾特全体剩余次数",
-               "type": "number"
-              },
-              "remain_at_all_count_for_uin": {
-               "description": "个人艾特全体剩余次数",
-               "type": "number"
-              }
-             },
-             "required": [
-              "can_at_all",
-              "remain_at_all_count_for_group",
-              "remain_at_all_count_for_uin"
-             ],
-             "x-go-type-name": "GetGroupAtAllRemainData"
+             "$ref": "#/components/schemas/GetGroupAtAllRemainData"
             }
            }
           }
@@ -10883,7 +9914,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_at_all_remain"
+    "operationId": "GetGroupAtAllRemain"
    }
   },
   "/send_forward_msg": {
@@ -10997,26 +10028,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendForwardMsgData"
+             "$ref": "#/components/schemas/SendForwardMsgData"
             }
            }
           }
@@ -11051,7 +10063,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_forward_msg"
+    "operationId": "SendForwardMsg"
    }
   },
   "/send_group_forward_msg": {
@@ -11165,26 +10177,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendGroupForwardMsgData"
+             "$ref": "#/components/schemas/SendGroupForwardMsgData"
             }
            }
           }
@@ -11219,7 +10212,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_group_forward_msg"
+    "operationId": "SendGroupForwardMsg"
    }
   },
   "/send_private_forward_msg": {
@@ -11333,26 +10326,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              },
-              "res_id": {
-               "description": "转发消息的 res_id",
-               "type": "string"
-              },
-              "forward_id": {
-               "description": "转发消息的 forward_id",
-               "type": "string"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "SendPrivateForwardMsgData"
+             "$ref": "#/components/schemas/SendPrivateForwardMsgData"
             }
            }
           }
@@ -11387,7 +10361,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_private_forward_msg"
+    "operationId": "SendPrivateForwardMsg"
    }
   },
   "/get_stranger_info": {
@@ -11456,88 +10430,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "user_id": {
-               "description": "用户QQ",
-               "type": "number"
-              },
-              "uid": {
-               "description": "UID",
-               "type": "string"
-              },
-              "nickname": {
-               "description": "昵称",
-               "type": "string"
-              },
-              "age": {
-               "description": "年龄",
-               "type": "number"
-              },
-              "qid": {
-               "description": "QID",
-               "type": "string"
-              },
-              "qqLevel": {
-               "description": "QQ等级",
-               "type": "number"
-              },
-              "sex": {
-               "description": "性别",
-               "type": "string"
-              },
-              "long_nick": {
-               "description": "个性签名",
-               "type": "string"
-              },
-              "reg_time": {
-               "description": "注册时间",
-               "type": "number"
-              },
-              "is_vip": {
-               "description": "是否VIP",
-               "type": "boolean"
-              },
-              "is_years_vip": {
-               "description": "是否年费VIP",
-               "type": "boolean"
-              },
-              "vip_level": {
-               "description": "VIP等级",
-               "type": "number"
-              },
-              "remark": {
-               "description": "备注",
-               "type": "string"
-              },
-              "status": {
-               "description": "状态",
-               "type": "number"
-              },
-              "login_days": {
-               "description": "登录天数",
-               "type": "number"
-              }
-             },
-             "required": [
-              "user_id",
-              "uid",
-              "nickname",
-              "age",
-              "qid",
-              "qqLevel",
-              "sex",
-              "long_nick",
-              "reg_time",
-              "is_vip",
-              "is_years_vip",
-              "vip_level",
-              "remark",
-              "status",
-              "login_days"
-             ],
-             "x-go-type-name": "GetStrangerInfoData"
+             "$ref": "#/components/schemas/GetStrangerInfoData"
             }
            }
           }
@@ -11574,7 +10467,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_stranger_info"
+    "operationId": "GetStrangerInfo"
    }
   },
   "/download_file": {
@@ -11651,18 +10544,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "file": {
-               "description": "文件路径",
-               "type": "string"
-              }
-             },
-             "required": [
-              "file"
-             ],
-             "x-go-type-name": "DownloadFileData"
+             "$ref": "#/components/schemas/DownloadFileData"
             }
            }
           }
@@ -11697,7 +10579,7 @@
      }
     },
     "security": [],
-    "operationId": "Download_file"
+    "operationId": "DownloadFile"
    }
   },
   "/get_guild_list": {
@@ -11743,9 +10625,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "GetGuildListData"
+             "$ref": "#/components/schemas/GetGuildListData"
             }
            }
           }
@@ -11783,7 +10663,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_guild_list"
+    "operationId": "GetGuildList"
    }
   },
   "/mark_msg_as_read": {
@@ -11851,9 +10731,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "MarkMsgAsReadData"
+             "$ref": "#/components/schemas/MarkMsgAsReadData"
             }
            }
           }
@@ -11878,7 +10756,7 @@
      }
     },
     "security": [],
-    "operationId": "Mark_msg_as_read"
+    "operationId": "MarkMsgAsRead"
    }
   },
   "/upload_group_file": {
@@ -11960,25 +10838,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "file_id": {
-               "description": "文件 ID",
-               "anyOf": [
-                {
-                 "type": "string"
-                },
-                {
-                 "type": "null"
-                }
-               ]
-              }
-             },
-             "required": [
-              "file_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "UploadGroupFileData"
+             "$ref": "#/components/schemas/UploadGroupFileData"
             }
            }
           }
@@ -12013,7 +10873,7 @@
      }
     },
     "security": [],
-    "operationId": "Upload_group_file"
+    "operationId": "UploadGroupFile"
    }
   },
   "/get_group_msg_history": {
@@ -12106,19 +10966,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "messages": {
-               "description": "消息列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "messages"
-             ],
-             "x-go-type-name": "GetGroupMsgHistoryData"
+             "$ref": "#/components/schemas/GetGroupMsgHistoryData"
             }
            }
           }
@@ -12153,7 +11001,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_msg_history"
+    "operationId": "GetGroupMsgHistory"
    }
   },
   "/get_forward_msg": {
@@ -12210,16 +11058,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "messages": {
-               "description": "消息列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "x-go-type-name": "GetForwardMsgData"
+             "$ref": "#/components/schemas/GetForwardMsgData"
             }
            }
           }
@@ -12254,7 +11093,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_forward_msg"
+    "operationId": "GetForwardMsg"
    }
   },
   "/get_friend_msg_history": {
@@ -12347,19 +11186,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "messages": {
-               "description": "消息列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "messages"
-             ],
-             "x-go-type-name": "GetFriendMsgHistoryData"
+             "$ref": "#/components/schemas/GetFriendMsgHistoryData"
             }
            }
           }
@@ -12394,7 +11221,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_friend_msg_history"
+    "operationId": "GetFriendMsgHistory"
    }
   },
   "/.handle_quick_operation": {
@@ -12419,11 +11246,13 @@
           "properties": {
            "time": {
             "description": "事件发生时间",
-            "type": "number"
+            "type": "number",
+            "x-go-type": "int64"
            },
            "self_id": {
             "description": "收到事件的机器人 QQ 号",
-            "type": "number"
+            "type": "number",
+            "x-go-type": "int64"
            },
            "post_type": {
             "description": "上报类型",
@@ -12447,15 +11276,18 @@
            },
            "message_id": {
             "description": "消息 ID",
-            "type": "number"
+            "type": "number",
+            "x-go-type": "int64"
            },
            "message_seq": {
             "description": "消息序列号",
-            "type": "number"
+            "type": "number",
+            "x-go-type": "int64"
            },
            "real_id": {
             "description": "真实消息 ID",
-            "type": "number"
+            "type": "number",
+            "x-go-type": "int64"
            },
            "sender": {
             "type": "object",
@@ -12606,9 +11438,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "HandleQuickOperationLegacyData"
+             "$ref": "#/components/schemas/HandleQuickOperationLegacyData"
             }
            }
           }
@@ -12680,31 +11510,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "invited_requests": {
-               "description": "邀请请求列表",
-               "type": "array",
-               "items": {}
-              },
-              "InvitedRequest": {
-               "description": "邀请请求列表",
-               "type": "array",
-               "items": {}
-              },
-              "join_requests": {
-               "description": "加入请求列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "invited_requests",
-              "InvitedRequest",
-              "join_requests"
-             ],
-             "x-go-type-name": "GetGroupIgnoredNotifiesData"
+             "$ref": "#/components/schemas/GetGroupIgnoredNotifiesData"
             }
            }
           }
@@ -12741,7 +11547,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_ignored_notifies"
+    "operationId": "GetGroupIgnoredNotifies"
    }
   },
   "/delete_essence_msg": {
@@ -12813,9 +11619,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DeleteEssenceMsgData"
+             "$ref": "#/components/schemas/DeleteEssenceMsgData"
             }
            }
           }
@@ -12840,7 +11644,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_essence_msg"
+    "operationId": "DeleteEssenceMsg"
    }
   },
   "/set_essence_msg": {
@@ -12903,9 +11707,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetEssenceMsgData"
+             "$ref": "#/components/schemas/SetEssenceMsgData"
             }
            }
           }
@@ -12930,7 +11732,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_essence_msg"
+    "operationId": "SetEssenceMsg"
    }
   },
   "/get_recent_contact": {
@@ -12994,61 +11796,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "lastestMsg": {
-                "description": "最后一条消息",
-                "type": "object"
-               },
-               "peerUin": {
-                "description": "对象QQ",
-                "type": "string"
-               },
-               "remark": {
-                "description": "备注",
-                "type": "string"
-               },
-               "msgTime": {
-                "description": "消息时间",
-                "type": "string"
-               },
-               "chatType": {
-                "description": "聊天类型",
-                "type": "number"
-               },
-               "msgId": {
-                "description": "消息ID",
-                "type": "string"
-               },
-               "sendNickName": {
-                "description": "发送者昵称",
-                "type": "string"
-               },
-               "sendMemberName": {
-                "description": "发送者群名片",
-                "type": "string"
-               },
-               "peerName": {
-                "description": "对象名称",
-                "type": "string"
-               }
-              },
-              "required": [
-               "lastestMsg",
-               "peerUin",
-               "remark",
-               "msgTime",
-               "chatType",
-               "msgId",
-               "sendNickName",
-               "sendMemberName",
-               "peerName"
-              ]
-             },
-             "x-go-type-name": "GetRecentContactData"
+             "$ref": "#/components/schemas/GetRecentContactData"
             }
            }
           }
@@ -13089,7 +11837,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_recent_contact"
+    "operationId": "GetRecentContact"
    }
   },
   "/_mark_all_as_read": {
@@ -13161,7 +11909,7 @@
      }
     },
     "security": [],
-    "operationId": "_mark_all_as_read"
+    "operationId": "MarkAllAsRead"
    }
   },
   "/get_profile_like": {
@@ -13244,86 +11992,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "uid": {
-               "description": "用户UID",
-               "type": "string"
-              },
-              "time": {
-               "description": "时间",
-               "type": "string"
-              },
-              "favoriteInfo": {
-               "type": "object",
-               "properties": {
-                "userInfos": {
-                 "description": "点赞用户信息",
-                 "type": "array",
-                 "items": {}
-                },
-                "total_count": {
-                 "description": "总点赞数",
-                 "type": "number"
-                },
-                "last_time": {
-                 "description": "最后点赞时间",
-                 "type": "number"
-                },
-                "today_count": {
-                 "description": "今日点赞数",
-                 "type": "number"
-                }
-               },
-               "required": [
-                "userInfos",
-                "total_count",
-                "last_time",
-                "today_count"
-               ]
-              },
-              "voteInfo": {
-               "type": "object",
-               "properties": {
-                "total_count": {
-                 "description": "总点赞数",
-                 "type": "number"
-                },
-                "new_count": {
-                 "description": "新增点赞数",
-                 "type": "number"
-                },
-                "new_nearby_count": {
-                 "description": "新增附近点赞数",
-                 "type": "number"
-                },
-                "last_visit_time": {
-                 "description": "最后访问时间",
-                 "type": "number"
-                },
-                "userInfos": {
-                 "description": "点赞用户信息",
-                 "type": "array",
-                 "items": {}
-                }
-               },
-               "required": [
-                "total_count",
-                "new_count",
-                "new_nearby_count",
-                "last_visit_time",
-                "userInfos"
-               ]
-              }
-             },
-             "required": [
-              "uid",
-              "time",
-              "favoriteInfo",
-              "voteInfo"
-             ],
-             "x-go-type-name": "GetProfileLikeData"
+             "$ref": "#/components/schemas/GetProfileLikeData"
             }
            }
           }
@@ -13372,7 +12041,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_profile_like"
+    "operationId": "GetProfileLike"
    }
   },
   "/set_group_portrait": {
@@ -13434,21 +12103,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "result": {
-               "type": "number"
-              },
-              "errMsg": {
-               "type": "string"
-              }
-             },
-             "required": [
-              "result",
-              "errMsg"
-             ],
-             "x-go-type-name": "SetGroupPortraitData"
+             "$ref": "#/components/schemas/SetGroupPortraitData"
             }
            }
           }
@@ -13484,7 +12139,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_portrait"
+    "operationId": "SetGroupPortrait"
    }
   },
   "/fetch_custom_face": {
@@ -13548,12 +12203,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "string"
-             },
-             "x-go-type-name": "FetchCustomFaceData"
+             "$ref": "#/components/schemas/FetchCustomFaceData"
             }
            }
           }
@@ -13588,7 +12238,7 @@
      }
     },
     "security": [],
-    "operationId": "Fetch_custom_face"
+    "operationId": "FetchCustomFace"
    }
   },
   "/fetch_custom_face_detail": {
@@ -13652,9 +12302,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "FetchCustomFaceDetailData"
+             "$ref": "#/components/schemas/FetchCustomFaceDetailData"
             }
            }
           }
@@ -13679,7 +12327,7 @@
      }
     },
     "security": [],
-    "operationId": "Fetch_custom_face_detail"
+    "operationId": "FetchCustomFaceDetail"
    }
   },
   "/add_custom_face": {
@@ -13785,9 +12433,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "AddCustomFaceData"
+             "$ref": "#/components/schemas/AddCustomFaceData"
             }
            }
           }
@@ -13812,7 +12458,7 @@
      }
     },
     "security": [],
-    "operationId": "Add_custom_face"
+    "operationId": "AddCustomFace"
    }
   },
   "/delete_custom_face": {
@@ -13913,9 +12559,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DeleteCustomFaceData"
+             "$ref": "#/components/schemas/DeleteCustomFaceData"
             }
            }
           }
@@ -13940,7 +12584,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_custom_face"
+    "operationId": "DeleteCustomFace"
    }
   },
   "/set_custom_face_desc": {
@@ -14021,9 +12665,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetCustomFaceDescData"
+             "$ref": "#/components/schemas/SetCustomFaceDescData"
             }
            }
           }
@@ -14048,7 +12690,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_custom_face_desc"
+    "operationId": "SetCustomFaceDesc"
    }
   },
   "/upload_private_file": {
@@ -14122,25 +12764,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "file_id": {
-               "description": "文件 ID",
-               "anyOf": [
-                {
-                 "type": "string"
-                },
-                {
-                 "type": "null"
-                }
-               ]
-              }
-             },
-             "required": [
-              "file_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "UploadPrivateFileData"
+             "$ref": "#/components/schemas/UploadPrivateFileData"
             }
            }
           }
@@ -14175,7 +12799,7 @@
      }
     },
     "security": [],
-    "operationId": "Upload_private_file"
+    "operationId": "UploadPrivateFile"
    }
   },
   "/get_guild_service_profile": {
@@ -14223,9 +12847,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "GetGuildServiceProfileData"
+             "$ref": "#/components/schemas/GetGuildServiceProfileData"
             }
            }
           }
@@ -14262,7 +12884,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_guild_service_profile"
+    "operationId": "GetGuildServiceProfile"
    }
   },
   "/_get_model_show": {
@@ -14315,34 +12937,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "variants": {
-                "type": "object",
-                "properties": {
-                 "model_show": {
-                  "description": "显示名称",
-                  "type": "string"
-                 },
-                 "need_pay": {
-                  "description": "是否需要付费",
-                  "type": "boolean"
-                 }
-                },
-                "required": [
-                 "model_show",
-                 "need_pay"
-                ]
-               }
-              },
-              "required": [
-               "variants"
-              ]
-             },
-             "x-go-type-name": "GetModelShowData"
+             "$ref": "#/components/schemas/GetModelShowData"
             }
            }
           }
@@ -14377,7 +12972,7 @@
      }
     },
     "security": [],
-    "operationId": "_get_model_show"
+    "operationId": "GetModelShow"
    }
   },
   "/_set_model_show": {
@@ -14426,9 +13021,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SetModelShowData"
+             "$ref": "#/components/schemas/SetModelShowData"
             }
            }
           }
@@ -14453,7 +13046,7 @@
      }
     },
     "security": [],
-    "operationId": "_set_model_show"
+    "operationId": "SetModelShow"
    }
   },
   "/set_input_status": {
@@ -14515,9 +13108,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SetInputStatusData"
+             "$ref": "#/components/schemas/SetInputStatusData"
             }
            }
           }
@@ -14542,7 +13133,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_input_status"
+    "operationId": "SetInputStatus"
    }
   },
   "/get_csrf_token": {
@@ -14588,18 +13179,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "token": {
-               "description": "CSRF Token",
-               "type": "number"
-              }
-             },
-             "required": [
-              "token"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetCsrfTokenData"
+             "$ref": "#/components/schemas/GetCsrfTokenData"
             }
            }
           }
@@ -14634,7 +13214,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_csrf_token"
+    "operationId": "GetCsrfToken"
    }
   },
   "/get_credentials": {
@@ -14690,23 +13270,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "cookies": {
-               "description": "Cookies",
-               "type": "string"
-              },
-              "token": {
-               "description": "CSRF Token",
-               "type": "number"
-              }
-             },
-             "required": [
-              "cookies",
-              "token"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetCredentialsData"
+             "$ref": "#/components/schemas/GetCredentialsData"
             }
            }
           }
@@ -14742,7 +13306,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_credentials"
+    "operationId": "GetCredentials"
    }
   },
   "/_del_group_notice": {
@@ -14804,9 +13368,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DelGroupNoticeData"
+             "$ref": "#/components/schemas/DelGroupNoticeData"
             }
            }
           }
@@ -14831,7 +13393,7 @@
      }
     },
     "security": [],
-    "operationId": "_del_group_notice"
+    "operationId": "DelGroupNotice"
    }
   },
   "/delete_group_file": {
@@ -14893,9 +13455,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DeleteGroupFileData"
+             "$ref": "#/components/schemas/DeleteGroupFileData"
             }
            }
           }
@@ -14920,7 +13480,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_group_file"
+    "operationId": "DeleteGroupFile"
    }
   },
   "/create_group_file_folder": {
@@ -14985,23 +13545,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "result": {
-               "description": "操作结果",
-               "type": "object"
-              },
-              "groupItem": {
-               "description": "群项信息",
-               "type": "object"
-              }
-             },
-             "required": [
-              "result",
-              "groupItem"
-             ],
-             "x-go-type-name": "CreateGroupFileFolderData"
+             "$ref": "#/components/schemas/CreateGroupFileFolderData"
             }
            }
           }
@@ -15037,7 +13581,7 @@
      }
     },
     "security": [],
-    "operationId": "Create_group_file_folder"
+    "operationId": "CreateGroupFileFolder"
    }
   },
   "/delete_group_folder": {
@@ -15102,9 +13646,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DeleteGroupFolderData"
+             "$ref": "#/components/schemas/DeleteGroupFolderData"
             }
            }
           }
@@ -15129,7 +13671,7 @@
      }
     },
     "security": [],
-    "operationId": "Delete_group_folder"
+    "operationId": "DeleteGroupFolder"
    }
   },
   "/get_group_file_system_info": {
@@ -15185,33 +13727,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "file_count": {
-               "description": "文件总数",
-               "type": "number"
-              },
-              "limit_count": {
-               "description": "文件上限",
-               "type": "number"
-              },
-              "used_space": {
-               "description": "已使用空间",
-               "type": "number"
-              },
-              "total_space": {
-               "description": "总空间",
-               "type": "number"
-              }
-             },
-             "required": [
-              "file_count",
-              "limit_count",
-              "used_space",
-              "total_space"
-             ],
-             "x-go-type-name": "GetGroupFileSystemInfoData"
+             "$ref": "#/components/schemas/GetGroupFileSystemInfoData"
             }
            }
           }
@@ -15249,7 +13765,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_file_system_info"
+    "operationId": "GetGroupFileSystemInfo"
    }
   },
   "/get_group_files_by_folder": {
@@ -15327,25 +13843,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "files": {
-               "description": "文件列表",
-               "type": "array",
-               "items": {}
-              },
-              "folders": {
-               "description": "文件夹列表",
-               "type": "array",
-               "items": {}
-              }
-             },
-             "required": [
-              "files",
-              "folders"
-             ],
-             "x-go-type-name": "GetGroupFilesByFolderData"
+             "$ref": "#/components/schemas/GetGroupFilesByFolderData"
             }
            }
           }
@@ -15381,7 +13879,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_files_by_folder"
+    "operationId": "GetGroupFilesByFolder"
    }
   },
   "/nc_get_packet_status": {
@@ -15427,9 +13925,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "NcGetPacketStatusData"
+             "$ref": "#/components/schemas/NcGetPacketStatusData"
             }
            }
           }
@@ -15454,7 +13950,7 @@
      }
     },
     "security": [],
-    "operationId": "Nc_get_packet_status"
+    "operationId": "NcGetPacketStatus"
    }
   },
   "/set_restart": {
@@ -15500,9 +13996,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SetRestartData"
+             "$ref": "#/components/schemas/SetRestartData"
             }
            }
           }
@@ -15527,7 +14021,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_restart"
+    "operationId": "SetRestart"
    }
   },
   "/group_poke": {
@@ -15591,9 +14085,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "GroupPokeData"
+             "$ref": "#/components/schemas/GroupPokeData"
             }
            }
           }
@@ -15618,7 +14110,7 @@
      }
     },
     "security": [],
-    "operationId": "Group_poke"
+    "operationId": "GroupPoke"
    }
   },
   "/friend_poke": {
@@ -15682,9 +14174,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "FriendPokeData"
+             "$ref": "#/components/schemas/FriendPokeData"
             }
            }
           }
@@ -15709,7 +14199,7 @@
      }
     },
     "security": [],
-    "operationId": "Friend_poke"
+    "operationId": "FriendPoke"
    }
   },
   "/nc_get_user_status": {
@@ -15765,23 +14255,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "status": {
-               "description": "在线状态",
-               "type": "number"
-              },
-              "ext_status": {
-               "description": "扩展状态",
-               "type": "number"
-              }
-             },
-             "required": [
-              "status",
-              "ext_status"
-             ],
-             "x-go-type-name": "NcGetUserStatusData"
+             "$ref": "#/components/schemas/NcGetUserStatusData"
             }
            }
           }
@@ -15817,7 +14291,7 @@
      }
     },
     "security": [],
-    "operationId": "Nc_get_user_status"
+    "operationId": "NcGetUserStatus"
    }
   },
   "/nc_get_rkey": {
@@ -15863,10 +14337,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {},
-             "x-go-type-name": "NcGetRkeyData"
+             "$ref": "#/components/schemas/NcGetRkeyData"
             }
            }
           }
@@ -15904,7 +14375,7 @@
      }
     },
     "security": [],
-    "operationId": "Nc_get_rkey"
+    "operationId": "NcGetRkey"
    }
   },
   "/set_group_special_title": {
@@ -15973,9 +14444,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "null",
-             "x-go-type-name": "SetGroupSpecialTitleData"
+             "$ref": "#/components/schemas/SetGroupSpecialTitleData"
             }
            }
           }
@@ -16000,7 +14469,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_group_special_title"
+    "operationId": "SetGroupSpecialTitle"
    }
   },
   "/set_diy_online_status": {
@@ -16084,9 +14553,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "string",
-             "x-go-type-name": "SetDiyOnlineStatusData"
+             "$ref": "#/components/schemas/SetDiyOnlineStatusData"
             }
            }
           }
@@ -16119,7 +14586,7 @@
      }
     },
     "security": [],
-    "operationId": "Set_diy_online_status"
+    "operationId": "SetDiyOnlineStatus"
    }
   },
   "/get_group_shut_list": {
@@ -16175,10 +14642,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {},
-             "x-go-type-name": "GetGroupShutListData"
+             "$ref": "#/components/schemas/GetGroupShutListData"
             }
            }
           }
@@ -16217,7 +14681,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_shut_list"
+    "operationId": "GetGroupShutList"
    }
   },
   "/get_group_file_url": {
@@ -16280,15 +14744,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "url": {
-               "description": "文件下载链接",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetGroupFileUrlData"
+             "$ref": "#/components/schemas/GetGroupFileUrlData"
             }
            }
           }
@@ -16323,7 +14779,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_file_url"
+    "operationId": "GetGroupFileUrl"
    }
   },
   "/get_mini_app_ark": {
@@ -16505,18 +14961,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "data": {
-               "description": "Ark数据",
-               "type": "object"
-              }
-             },
-             "required": [
-              "data"
-             ],
-             "x-go-type-name": "GetMiniAppArkData"
+             "$ref": "#/components/schemas/GetMiniAppArkData"
             }
            }
           }
@@ -16553,7 +14998,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_mini_app_ark"
+    "operationId": "GetMiniAppArk"
    }
   },
   "/get_ai_record": {
@@ -16621,9 +15066,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "string",
-             "x-go-type-name": "GetAiRecordData"
+             "$ref": "#/components/schemas/GetAiRecordData"
             }
            }
           }
@@ -16656,7 +15099,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_ai_record"
+    "operationId": "GetAiRecord"
    }
   },
   "/send_group_ai_record": {
@@ -16724,18 +15167,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "message_id": {
-               "description": "消息ID",
-               "type": "number"
-              }
-             },
-             "required": [
-              "message_id"
-             ],
-             "x-go-type-name": "SendGroupAiRecordData"
+             "$ref": "#/components/schemas/SendGroupAiRecordData"
             }
            }
           }
@@ -16760,7 +15192,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_group_ai_record"
+    "operationId": "SendGroupAiRecord"
    }
   },
   "/get_ai_characters": {
@@ -16829,48 +15261,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "type": {
-                "description": "角色类型",
-                "type": "string"
-               },
-               "characters": {
-                "description": "角色列表",
-                "type": "array",
-                "items": {
-                 "type": "object",
-                 "properties": {
-                  "character_id": {
-                   "description": "角色ID",
-                   "type": "string"
-                  },
-                  "character_name": {
-                   "description": "角色名称",
-                   "type": "string"
-                  },
-                  "preview_url": {
-                   "description": "预览URL",
-                   "type": "string"
-                  }
-                 },
-                 "required": [
-                  "character_id",
-                  "character_name",
-                  "preview_url"
-                 ]
-                }
-               }
-              },
-              "required": [
-               "type",
-               "characters"
-              ]
-             },
-             "x-go-type-name": "GetAiCharactersData"
+             "$ref": "#/components/schemas/GetAiCharactersData"
             }
            }
           }
@@ -16914,7 +15305,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_ai_characters"
+    "operationId": "GetAiCharacters"
    }
   },
   "/send_packet": {
@@ -16990,17 +15381,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "anyOf": [
-              {
-               "description": "响应十六进制数据",
-               "type": "string"
-              },
-              {
-               "type": "null"
-              }
-             ],
-             "x-go-type-name": "SendPacketData"
+             "$ref": "#/components/schemas/SendPacketData"
             }
            }
           }
@@ -17033,7 +15414,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_packet"
+    "operationId": "SendPacket"
    }
   },
   "/send_poke": {
@@ -17097,9 +15478,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "SendPokeData"
+             "$ref": "#/components/schemas/SendPokeData"
             }
            }
           }
@@ -17124,7 +15503,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_poke"
+    "operationId": "SendPoke"
    }
   },
   "/get_group_system_msg": {
@@ -17188,37 +15567,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "invited_requests": {
-               "description": "进群邀请列表",
-               "type": "array",
-               "items": {
-                "$ref": "#/components/schemas/OB11Notify"
-               }
-              },
-              "InvitedRequest": {
-               "description": "进群邀请列表 (兼容)",
-               "type": "array",
-               "items": {
-                "$ref": "#/components/schemas/OB11Notify"
-               }
-              },
-              "join_requests": {
-               "description": "进群申请列表",
-               "type": "array",
-               "items": {
-                "$ref": "#/components/schemas/OB11Notify"
-               }
-              }
-             },
-             "required": [
-              "invited_requests",
-              "InvitedRequest",
-              "join_requests"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetGroupSystemMsgData"
+             "$ref": "#/components/schemas/GetGroupSystemMsgData"
             }
            }
           }
@@ -17255,7 +15604,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_system_msg"
+    "operationId": "GetGroupSystemMsg"
    }
   },
   "/bot_exit": {
@@ -17301,10 +15650,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {},
-             "description": "业务数据",
-             "x-go-type-name": "BotExitData"
+             "$ref": "#/components/schemas/BotExitData"
             }
            }
           }
@@ -17329,7 +15675,7 @@
      }
     },
     "security": [],
-    "operationId": "Bot_exit"
+    "operationId": "BotExit"
    }
   },
   "/click_inline_keyboard_button": {
@@ -17412,9 +15758,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "ClickInlineKeyboardButtonData"
+             "$ref": "#/components/schemas/ClickInlineKeyboardButtonData"
             }
            }
           }
@@ -17439,7 +15783,7 @@
      }
     },
     "security": [],
-    "operationId": "Click_inline_keyboard_button"
+    "operationId": "ClickInlineKeyboardButton"
    }
   },
   "/get_private_file_url": {
@@ -17496,15 +15840,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "properties": {
-              "url": {
-               "description": "文件下载链接",
-               "type": "string"
-              }
-             },
-             "x-go-type-name": "GetPrivateFileUrlData"
+             "$ref": "#/components/schemas/GetPrivateFileUrlData"
             }
            }
           }
@@ -17539,7 +15875,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_private_file_url"
+    "operationId": "GetPrivateFileUrl"
    }
   },
   "/get_unidirectional_friend_list": {
@@ -17585,41 +15921,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "uin": {
-                "description": "QQ号",
-                "type": "number"
-               },
-               "uid": {
-                "description": "用户UID",
-                "type": "string"
-               },
-               "nick_name": {
-                "description": "昵称",
-                "type": "string"
-               },
-               "age": {
-                "description": "年龄",
-                "type": "number"
-               },
-               "source": {
-                "description": "来源",
-                "type": "string"
-               }
-              },
-              "required": [
-               "uin",
-               "uid",
-               "nick_name",
-               "age",
-               "source"
-              ]
-             },
-             "x-go-type-name": "GetUnidirectionalFriendListData"
+             "$ref": "#/components/schemas/GetUnidirectionalFriendListData"
             }
            }
           }
@@ -17660,7 +15962,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_unidirectional_friend_list"
+    "operationId": "GetUnidirectionalFriendList"
    }
   },
   "/clean_cache": {
@@ -17706,9 +16008,7 @@
            ],
            "properties": {
             "data": {
-             "type": "null",
-             "description": "业务数据",
-             "x-go-type-name": "CleanCacheData"
+             "$ref": "#/components/schemas/CleanCacheData"
             }
            }
           }
@@ -17733,7 +16033,7 @@
      }
     },
     "security": [],
-    "operationId": "Clean_cache"
+    "operationId": "CleanCache"
    }
   },
   "/get_group_ignore_add_request": {
@@ -17779,57 +16079,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "array",
-             "items": {
-              "type": "object",
-              "properties": {
-               "request_id": {
-                "description": "请求ID",
-                "type": "number"
-               },
-               "invitor_uin": {
-                "description": "邀请者QQ",
-                "type": "number"
-               },
-               "invitor_nick": {
-                "description": "邀请者昵称",
-                "type": "string"
-               },
-               "group_id": {
-                "description": "群号",
-                "type": "number"
-               },
-               "message": {
-                "description": "验证信息",
-                "type": "string"
-               },
-               "group_name": {
-                "description": "群名称",
-                "type": "string"
-               },
-               "checked": {
-                "description": "是否已处理",
-                "type": "boolean"
-               },
-               "actor": {
-                "description": "处理者QQ",
-                "type": "number"
-               },
-               "requester_nick": {
-                "description": "请求者昵称",
-                "type": "string"
-               }
-              },
-              "required": [
-               "request_id",
-               "invitor_uin",
-               "group_id",
-               "checked",
-               "actor"
-              ]
-             },
-             "x-go-type-name": "GetGroupIgnoreAddRequestData"
+             "$ref": "#/components/schemas/GetGroupIgnoreAddRequestData"
             }
            }
           }
@@ -17874,7 +16124,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_group_ignore_add_request"
+    "operationId": "GetGroupIgnoreAddRequest"
    }
   },
   "/get_collection_list": {
@@ -17937,9 +16187,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetCollectionListData"
+             "$ref": "#/components/schemas/GetCollectionListData"
             }
            }
           }
@@ -18022,7 +16270,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_collection_list"
+    "operationId": "GetCollectionList"
    }
   },
   "/create_flash_task": {
@@ -18097,9 +16345,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "CreateFlashTaskData"
+             "$ref": "#/components/schemas/CreateFlashTaskData"
             }
            }
           }
@@ -18134,7 +16380,7 @@
      }
     },
     "security": [],
-    "operationId": "Create_flash_task"
+    "operationId": "CreateFlashTask"
    }
   },
   "/get_flash_file_list": {
@@ -18190,9 +16436,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetFlashFileListData"
+             "$ref": "#/components/schemas/GetFlashFileListData"
             }
            }
           }
@@ -18230,7 +16474,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_flash_file_list"
+    "operationId": "GetFlashFileList"
    }
   },
   "/get_flash_file_url": {
@@ -18294,9 +16538,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetFlashFileUrlData"
+             "$ref": "#/components/schemas/GetFlashFileUrlData"
             }
            }
           }
@@ -18331,7 +16573,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_flash_file_url"
+    "operationId": "GetFlashFileUrl"
    }
   },
   "/send_flash_msg": {
@@ -18396,9 +16638,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SendFlashMsgData"
+             "$ref": "#/components/schemas/SendFlashMsgData"
             }
            }
           }
@@ -18433,7 +16673,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_flash_msg"
+    "operationId": "SendFlashMsg"
    }
   },
   "/get_share_link": {
@@ -18489,9 +16729,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetShareLinkData"
+             "$ref": "#/components/schemas/GetShareLinkData"
             }
            }
           }
@@ -18524,7 +16762,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_share_link"
+    "operationId": "GetShareLink"
    }
   },
   "/get_fileset_info": {
@@ -18580,9 +16818,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetFilesetInfoData"
+             "$ref": "#/components/schemas/GetFilesetInfoData"
             }
            }
           }
@@ -18618,7 +16854,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_fileset_info"
+    "operationId": "GetFilesetInfo"
    }
   },
   "/get_online_file_msg": {
@@ -18674,9 +16910,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "GetOnlineFileMsgData"
+             "$ref": "#/components/schemas/GetOnlineFileMsgData"
             }
            }
           }
@@ -18701,7 +16935,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_online_file_msg"
+    "operationId": "GetOnlineFileMsg"
    }
   },
   "/send_online_file": {
@@ -18768,9 +17002,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SendOnlineFileData"
+             "$ref": "#/components/schemas/SendOnlineFileData"
             }
            }
           }
@@ -18795,7 +17027,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_online_file"
+    "operationId": "SendOnlineFile"
    }
   },
   "/send_online_folder": {
@@ -18861,9 +17093,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "SendOnlineFolderData"
+             "$ref": "#/components/schemas/SendOnlineFolderData"
             }
            }
           }
@@ -18888,7 +17118,7 @@
      }
     },
     "security": [],
-    "operationId": "Send_online_folder"
+    "operationId": "SendOnlineFolder"
    }
   },
   "/receive_online_file": {
@@ -18956,9 +17186,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "ReceiveOnlineFileData"
+             "$ref": "#/components/schemas/ReceiveOnlineFileData"
             }
            }
           }
@@ -18983,7 +17211,7 @@
      }
     },
     "security": [],
-    "operationId": "Receive_online_file"
+    "operationId": "ReceiveOnlineFile"
    }
   },
   "/refuse_online_file": {
@@ -19050,9 +17278,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "RefuseOnlineFileData"
+             "$ref": "#/components/schemas/RefuseOnlineFileData"
             }
            }
           }
@@ -19077,7 +17303,7 @@
      }
     },
     "security": [],
-    "operationId": "Refuse_online_file"
+    "operationId": "RefuseOnlineFile"
    }
   },
   "/cancel_online_file": {
@@ -19139,9 +17365,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "CancelOnlineFileData"
+             "$ref": "#/components/schemas/CancelOnlineFileData"
             }
            }
           }
@@ -19166,7 +17390,7 @@
      }
     },
     "security": [],
-    "operationId": "Cancel_online_file"
+    "operationId": "CancelOnlineFile"
    }
   },
   "/download_fileset": {
@@ -19222,9 +17446,7 @@
            ],
            "properties": {
             "data": {
-             "description": "业务数据",
-             "type": "object",
-             "x-go-type-name": "DownloadFilesetData"
+             "$ref": "#/components/schemas/DownloadFilesetData"
             }
            }
           }
@@ -19249,7 +17471,7 @@
      }
     },
     "security": [],
-    "operationId": "Download_fileset"
+    "operationId": "DownloadFileset"
    }
   },
   "/get_fileset_id": {
@@ -19305,18 +17527,7 @@
            ],
            "properties": {
             "data": {
-             "type": "object",
-             "properties": {
-              "fileset_id": {
-               "description": "文件集 ID",
-               "type": "string"
-              }
-             },
-             "required": [
-              "fileset_id"
-             ],
-             "description": "业务数据",
-             "x-go-type-name": "GetFilesetIdData"
+             "$ref": "#/components/schemas/GetFilesetIdData"
             }
            }
           }
@@ -19351,7 +17562,7 @@
      }
     },
     "security": [],
-    "operationId": "Get_fileset_id"
+    "operationId": "GetFilesetId"
    }
   }
  },
@@ -20041,7 +18252,8 @@
       "properties": {
        "emoji_package_id": {
         "description": "表情包ID",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "emoji_id": {
         "description": "表情ID",
@@ -20399,7 +18611,8 @@
        },
        "seq": {
         "description": "消息序列号，优先使用",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        }
       }
      }
@@ -20428,27 +18641,33 @@
      },
      "target_id": {
       "description": "目标ID",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "self_id": {
       "description": "机器人QQ号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "time": {
       "description": "消息时间戳",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "message_id": {
       "description": "消息ID",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "message_seq": {
       "description": "消息序列号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "real_id": {
       "description": "真实ID",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "user_id": {
       "description": "发送者QQ号",
@@ -20788,11 +19007,13 @@
     "properties": {
      "group_id": {
       "description": "群号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "user_id": {
       "description": "QQ号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "nickname": {
       "description": "昵称",
@@ -20812,11 +19033,13 @@
      },
      "join_time": {
       "description": "入群时间戳",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "last_sent_time": {
       "description": "最后发言时间戳",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "level": {
       "description": "等级",
@@ -20844,7 +19067,8 @@
      },
      "title_expire_time": {
       "description": "头衔过期时间",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "card_changeable": {
       "description": "是否允许修改名片",
@@ -20852,7 +19076,8 @@
      },
      "shut_up_timestamp": {
       "description": "禁言截止时间戳",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "is_robot": {
       "description": "是否为机器人",
@@ -20884,7 +19109,8 @@
      },
      "group_id": {
       "description": "群号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "group_name": {
       "description": "群名称",
@@ -20917,15 +19143,18 @@
       "properties": {
        "self_id": {
         "description": "发送者QQ号",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "user_id": {
         "description": "接收者QQ号",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "time": {
         "description": "时间戳",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "real_seq": {
         "description": "消息序号",
@@ -20940,7 +19169,8 @@
         "properties": {
          "user_id": {
           "description": "用户QQ号",
-          "type": "number"
+          "type": "number",
+          "x-go-type": "int64"
          },
          "nickname": {
           "description": "用户昵称",
@@ -20986,7 +19216,8 @@
        },
        "group_id": {
         "description": "群号",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "group_name": {
         "description": "群名称",
@@ -21016,11 +19247,13 @@
       "properties": {
        "message_id": {
         "description": "消息ID",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "message_seq": {
         "description": "消息序列号",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "emoji_likes_list": {
         "type": "array",
@@ -21067,7 +19300,8 @@
      },
      "invitor_uin": {
       "description": "邀请者QQ",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "invitor_nick": {
       "description": "邀请者昵称",
@@ -21075,7 +19309,8 @@
      },
      "group_id": {
       "description": "群号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "group_name": {
       "description": "群名称",
@@ -21091,7 +19326,8 @@
      },
      "actor": {
       "description": "操作者QQ",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "requester_nick": {
       "description": "申请者昵称",
@@ -21141,7 +19377,8 @@
      },
      "user_id": {
       "description": "QQ号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "nickname": {
       "description": "昵称",
@@ -21169,7 +19406,8 @@
      },
      "login_days": {
       "description": "登录天数",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "categoryName": {
       "description": "分组名称",
@@ -21188,15 +19426,18 @@
     "properties": {
      "self_id": {
       "description": "发送者QQ号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "user_id": {
       "description": "接收者QQ号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "time": {
       "description": "时间戳",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "real_seq": {
       "description": "消息序号",
@@ -21211,7 +19452,8 @@
       "properties": {
        "user_id": {
         "description": "用户QQ号",
-        "type": "number"
+        "type": "number",
+        "x-go-type": "int64"
        },
        "nickname": {
         "description": "用户昵称",
@@ -21257,7 +19499,8 @@
      },
      "group_id": {
       "description": "群号",
-      "type": "number"
+      "type": "number",
+      "x-go-type": "int64"
      },
      "group_name": {
       "description": "群名称",
@@ -21280,6 +19523,2197 @@
      "group_id",
      "group_name"
     ]
+   },
+   "CleanStreamTempFileData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "DownloadFileStreamData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DownloadFileRecordStreamData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DownloadFileImageStreamData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "TestDownloadStreamData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "UploadFileStreamData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DelGroupAlbumMediaData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetGroupAlbumMediaLikeData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "CancelGroupAlbumMediaLikeData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DoGroupAlbumCommentData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetGroupAlbumMediaListData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetQunAlbumListData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "album_list": {
+      "description": "群相册列表",
+      "type": "array",
+      "items": {}
+     },
+     "attach_info": {
+      "description": "分页附加信息，传入下一次请求以获取更多数据",
+      "type": "string"
+     },
+     "has_more": {
+      "description": "是否有更多数据",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "album_list",
+     "attach_info",
+     "has_more"
+    ]
+   },
+   "UploadImageToQunAlbumData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetGroupTodoData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "CompleteGroupTodoData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "CancelGroupTodoData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetGroupDetailInfoData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "group_id": {
+      "description": "群号",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "group_name": {
+      "description": "群名称",
+      "type": "string"
+     },
+     "member_count": {
+      "description": "成员数量",
+      "type": "number"
+     },
+     "max_member_count": {
+      "description": "最大成员数量",
+      "type": "number"
+     },
+     "group_all_shut": {
+      "description": "全员禁言状态",
+      "type": "number"
+     },
+     "group_remark": {
+      "description": "群备注",
+      "type": "string"
+     }
+    },
+    "required": [
+     "group_id",
+     "group_name",
+     "member_count",
+     "max_member_count",
+     "group_all_shut",
+     "group_remark"
+    ]
+   },
+   "SetGroupKickMembersData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupAddOptionData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupRobotAddOptionData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupSearchData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetDoubtFriendsAddRequestData": {
+    "description": "业务数据"
+   },
+   "GetDoubtFriendsAddRequestData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetFriendRemarkData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetRkeyData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "type": {
+       "description": "类型 (private/group)",
+       "type": "string"
+      },
+      "rkey": {
+       "description": "RKey",
+       "type": "string"
+      },
+      "created_at": {
+       "description": "创建时间",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "ttl": {
+       "description": "有效期",
+       "type": "number"
+      }
+     },
+     "required": [
+      "type",
+      "rkey",
+      "created_at",
+      "ttl"
+     ]
+    }
+   },
+   "GetRkeyServerData": {
+    "type": "object",
+    "properties": {
+     "private_rkey": {
+      "description": "私聊 RKey",
+      "type": "string"
+     },
+     "group_rkey": {
+      "description": "群聊 RKey",
+      "type": "string"
+     },
+     "expired_time": {
+      "description": "过期时间",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "name": {
+      "description": "名称",
+      "type": "string"
+     }
+    },
+    "required": [
+     "name"
+    ],
+    "description": "业务数据"
+   },
+   "SetGroupRemarkData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "GetGroupInfoExData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "FetchEmojiLikeData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "emojiLikesList": {
+      "description": "表情回应列表",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "tinyId": {
+         "description": "TinyID",
+         "type": "string"
+        },
+        "nickName": {
+         "description": "昵称",
+         "type": "string"
+        },
+        "headUrl": {
+         "description": "头像URL",
+         "type": "string"
+        }
+       },
+       "required": [
+        "tinyId",
+        "nickName",
+        "headUrl"
+       ]
+      }
+     },
+     "cookie": {
+      "description": "分页Cookie",
+      "type": "string"
+     },
+     "isLastPage": {
+      "description": "是否最后一页",
+      "type": "boolean"
+     },
+     "isFirstPage": {
+      "description": "是否第一页",
+      "type": "boolean"
+     },
+     "result": {
+      "description": "结果状态码",
+      "type": "number"
+     },
+     "errMsg": {
+      "description": "错 误信息",
+      "type": "string"
+     }
+    },
+    "required": [
+     "emojiLikesList",
+     "cookie",
+     "isLastPage",
+     "isFirstPage",
+     "result",
+     "errMsg"
+    ]
+   },
+   "GetEmojiLikesData": {
+    "type": "object",
+    "properties": {
+     "emoji_like_list": {
+      "description": "表情回应列表",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "description": "点击者QQ号",
+         "type": "string"
+        },
+        "nick_name": {
+         "description": "昵称?",
+         "type": "string"
+        }
+       },
+       "required": [
+        "user_id",
+        "nick_name"
+       ]
+      }
+     }
+    },
+    "required": [
+     "emoji_like_list"
+    ],
+    "description": "业务数据"
+   },
+   "FetchPttTextData": {
+    "type": "object",
+    "properties": {
+     "text": {
+      "description": "得到的文本",
+      "type": "string"
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "description": "业务数据"
+   },
+   "GetFileData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "file": {
+      "description": "本地路径",
+      "type": "string"
+     },
+     "url": {
+      "description": "下载URL",
+      "type": "string"
+     },
+     "file_size": {
+      "description": "文件大小",
+      "type": "string"
+     },
+     "file_name": {
+      "description": "文件名",
+      "type": "string"
+     },
+     "base64": {
+      "description": "Base64编码",
+      "type": "string"
+     }
+    }
+   },
+   "SetQqProfileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "ArkShareGroupData": {
+    "description": "业务数据",
+    "type": "string"
+   },
+   "ArkSharePeerData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SendGroupArkShareData": {
+    "description": "业务数据",
+    "type": "string"
+   },
+   "SendArkShareData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "CreateCollectionData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetSelfLongnickData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "ForwardFriendSingleMsgData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "ForwardGroupSingleMsgData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "MarkGroupMsgAsReadData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "MarkPrivateMsgAsReadData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetQqAvatarData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "TranslateEn2zhData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "words": {
+      "description": "翻译结果列表",
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "required": [
+     "words"
+    ]
+   },
+   "GetGroupRootFilesData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "files": {
+      "description": "文件列表",
+      "type": "array",
+      "items": {}
+     },
+     "folders": {
+      "description": "文件夹列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "files",
+     "folders"
+    ]
+   },
+   "SetGroupSignData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SendGroupSignData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "GetClientkeyData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "clientkey": {
+      "description": "客户端Key",
+      "type": "string"
+     }
+    }
+   },
+   "MoveGroupFileData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "ok": {
+      "description": "是否成功",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "ok"
+    ]
+   },
+   "RenameGroupFileData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "ok": {
+      "description": "是否成功",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "ok"
+    ]
+   },
+   "TransGroupFileData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "ok": {
+      "description": "是否成功",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "ok"
+    ]
+   },
+   "GetGroupSignedListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "user_id": {
+       "description": "打卡者QQ",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "nick": {
+       "description": "打卡者昵称",
+       "type": "string"
+      },
+      "time": {
+       "description": "打卡时间",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "rank": {
+       "description": "打卡排名",
+       "type": "number"
+      }
+     },
+     "required": [
+      "user_id",
+      "nick",
+      "time",
+      "rank"
+     ]
+    }
+   },
+   "SendQzoneMsgData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "tid": {
+      "description": "说说Tid",
+      "type": "string"
+     }
+    },
+    "required": [
+     "tid"
+    ]
+   },
+   "DeleteQzoneMsgData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "SetGroupMemberInvitePolicyData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupMemberPermissionsData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupNewMemberHistoryVisibilityData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SendLikeData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetMsgData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "time": {
+      "description": "发送时间",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "message_type": {
+      "description": "消息类型",
+      "type": "string"
+     },
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "real_id": {
+      "description": "真实ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "message_seq": {
+      "description": "消息序号",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "sender": {
+      "description": "发送者",
+      "type": "object",
+      "properties": {
+       "user_id": {
+        "description": "发送者 QQ 号",
+        "type": "number",
+        "x-go-type": "int64"
+       },
+       "nickname": {
+        "description": "昵称",
+        "type": "string"
+       },
+       "card": {
+        "description": "群名片",
+        "type": "string"
+       },
+       "role": {
+        "description": "群角色",
+        "type": "string"
+       },
+       "level": {
+        "description": "等级",
+        "type": "string"
+       },
+       "title": {
+        "description": "头衔",
+        "type": "string"
+       }
+      }
+     },
+     "message": {
+      "description": "消息内容 (消息段数组)",
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OB11MessageData"
+      }
+     },
+     "raw_message": {
+      "description": "原始消息内容",
+      "type": "string"
+     },
+     "font": {
+      "description": "字体",
+      "type": "number"
+     },
+     "group_id": {
+      "description": "群号",
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "string"
+       }
+      ]
+     },
+     "user_id": {
+      "description": "发送者QQ号",
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "string"
+       }
+      ]
+     },
+     "emoji_likes_list": {
+      "description": "表情回应列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "time",
+     "message_type",
+     "message_id",
+     "real_id",
+     "message_seq",
+     "sender",
+     "message",
+     "raw_message",
+     "font",
+     "user_id"
+    ]
+   },
+   "GetFriendListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "$ref": "#/components/schemas/OB11User"
+    }
+   },
+   "GetGroupListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "$ref": "#/components/schemas/OB11Group"
+    }
+   },
+   "GetGroupMemberListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {}
+   },
+   "SendGroupMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "SendPrivateMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "SendMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "DeleteMsgData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupAddRequestData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetFriendAddRequestData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "SetGroupLeaveData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "GetVersionInfoData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "app_name": {
+      "description": "应用名称",
+      "type": "string"
+     },
+     "protocol_version": {
+      "description": "协议版本",
+      "type": "string"
+     },
+     "app_version": {
+      "description": "应用版本",
+      "type": "string"
+     }
+    },
+    "required": [
+     "app_name",
+     "protocol_version",
+     "app_version"
+    ]
+   },
+   "CanSendRecordData": {
+    "type": "object",
+    "properties": {
+     "yes": {
+      "description": "是否可以发送",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "yes"
+    ],
+    "description": "业务数据"
+   },
+   "CanSendImageData": {
+    "type": "object",
+    "properties": {
+     "yes": {
+      "description": "是否可以发送",
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "yes"
+    ],
+    "description": "业务数据"
+   },
+   "GetStatusData": {
+    "type": "object",
+    "properties": {
+     "online": {
+      "description": "是否在线",
+      "type": "boolean"
+     },
+     "good": {
+      "description": "状态是否良好",
+      "type": "boolean"
+     },
+     "stat": {
+      "description": "统计信息",
+      "type": "object"
+     }
+    },
+    "required": [
+     "online",
+     "good",
+     "stat"
+    ],
+    "description": "业务数据"
+   },
+   "SetGroupWholeBanData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupBanData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupKickData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupAdminData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupNameData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetGroupCardData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "GetImageData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "file": {
+      "description": "本地路径",
+      "type": "string"
+     },
+     "url": {
+      "description": "下载URL",
+      "type": "string"
+     },
+     "file_size": {
+      "description": "文件大小",
+      "type": "string"
+     },
+     "file_name": {
+      "description": "文件名",
+      "type": "string"
+     },
+     "base64": {
+      "description": "Base64编码",
+      "type": "string"
+     }
+    }
+   },
+   "GetRecordData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "file": {
+      "description": "本地路径",
+      "type": "string"
+     },
+     "url": {
+      "description": "下载URL",
+      "type": "string"
+     },
+     "file_size": {
+      "description": "文件大小",
+      "type": "string"
+     },
+     "file_name": {
+      "description": "文件名",
+      "type": "string"
+     },
+     "base64": {
+      "description": "Base64编码",
+      "type": "string"
+     }
+    }
+   },
+   "SetMsgEmojiLikeData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetCookiesData": {
+    "type": "object",
+    "properties": {
+     "cookies": {
+      "description": "Cookies",
+      "type": "string"
+     },
+     "bkn": {
+      "description": "CSRF Token",
+      "type": "string"
+     }
+    },
+    "required": [
+     "cookies",
+     "bkn"
+    ],
+    "description": "业务数据"
+   },
+   "SetOnlineStatusData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "GetRobotUinRangeData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {}
+   },
+   "GetFriendsWithCategoryData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "categoryId": {
+       "description": "分组ID",
+       "type": "number"
+      },
+      "categoryName": {
+       "description": "分组名称",
+       "type": "string"
+      },
+      "categoryMbCount": {
+       "description": "分组内好友数量",
+       "type": "number"
+      },
+      "buddyList": {
+       "description": "好友列表",
+       "type": "array",
+       "items": {
+        "$ref": "#/components/schemas/OB11User"
+       }
+      }
+     },
+     "required": [
+      "categoryId",
+      "categoryName",
+      "categoryMbCount",
+      "buddyList"
+     ]
+    }
+   },
+   "DeleteFriendData": {
+    "description": "业务数据"
+   },
+   "CheckUrlSafelyData": {
+    "type": "object",
+    "properties": {
+     "level": {
+      "description": "安全等级 (1: 安全, 2: 未知, 3: 危险)",
+      "type": "number"
+     }
+    },
+    "required": [
+     "level"
+    ],
+    "description": "业务数据"
+   },
+   "GetOnlineClientsData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {}
+   },
+   "OcrImageData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "OcrImageLegacyData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetGroupHonorInfoData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "group_id": {
+      "description": "群号",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "current_talkative": {
+      "description": "当前龙王",
+      "type": "object",
+      "patternProperties": {
+       "^(.*)$": {}
+      }
+     },
+     "talkative_list": {
+      "description": "龙王列表",
+      "type": "array",
+      "items": {}
+     },
+     "performer_list": {
+      "description": "群聊之火列表",
+      "type": "array",
+      "items": {}
+     },
+     "legend_list": {
+      "description": "群聊炽热列表",
+      "type": "array",
+      "items": {}
+     },
+     "emotion_list": {
+      "description": "快乐源泉列表",
+      "type": "array",
+      "items": {}
+     },
+     "strong_newbie_list": {
+      "description": "冒尖小春笋列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "group_id",
+     "current_talkative",
+     "talkative_list",
+     "performer_list",
+     "legend_list",
+     "emotion_list",
+     "strong_newbie_list"
+    ]
+   },
+   "SendGroupNoticeData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetGroupNoticeData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "sender_id": {
+       "description": "发送者QQ",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "publish_time": {
+       "description": "发布时间",
+       "type": "number"
+      },
+      "notice_id": {
+       "description": "公告ID",
+       "type": "string"
+      },
+      "message": {
+       "description": "公告内容",
+       "type": "object",
+       "properties": {
+        "text": {
+         "description": "文本内容",
+         "type": "string"
+        },
+        "image": {
+         "description": "图片列表",
+         "type": "array",
+         "items": {}
+        },
+        "images": {
+         "description": "图片列表",
+         "type": "array",
+         "items": {}
+        }
+       },
+       "required": [
+        "text",
+        "image",
+        "images"
+       ]
+      },
+      "settings": {
+       "description": "设置项",
+       "type": "object"
+      },
+      "read_num": {
+       "description": "阅读数",
+       "type": "number"
+      }
+     },
+     "required": [
+      "sender_id",
+      "publish_time",
+      "notice_id",
+      "message"
+     ]
+    }
+   },
+   "GetEssenceMsgListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "msg_seq": {
+       "description": "消息序号",
+       "type": "number"
+      },
+      "msg_random": {
+       "description": "消息随机数",
+       "type": "number"
+      },
+      "sender_id": {
+       "description": "发送者QQ",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "sender_nick": {
+       "description": "发送者昵称",
+       "type": "string"
+      },
+      "operator_id": {
+       "description": "操作者QQ",
+       "type": "number"
+      },
+      "operator_nick": {
+       "description": "操作者昵称",
+       "type": "string"
+      },
+      "message_id": {
+       "description": "消息ID",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "operator_time": {
+       "description": "操作时间",
+       "type": "number"
+      },
+      "content": {
+       "description": "消息内容",
+       "type": "array",
+       "items": {}
+      }
+     },
+     "required": [
+      "msg_seq",
+      "msg_random",
+      "sender_id",
+      "sender_nick",
+      "operator_id",
+      "operator_nick",
+      "message_id",
+      "operator_time",
+      "content"
+     ]
+    }
+   },
+   "GetGroupAtAllRemainData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "can_at_all": {
+      "description": "是否可以艾特全体",
+      "type": "boolean"
+     },
+     "remain_at_all_count_for_group": {
+      "description": "群艾特全体剩余次数",
+      "type": "number"
+     },
+     "remain_at_all_count_for_uin": {
+      "description": "个人艾特全体剩余次数",
+      "type": "number"
+     }
+    },
+    "required": [
+     "can_at_all",
+     "remain_at_all_count_for_group",
+     "remain_at_all_count_for_uin"
+    ]
+   },
+   "SendForwardMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "SendGroupForwardMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "SendPrivateForwardMsgData": {
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "res_id": {
+      "description": "转发消息的 res_id",
+      "type": "string"
+     },
+     "forward_id": {
+      "description": "转发消息的 forward_id",
+      "type": "string"
+     }
+    },
+    "required": [
+     "message_id"
+    ],
+    "description": "业务数据"
+   },
+   "GetStrangerInfoData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "user_id": {
+      "description": "用户QQ",
+      "type": "number",
+      "x-go-type": "int64"
+     },
+     "uid": {
+      "description": "UID",
+      "type": "string"
+     },
+     "nickname": {
+      "description": "昵称",
+      "type": "string"
+     },
+     "age": {
+      "description": "年龄",
+      "type": "number"
+     },
+     "qid": {
+      "description": "QID",
+      "type": "string"
+     },
+     "qqLevel": {
+      "description": "QQ等级",
+      "type": "number"
+     },
+     "sex": {
+      "description": "性别",
+      "type": "string"
+     },
+     "long_nick": {
+      "description": "个性签名",
+      "type": "string"
+     },
+     "reg_time": {
+      "description": "注册时间",
+      "type": "number"
+     },
+     "is_vip": {
+      "description": "是否VIP",
+      "type": "boolean"
+     },
+     "is_years_vip": {
+      "description": "是否年费VIP",
+      "type": "boolean"
+     },
+     "vip_level": {
+      "description": "VIP等级",
+      "type": "number"
+     },
+     "remark": {
+      "description": "备注",
+      "type": "string"
+     },
+     "status": {
+      "description": "状态",
+      "type": "number"
+     },
+     "login_days": {
+      "description": "登录天数",
+      "type": "number",
+      "x-go-type": "int64"
+     }
+    },
+    "required": [
+     "user_id",
+     "uid",
+     "nickname",
+     "age",
+     "qid",
+     "qqLevel",
+     "sex",
+     "long_nick",
+     "reg_time",
+     "is_vip",
+     "is_years_vip",
+     "vip_level",
+     "remark",
+     "status",
+     "login_days"
+    ]
+   },
+   "DownloadFileData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "file": {
+      "description": "文件路径",
+      "type": "string"
+     }
+    },
+    "required": [
+     "file"
+    ]
+   },
+   "GetGuildListData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "MarkMsgAsReadData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "UploadGroupFileData": {
+    "type": "object",
+    "properties": {
+     "file_id": {
+      "description": "文件 ID",
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "required": [
+     "file_id"
+    ],
+    "description": "业务数据"
+   },
+   "GetGroupMsgHistoryData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "messages": {
+      "description": "消息列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "messages"
+    ]
+   },
+   "GetForwardMsgData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "messages": {
+      "description": "消息列表",
+      "type": "array",
+      "items": {}
+     }
+    }
+   },
+   "GetFriendMsgHistoryData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "messages": {
+      "description": "消息列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "messages"
+    ]
+   },
+   "HandleQuickOperationLegacyData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetGroupIgnoredNotifiesData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "invited_requests": {
+      "description": "邀请请求列表",
+      "type": "array",
+      "items": {}
+     },
+     "InvitedRequest": {
+      "description": "邀请请求列表",
+      "type": "array",
+      "items": {}
+     },
+     "join_requests": {
+      "description": "加入请求列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "invited_requests",
+     "InvitedRequest",
+     "join_requests"
+    ]
+   },
+   "DeleteEssenceMsgData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetEssenceMsgData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetRecentContactData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "lastestMsg": {
+       "description": "最后一条消息",
+       "type": "object"
+      },
+      "peerUin": {
+       "description": "对象QQ",
+       "type": "string"
+      },
+      "remark": {
+       "description": "备注",
+       "type": "string"
+      },
+      "msgTime": {
+       "description": "消息时间",
+       "type": "string"
+      },
+      "chatType": {
+       "description": "聊天类型",
+       "type": "number"
+      },
+      "msgId": {
+       "description": "消息ID",
+       "type": "string"
+      },
+      "sendNickName": {
+       "description": "发送者昵称",
+       "type": "string"
+      },
+      "sendMemberName": {
+       "description": "发送者群名片",
+       "type": "string"
+      },
+      "peerName": {
+       "description": "对象名称",
+       "type": "string"
+      }
+     },
+     "required": [
+      "lastestMsg",
+      "peerUin",
+      "remark",
+      "msgTime",
+      "chatType",
+      "msgId",
+      "sendNickName",
+      "sendMemberName",
+      "peerName"
+     ]
+    }
+   },
+   "GetProfileLikeData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "uid": {
+      "description": "用户UID",
+      "type": "string"
+     },
+     "time": {
+      "description": "时间",
+      "type": "string"
+     },
+     "favoriteInfo": {
+      "type": "object",
+      "properties": {
+       "userInfos": {
+        "description": "点赞用户信息",
+        "type": "array",
+        "items": {}
+       },
+       "total_count": {
+        "description": "总点赞数",
+        "type": "number"
+       },
+       "last_time": {
+        "description": "最后点赞时间",
+        "type": "number"
+       },
+       "today_count": {
+        "description": "今日点赞数",
+        "type": "number"
+       }
+      },
+      "required": [
+       "userInfos",
+       "total_count",
+       "last_time",
+       "today_count"
+      ]
+     },
+     "voteInfo": {
+      "type": "object",
+      "properties": {
+       "total_count": {
+        "description": "总点赞数",
+        "type": "number"
+       },
+       "new_count": {
+        "description": "新增点赞数",
+        "type": "number"
+       },
+       "new_nearby_count": {
+        "description": "新增附近点赞数",
+        "type": "number"
+       },
+       "last_visit_time": {
+        "description": "最后访问时间",
+        "type": "number"
+       },
+       "userInfos": {
+        "description": "点赞用户信息",
+        "type": "array",
+        "items": {}
+       }
+      },
+      "required": [
+       "total_count",
+       "new_count",
+       "new_nearby_count",
+       "last_visit_time",
+       "userInfos"
+      ]
+     }
+    },
+    "required": [
+     "uid",
+     "time",
+     "favoriteInfo",
+     "voteInfo"
+    ]
+   },
+   "SetGroupPortraitData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "result": {
+      "type": "number"
+     },
+     "errMsg": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "result",
+     "errMsg"
+    ]
+   },
+   "FetchCustomFaceData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "string"
+    }
+   },
+   "FetchCustomFaceDetailData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "AddCustomFaceData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DeleteCustomFaceData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SetCustomFaceDescData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "UploadPrivateFileData": {
+    "type": "object",
+    "properties": {
+     "file_id": {
+      "description": "文件 ID",
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "required": [
+     "file_id"
+    ],
+    "description": "业务数据"
+   },
+   "GetGuildServiceProfileData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetModelShowData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "variants": {
+       "type": "object",
+       "properties": {
+        "model_show": {
+         "description": "显示名称",
+         "type": "string"
+        },
+        "need_pay": {
+         "description": "是否需要付费",
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "model_show",
+        "need_pay"
+       ]
+      }
+     },
+     "required": [
+      "variants"
+     ]
+    }
+   },
+   "SetModelShowData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "SetInputStatusData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetCsrfTokenData": {
+    "type": "object",
+    "properties": {
+     "token": {
+      "description": "CSRF Token",
+      "type": "number"
+     }
+    },
+    "required": [
+     "token"
+    ],
+    "description": "业务数据"
+   },
+   "GetCredentialsData": {
+    "type": "object",
+    "properties": {
+     "cookies": {
+      "description": "Cookies",
+      "type": "string"
+     },
+     "token": {
+      "description": "CSRF Token",
+      "type": "number"
+     }
+    },
+    "required": [
+     "cookies",
+     "token"
+    ],
+    "description": "业务数据"
+   },
+   "DelGroupNoticeData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DeleteGroupFileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "CreateGroupFileFolderData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "result": {
+      "description": "操作结果",
+      "type": "object"
+     },
+     "groupItem": {
+      "description": "群项信息",
+      "type": "object"
+     }
+    },
+    "required": [
+     "result",
+     "groupItem"
+    ]
+   },
+   "DeleteGroupFolderData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetGroupFileSystemInfoData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "file_count": {
+      "description": "文件总数",
+      "type": "number"
+     },
+     "limit_count": {
+      "description": "文件上限",
+      "type": "number"
+     },
+     "used_space": {
+      "description": "已使用空间",
+      "type": "number"
+     },
+     "total_space": {
+      "description": "总空间",
+      "type": "number"
+     }
+    },
+    "required": [
+     "file_count",
+     "limit_count",
+     "used_space",
+     "total_space"
+    ]
+   },
+   "GetGroupFilesByFolderData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "files": {
+      "description": "文件列表",
+      "type": "array",
+      "items": {}
+     },
+     "folders": {
+      "description": "文件夹列表",
+      "type": "array",
+      "items": {}
+     }
+    },
+    "required": [
+     "files",
+     "folders"
+    ]
+   },
+   "NcGetPacketStatusData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "SetRestartData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GroupPokeData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "FriendPokeData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "NcGetUserStatusData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "status": {
+      "description": "在线状态",
+      "type": "number"
+     },
+     "ext_status": {
+      "description": "扩展状态",
+      "type": "number"
+     }
+    },
+    "required": [
+     "status",
+     "ext_status"
+    ]
+   },
+   "NcGetRkeyData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {}
+   },
+   "SetGroupSpecialTitleData": {
+    "description": "业务数据",
+    "type": "null"
+   },
+   "SetDiyOnlineStatusData": {
+    "description": "业务数据",
+    "type": "string"
+   },
+   "GetGroupShutListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {}
+   },
+   "GetGroupFileUrlData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "url": {
+      "description": "文件下载链接",
+      "type": "string"
+     }
+    }
+   },
+   "GetMiniAppArkData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "data": {
+      "description": "Ark数据",
+      "type": "object"
+     }
+    },
+    "required": [
+     "data"
+    ]
+   },
+   "GetAiRecordData": {
+    "description": "业务数据",
+    "type": "string"
+   },
+   "SendGroupAiRecordData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "message_id": {
+      "description": "消息ID",
+      "type": "number",
+      "x-go-type": "int64"
+     }
+    },
+    "required": [
+     "message_id"
+    ]
+   },
+   "GetAiCharactersData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "type": {
+       "description": "角色类型",
+       "type": "string"
+      },
+      "characters": {
+       "description": "角色列表",
+       "type": "array",
+       "items": {
+        "type": "object",
+        "properties": {
+         "character_id": {
+          "description": "角色ID",
+          "type": "string"
+         },
+         "character_name": {
+          "description": "角色名称",
+          "type": "string"
+         },
+         "preview_url": {
+          "description": "预览URL",
+          "type": "string"
+         }
+        },
+        "required": [
+         "character_id",
+         "character_name",
+         "preview_url"
+        ]
+       }
+      }
+     },
+     "required": [
+      "type",
+      "characters"
+     ]
+    }
+   },
+   "SendPacketData": {
+    "description": "业务数据",
+    "anyOf": [
+     {
+      "description": "响应十六进制数据",
+      "type": "string"
+     },
+     {
+      "type": "null"
+     }
+    ]
+   },
+   "SendPokeData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetGroupSystemMsgData": {
+    "type": "object",
+    "properties": {
+     "invited_requests": {
+      "description": "进群邀请列表",
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OB11Notify"
+      }
+     },
+     "InvitedRequest": {
+      "description": "进群邀请列表 (兼容)",
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OB11Notify"
+      }
+     },
+     "join_requests": {
+      "description": "进群申请列表",
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/OB11Notify"
+      }
+     }
+    },
+    "required": [
+     "invited_requests",
+     "InvitedRequest",
+     "join_requests"
+    ],
+    "description": "业务数据"
+   },
+   "BotExitData": {
+    "type": "object",
+    "properties": {},
+    "description": "业务数据"
+   },
+   "ClickInlineKeyboardButtonData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetPrivateFileUrlData": {
+    "description": "业务数据",
+    "type": "object",
+    "properties": {
+     "url": {
+      "description": "文件下载链接",
+      "type": "string"
+     }
+    }
+   },
+   "GetUnidirectionalFriendListData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "uin": {
+       "description": "QQ号",
+       "type": "number"
+      },
+      "uid": {
+       "description": "用户UID",
+       "type": "string"
+      },
+      "nick_name": {
+       "description": "昵称",
+       "type": "string"
+      },
+      "age": {
+       "description": "年龄",
+       "type": "number"
+      },
+      "source": {
+       "description": "来源",
+       "type": "string"
+      }
+     },
+     "required": [
+      "uin",
+      "uid",
+      "nick_name",
+      "age",
+      "source"
+     ]
+    }
+   },
+   "CleanCacheData": {
+    "type": "null",
+    "description": "业务数据"
+   },
+   "GetGroupIgnoreAddRequestData": {
+    "description": "业务数据",
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "request_id": {
+       "description": "请求ID",
+       "type": "number"
+      },
+      "invitor_uin": {
+       "description": "邀请者QQ",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "invitor_nick": {
+       "description": "邀请者昵称",
+       "type": "string"
+      },
+      "group_id": {
+       "description": "群号",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "message": {
+       "description": "验证信息",
+       "type": "string"
+      },
+      "group_name": {
+       "description": "群名称",
+       "type": "string"
+      },
+      "checked": {
+       "description": "是否已处理",
+       "type": "boolean"
+      },
+      "actor": {
+       "description": "处理者QQ",
+       "type": "number",
+       "x-go-type": "int64"
+      },
+      "requester_nick": {
+       "description": "请求者昵称",
+       "type": "string"
+      }
+     },
+     "required": [
+      "request_id",
+      "invitor_uin",
+      "group_id",
+      "checked",
+      "actor"
+     ]
+    }
+   },
+   "GetCollectionListData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "CreateFlashTaskData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetFlashFileListData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetFlashFileUrlData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SendFlashMsgData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetShareLinkData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetFilesetInfoData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetOnlineFileMsgData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SendOnlineFileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "SendOnlineFolderData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "ReceiveOnlineFileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "RefuseOnlineFileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "CancelOnlineFileData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "DownloadFilesetData": {
+    "description": "业务数据",
+    "type": "object"
+   },
+   "GetFilesetIdData": {
+    "type": "object",
+    "properties": {
+     "fileset_id": {
+      "description": "文件集 ID",
+      "type": "string"
+     }
+    },
+    "required": [
+     "fileset_id"
+    ],
+    "description": "业务数据"
    }
   },
   "examples": {

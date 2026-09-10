@@ -64,13 +64,13 @@ type Event struct {
 
 	// [NoticeGroupRecall]
 	// [NoticeFriendRecall]
-	NoticeRecall_Lgr
+	NoticeRecall_Nc
 
 	// [NoticeNotify]
 	TargetId int `json:"target_id" mapstructure:"target_id"`
 
 	// [NoticeNotifyPoke]
-	NoticeNotifyPoke_Lgr
+	NoticeNotifyPoke_Nc
 
 	// [NoticeNotifyLuckyKing]
 
@@ -85,7 +85,7 @@ type Event struct {
 	// [RequestFriend]
 
 	// [RequestGroup]
-	RequestGroup_Lgr
+	RequestGroup_Nc
 
 	// [MetaEventBase]
 	MetaEventType string `json:"meta_event_type" mapstructure:"meta_event_type"` // [L2] 元事件类型

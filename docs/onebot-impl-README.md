@@ -8,10 +8,11 @@
 - [LuckyLilliaBot (LLBot)](./onebot-impl-luckylilliabot.md)
 - [SnowLuma](./onebot-impl-snowluma.md)
 
-另有两份与 EasyOnebot 重构直接相关的文档:
+另有三份与 EasyOnebot 重构直接相关的文档:
 
 - [NapCat 的 OpenAPI 与 EasyOnebot 对齐指南](./onebot-impl-napcat-openapi.md) —— NapCat 每版自动生成 OpenAPI 3.1.0 (175 个端点), 含 spec 位置、坑点与四步对齐方案
 - [NapCat OneBot 11 端点全量索引](./onebot-napcat-endpoints.md) —— 175 个端点按 tag 分组, 标注 EasyOnebot 是否已封装 (已封装 68, 未封装 107)
+- [NapCat 与 OneBot 11 标准的差异备忘](./napcat-protocol-differences.md) —— 实测到的字段语义差异 (poke 的 `sender_id`、合并转发节点、ID 类型、无 echo 推送), 以及各自由谁负责处理
 
 数据采集时间: **2026-09-10** (本地浅克隆 depth=200 + GitHub REST API + Docker Hub API)。
 

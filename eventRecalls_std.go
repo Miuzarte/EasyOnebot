@@ -30,7 +30,7 @@ type eventRecalls struct {
 	metaEventLifecycle []func(*event.MetaEventLifecycle) // 生命周期
 	metaEventHeartbeat []func(*event.MetaEventHeartbeat) // 心跳包
 
-	eventRecalls_Lgr
+	eventRecalls_Nc
 }
 
 // OnMessagePrivate 处理私聊消息
@@ -249,6 +249,6 @@ func (b *Bot) doEventRecall(typedEvent any) {
 			f(e)
 		}
 	default:
-		b.doEventRecall_Lgr(typedEvent)
+		b.doEventRecall_Nc(typedEvent)
 	}
 }

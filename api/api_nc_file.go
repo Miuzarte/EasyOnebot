@@ -3,7 +3,7 @@ package api
 /*
 GetPrivateFileUrl 获取私聊文件资源链接
 
-https://lagrange-onebot.apifox.cn/241662646e0
+见 NapCat 端点 [get_private_file_url] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -36,7 +36,7 @@ type GetPrivateFileUrlResp struct {
 	Url string `json:"url" mapstructure:"url"` // 文件下载链接
 }
 
-func (c LgrCaller) GetPrivateFileUrl(userId int, fileId string, fileHash ...string) (*GetPrivateFileUrlResp, error) {
+func (c NcCaller) GetPrivateFileUrl(userId int, fileId string, fileHash ...string) (*GetPrivateFileUrlResp, error) {
 	err := validate.Struct(&validateGetPrivateFileUrl{userId, fileId, fileHash})
 	if err != nil {
 		return nil, err
@@ -47,7 +47,7 @@ func (c LgrCaller) GetPrivateFileUrl(userId int, fileId string, fileHash ...stri
 /*
 GetGroupFileUrl 获取群文件资源链接
 
-https://lagrange-onebot.apifox.cn/236972687e0
+见 NapCat 端点 [get_group_file_url] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -81,7 +81,7 @@ type GetGroupFileUrlResp struct {
 }
 
 // GetGroupFileUrl 获取群文件资源链接
-func (c LgrCaller) GetGroupFileUrl(groupId int, fileId, busid string) (*GetGroupFileUrlResp, error) {
+func (c NcCaller) GetGroupFileUrl(groupId int, fileId, busid string) (*GetGroupFileUrlResp, error) {
 	err := validate.Struct(&validateGetGroupFileUrl{groupId, fileId, busid})
 	if err != nil {
 		return nil, err
@@ -92,7 +92,7 @@ func (c LgrCaller) GetGroupFileUrl(groupId int, fileId, busid string) (*GetGroup
 /*
 GetGroupRootFiles 获取群根目录文件列表
 
-https://lagrange-onebot.apifox.cn/236973502e0
+见 NapCat 端点 [get_group_root_files] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -136,7 +136,7 @@ type LgrFolder struct {
 }
 
 // GetGroupRootFiles 获取群根目录文件列表
-func (c LgrCaller) GetGroupRootFiles(groupId int) (*GetGroupRootFilesResp, error) {
+func (c NcCaller) GetGroupRootFiles(groupId int) (*GetGroupRootFilesResp, error) {
 	err := validate.idGt0(groupId)
 	if err != nil {
 		return nil, err
@@ -147,7 +147,7 @@ func (c LgrCaller) GetGroupRootFiles(groupId int) (*GetGroupRootFilesResp, error
 /*
 GetGroupFilesByFolder 获取群子目录文件列表
 
-https://lagrange-onebot.apifox.cn/236974042e0
+见 NapCat 端点 [get_group_files_by_folder] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -172,7 +172,7 @@ type GetGroupFilesByFolderResp struct {
 }
 
 // GetGroupFilesByFolder 获取群子目录文件列表
-func (c LgrCaller) GetGroupFilesByFolder(groupId int, folderId string) (*GetGroupFilesByFolderResp, error) {
+func (c NcCaller) GetGroupFilesByFolder(groupId int, folderId string) (*GetGroupFilesByFolderResp, error) {
 	err := validate.Struct(&validateGetGroupFilesByFolder{groupId, folderId})
 	if err != nil {
 		return nil, err
@@ -183,7 +183,7 @@ func (c LgrCaller) GetGroupFilesByFolder(groupId int, folderId string) (*GetGrou
 /*
 MoveGroupFile 移动群文件
 
-https://lagrange-onebot.apifox.cn/236974078e0
+见 NapCat 端点 [move_group_file] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -208,7 +208,7 @@ type validateMoveGroupFile struct {
 	TargetDir string `validate:"required"`
 }
 
-func (c LgrCaller) MoveGroupFile(groupId int, fileId, parentDir, targetDir string) error {
+func (c NcCaller) MoveGroupFile(groupId int, fileId, parentDir, targetDir string) error {
 	err := validate.Struct(&validateMoveGroupFile{groupId, fileId, parentDir, targetDir})
 	if err != nil {
 		return err
@@ -219,7 +219,7 @@ func (c LgrCaller) MoveGroupFile(groupId int, fileId, parentDir, targetDir strin
 /*
 DeleteGroupFile 删除群文件
 
-https://lagrange-onebot.apifox.cn/236974086e0
+见 NapCat 端点 [delete_group_file] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -238,7 +238,7 @@ type validateDeleteGroupFile struct {
 	FileId  string `validate:"required"`
 }
 
-func (c LgrCaller) DeleteGroupFile(groupId int, fileId string) error {
+func (c NcCaller) DeleteGroupFile(groupId int, fileId string) error {
 	err := validate.Struct(&validateDeleteGroupFile{groupId, fileId})
 	if err != nil {
 		return err
@@ -249,7 +249,7 @@ func (c LgrCaller) DeleteGroupFile(groupId int, fileId string) error {
 /*
 CreateGroupFileFolder 创建群文件文件夹
 
-https://lagrange-onebot.apifox.cn/236974237e0
+见 NapCat 端点 [create_group_file_folder] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -272,7 +272,7 @@ type validateCreateGroupFileFolder struct {
 	ParentId string `validate:"omitempty"`
 }
 
-func (c LgrCaller) CreateGroupFileFolder(groupId int, fileId, parentId string) error {
+func (c NcCaller) CreateGroupFileFolder(groupId int, fileId, parentId string) error {
 	err := validate.Struct(&validateCreateGroupFileFolder{groupId, fileId, parentId})
 	if err != nil {
 		return err
@@ -282,8 +282,6 @@ func (c LgrCaller) CreateGroupFileFolder(groupId int, fileId, parentId string) e
 
 /*
 DeleteGroupFileFolder 删除群文件文件夹
-
-https://lagrange-onebot.apifox.cn/236974248e0
 
 参数:
 
@@ -302,7 +300,7 @@ type validateDeleteGroupFileFolder struct {
 	FolderId string `validate:"required"`
 }
 
-func (c LgrCaller) DeleteGroupFileFolder(groupId int, folderId string) error {
+func (c NcCaller) DeleteGroupFileFolder(groupId int, folderId string) error {
 	err := validate.Struct(&validateDeleteGroupFileFolder{groupId, folderId})
 	if err != nil {
 		return err
@@ -312,8 +310,6 @@ func (c LgrCaller) DeleteGroupFileFolder(groupId int, folderId string) error {
 
 /*
 RenameGroupFileFolder 重命名群文件文件夹名
-
-https://lagrange-onebot.apifox.cn/236974260e0
 
 参数:
 
@@ -335,7 +331,7 @@ type validateRenameGroupFileFolder struct {
 	NewFolderName string `validate:"required"`
 }
 
-func (c LgrCaller) RenameGroupFileFolder(groupId int, folderId, newFolderName string) error {
+func (c NcCaller) RenameGroupFileFolder(groupId int, folderId, newFolderName string) error {
 	err := validate.Struct(&validateRenameGroupFileFolder{groupId, folderId, newFolderName})
 	if err != nil {
 		return err
@@ -346,7 +342,7 @@ func (c LgrCaller) RenameGroupFileFolder(groupId int, folderId, newFolderName st
 /*
 UploadGroupFile 上传群文件
 
-https://lagrange-onebot.apifox.cn/236974303e0
+见 NapCat 端点 [upload_group_file] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -372,7 +368,7 @@ type validateUploadGroupFile struct {
 }
 
 // UploadGroupFile 上传群文件
-func (c LgrCaller) UploadGroupFile(groupId int, file, name, folder string) error {
+func (c NcCaller) UploadGroupFile(groupId int, file, name, folder string) error {
 	err := validate.Struct(&validateUploadGroupFile{groupId, file, name, folder})
 	if err != nil {
 		return err
@@ -383,7 +379,7 @@ func (c LgrCaller) UploadGroupFile(groupId int, file, name, folder string) error
 /*
 UploadPrivateFile 私聊发送文件
 
-https://lagrange-onebot.apifox.cn/236974322e0
+见 NapCat 端点 [upload_private_file] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -406,7 +402,7 @@ type validateUploadPrivateFile struct {
 }
 
 // UploadPrivateFile 私聊发送文件
-func (c LgrCaller) UploadPrivateFile(userId int, file, name string) error {
+func (c NcCaller) UploadPrivateFile(userId int, file, name string) error {
 	err := validate.Struct(&validateUploadPrivateFile{userId, file, name})
 	if err != nil {
 		return err

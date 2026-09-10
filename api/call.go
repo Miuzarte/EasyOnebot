@@ -17,9 +17,9 @@ type Callable interface {
 type (
 	// [StdCaller] implements OneBot standard API
 	StdCaller struct{ Callable }
-	// [LgrCaller] implements Lagrange extension API
-	LgrCaller struct{ Callable }
 	// [NcCaller] implements NapCat extension API
+	//
+	// 包含 NapCat 兼容的 Lagrange 扩展端点 (合并转发、戳一戳、群文件等)。
 	NcCaller struct{ Callable }
 )
 

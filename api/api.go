@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-var echoSeq uintptr
+var echoSeq atomic.Uintptr
 
 // NewReq 创建一个 API 调用
 func NewReq(action string, params map[string]any) *Request {
@@ -18,7 +18,7 @@ func NewReq(action string, params map[string]any) *Request {
 
 	ac.Echo = ac.Action +
 		"_" + strconv.FormatInt(time.Now().UnixNano(), 10) +
-		"_" + strconv.FormatUint(uint64(atomic.AddUintptr(&echoSeq, 1)), 16)
+		"_" + strconv.FormatUint(uint64(echoSeq.Add(1)), 16)
 
 	return ac
 }

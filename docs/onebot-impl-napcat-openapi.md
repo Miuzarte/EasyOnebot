@@ -2,7 +2,7 @@
 
 - 采集时间: 2026-09-10
 - 目标: 说明 NapCat 是否有机器可读的 API 定义, 以及 EasyOnebot 重构时如何以它为准对齐
-- 相关文档: [端点全量索引](./onebot-napcat-endpoints.md) | [四家协议端选型对比](./onebot-impl-README.md)
+- 相关文档: [端点全量索引](./onebot-napcat-endpoints.md) | [四家协议端选型对比](./onebot-impl-README.md) | [NapCat 与 OB11 标准的差异备忘](./napcat-protocol-differences.md)
 
 ## 一 结论: 有, 而且是官方自动生成并随版本发布的
 

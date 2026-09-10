@@ -3,7 +3,7 @@ package api
 /*
 FetchCustomFace 获取自定义Face
 
-https://lagrange-onebot.apifox.cn/236974550e0
+见 NapCat 端点 [fetch_custom_face] (docs/onebot-napcat-endpoints.md)
 */
 func FetchCustomFace() *Request {
 	return NewReq("fetch_custom_face", nil)
@@ -12,14 +12,12 @@ func FetchCustomFace() *Request {
 type FetchCustomFaceResp = []string // 表情 Url 列表
 
 // FetchCustomFace 获取自定义Face
-func (c LgrCaller) FetchCustomFace() (FetchCustomFaceResp, error) {
+func (c NcCaller) FetchCustomFace() (FetchCustomFaceResp, error) {
 	return DecodeResponseSlice[FetchCustomFaceResp](c.PostReq(FetchCustomFace()))
 }
 
 /*
 FetchMFaceKey 获取mface key
-
-https://lagrange-onebot.apifox.cn/236974658e0
 
 参数:
 
@@ -34,7 +32,7 @@ func FetchMFaceKey(emojiIds []string) *Request {
 type FetchMFaceKeyResp = []string // 商城表情 Key 列表
 
 // FetchMFaceKey 获取mface key
-func (c LgrCaller) FetchMFaceKey(emojiIds []string) (FetchCustomFaceResp, error) {
+func (c NcCaller) FetchMFaceKey(emojiIds []string) (FetchCustomFaceResp, error) {
 	err := validate.require(emojiIds)
 	if err != nil {
 		return nil, err
@@ -44,8 +42,6 @@ func (c LgrCaller) FetchMFaceKey(emojiIds []string) (FetchCustomFaceResp, error)
 
 /*
 JoinFriendEmojiChain 加入好友表情接龙
-
-https://lagrange-onebot.apifox.cn/236974739e0
 
 参数:
 
@@ -68,7 +64,7 @@ type validateJoinFriendEmojiChain struct {
 }
 
 // JoinFriendEmojiChain 加入好友表情接龙
-func (c LgrCaller) JoinFriendEmojiChain(userId, messageId, emojiId int) error {
+func (c NcCaller) JoinFriendEmojiChain(userId, messageId, emojiId int) error {
 	err := validate.Struct(&validateJoinFriendEmojiChain{userId, messageId, emojiId})
 	if err != nil {
 		return err
@@ -79,7 +75,7 @@ func (c LgrCaller) JoinFriendEmojiChain(userId, messageId, emojiId int) error {
 /*
 GetAiCharacters 获取群 Ai 语音可用声色列表
 
-https://lagrange-onebot.apifox.cn/236974974e0
+见 NapCat 端点 [get_ai_characters] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -116,7 +112,7 @@ type Character struct {
 }
 
 // GetAiCharacters 获取群 Ai 语音可用声色列表
-func (c LgrCaller) GetAiCharacters(groupId int, chatType ...int) (GetAiCharactersResp, error) {
+func (c NcCaller) GetAiCharacters(groupId int, chatType ...int) (GetAiCharactersResp, error) {
 	err := validate.Struct(&validateGetAiCharacters{groupId, chatType})
 	if err != nil {
 		return nil, err
@@ -125,16 +121,14 @@ func (c LgrCaller) GetAiCharacters(groupId int, chatType ...int) (GetAiCharacter
 }
 
 // func GetCookies(domain string) *Request
-// std: [GetCookies] https://lagrange-onebot.apifox.cn/236975000e0
+// 见 NapCat 端点 [get_credentials] (docs/onebot-napcat-endpoints.md)
 // func GetCredentials(domain string) *Request
-// std: [GetCredentials] https://lagrange-onebot.apifox.cn/236975179e0
+// 见 NapCat 端点 [get_csrf_token] (docs/onebot-napcat-endpoints.md)
 // func GetCsrfToken() *Request
-// std: [GetCsrfToken] https://lagrange-onebot.apifox.cn/236975210e0
+// std: [GetCsrfToken]
 
 /*
 JoinGroupEmojiChain 加入群聊表情接龙
-
-https://lagrange-onebot.apifox.cn/236975310e0
 
 参数:
 
@@ -157,7 +151,7 @@ type validateJoinGroupEmojiChain struct {
 }
 
 // JoinGroupEmojiChain 加入群聊表情接龙
-func (c LgrCaller) JoinGroupEmojiChain(groupId, messageId, emojiId int) error {
+func (c NcCaller) JoinGroupEmojiChain(groupId, messageId, emojiId int) error {
 	err := validate.Struct(&validateJoinGroupEmojiChain{groupId, messageId, emojiId})
 	if err != nil {
 		return err
@@ -168,7 +162,7 @@ func (c LgrCaller) JoinGroupEmojiChain(groupId, messageId, emojiId int) error {
 /*
 OcrImage OCR图像识别
 
-https://lagrange-onebot.apifox.cn/236975354e0
+见 NapCat 端点 [ocr_image] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -197,7 +191,7 @@ type Coordinate struct {
 }
 
 // OcrImage OCR图像识别
-func (c LgrCaller) OcrImage(image any) (*OcrImageResp, error) {
+func (c NcCaller) OcrImage(image any) (*OcrImageResp, error) {
 	err := validate.require(image)
 	if err != nil {
 		return nil, err
@@ -208,7 +202,7 @@ func (c LgrCaller) OcrImage(image any) (*OcrImageResp, error) {
 /*
 SetQqAvatar 设置QQ头像
 
-https://lagrange-onebot.apifox.cn/236975389e0
+见 NapCat 端点 [set_qq_avatar] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -221,7 +215,7 @@ func SetQqAvatar(file any) *Request {
 }
 
 // SetQqAvatar 设置QQ头像
-func (c LgrCaller) SetQqAvatar(file any) error {
+func (c NcCaller) SetQqAvatar(file any) error {
 	err := validate.require(file)
 	if err != nil {
 		return err
@@ -230,14 +224,14 @@ func (c LgrCaller) SetQqAvatar(file any) error {
 }
 
 // func SendLike(userId, times int) *Request
-// std: [SendLike] https://lagrange-onebot.apifox.cn/236975389e0
+// 见 NapCat 端点 [set_restart] (docs/onebot-napcat-endpoints.md)
 // func SetRestart() *Request
-// std: [SetRestart] https://lagrange-onebot.apifox.cn/236975407e0
+// 见 NapCat 端点 [delete_friend] (docs/onebot-napcat-endpoints.md)
 
 /*
 DeleteFriend 删除好友
 
-https://lagrange-onebot.apifox.cn/238992623e0
+见 NapCat 端点 [delete_friend] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -252,7 +246,7 @@ func DeleteFriend(userId int, block bool) *Request {
 }
 
 // DeleteFriend 删除好友
-func (c LgrCaller) DeleteFriend(userId int, block bool) error {
+func (c NcCaller) DeleteFriend(userId int, block bool) error {
 	err := validate.idGt0(userId)
 	if err != nil {
 		return err
@@ -263,7 +257,7 @@ func (c LgrCaller) DeleteFriend(userId int, block bool) error {
 /*
 GetRKey 获取rkey
 
-https://lagrange-onebot.apifox.cn/256115438e0
+见 NapCat 端点 [get_rkey] (docs/onebot-napcat-endpoints.md)
 */
 func GetRKey() *Request {
 	return NewReq("get_rkey", nil)
@@ -281,6 +275,6 @@ type Rkey struct {
 }
 
 // GetRKey 获取rkey
-func (c LgrCaller) GetRKey() (*GetRKeyResp, error) {
+func (c NcCaller) GetRKey() (*GetRKeyResp, error) {
 	return DecodeResponse[GetRKeyResp](c.PostReq(GetRKey()))
 }

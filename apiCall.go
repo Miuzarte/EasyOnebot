@@ -8,18 +8,27 @@ import (
 	"time"
 
 	"github.com/Miuzarte/EasyOnebot/api"
+	"github.com/Miuzarte/EasyOnebot/api/napcat"
 )
 
 // MixCaller combines different implementations
 type MixCaller struct {
 	Std api.StdCaller
-	Lgr api.LgrCaller
 	Nc  api.NcCaller
 }
 
 // Call returns a [MixCaller] to call OneBot APIs
 func (b *Bot) Call() MixCaller {
-	return MixCaller{api.StdCaller{Callable: b}, api.LgrCaller{Callable: b}, api.NcCaller{Callable: b}}
+	return MixCaller{api.StdCaller{Callable: b}, api.NcCaller{Callable: b}}
+}
+
+// NapCat 返回基于本连接的 NapCat 类型化调用器。
+//
+// 与 [MixCaller] 的区别: 这里的参数与响应都是 OpenAPI spec 生成的类型,
+// 响应 data 严格解码 (字段类型与 spec 不符时直接报错), 端点名来自 spec 查表。
+// 新代码优先用它; Call() 保留给 OneBot 11 标准端点的旧写法。
+func (b *Bot) NapCat() napcat.Caller {
+	return napcat.Caller{Poster: b}
 }
 
 // PostReq implements [api.Callable]

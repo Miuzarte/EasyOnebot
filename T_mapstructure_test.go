@@ -206,16 +206,15 @@ const myJson = `{
 }`
 
 func TestDecodeFromBytes(t *testing.T) {
-	input := any(
-		[]byte(myJson),
-	)
+	// mapstructure 不认 []byte, 要先过一遍 json
+	input := map[string]any{}
+	if err := json.Unmarshal([]byte(myJson), &input); err != nil {
+		t.Fatal(err)
+	}
 	output := map[string]any{}
-
-	err := mapstructure.Decode(input, &output)
-	if err != nil {
+	if err := mapstructure.Decode(input, &output); err != nil {
 		t.Error(err)
 	}
-
 	t.Logf("%#v\n", output)
 }
 

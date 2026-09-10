@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
 	"testing"
 	"time"
 
@@ -15,18 +16,39 @@ import (
 
 var rdb redisClient
 
-func init() {
-	rueidisClient, err := rueidis.NewClient(rueidis.ClientOption{
-		InitAddress:  []string{"192.168.1.104:6379"},
+// redisForTest 连接测试用 Redis, 不可达时直接 skip 而不是 panic
+//
+// 之前是在 init() 里连接并 panic, 导致任何测试文件都因为这台机器上
+// 192.168.1.104:6379 不可达而整个包跑不起来。
+func redisForTest(t *testing.T) redisClient {
+	t.Helper()
+	if rdb.Client != nil {
+		return rdb
+	}
+	addr := os.Getenv("EASYONEBOT_TEST_REDIS")
+	if addr == "" {
+		t.Skip("未设置 EASYONEBOT_TEST_REDIS, 跳过需要 Redis 的测试")
+	}
+	c, err := rueidis.NewClient(rueidis.ClientOption{
+		InitAddress:  []string{addr},
 		DisableCache: true, // Disable Client-Side Caching
 	})
 	if err != nil {
-		panic(err)
+		t.Skipf("需要可用的 Redis: %v", err)
 	}
-	rdb = redisClient{Client: rueidisClient}
+	// NewClient 是懒连接, 这里先 ping 一次, 不可达就 skip (否则后续操作会崩)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	if err := c.Do(ctx, c.B().Ping().Build()).Error(); err != nil {
+		c.Close()
+		t.Skipf("Redis %s 不可达: %v", addr, err)
+	}
+	rdb = redisClient{Client: c}
+	return rdb
 }
 
 func TestDelSample(t *testing.T) {
+	rdb := redisForTest(t)
 	const match = "sample:*"
 	var cursor uint64
 	for {
@@ -58,6 +80,7 @@ func TestDelSample(t *testing.T) {
 }
 
 func TestSet(t *testing.T) {
+	rdb := redisForTest(t)
 	rdb.set(t.Context(), "key", "value", 20*time.Second)
 }
 
@@ -90,6 +113,7 @@ var testMsgP = &event.MessagePrivate{
 }
 
 func TestJson(t *testing.T) {
+	rdb := redisForTest(t)
 	msgBefore := fmt.Sprintf("%+v", testMsgP)
 	t.Log(msgBefore)
 	data, err := json.Marshal(testMsgP)
@@ -122,6 +146,7 @@ func TestJson(t *testing.T) {
 }
 
 func TestSetMessagePrivate(t *testing.T) {
+	rdb := redisForTest(t)
 	before := fmt.Sprintf("%+v", testMsgP)
 	key := "message_private:" + itoa(testMsgP.UserId) + ":" + itoa(testMsgP.MessageId)
 	err := rdb.set(t.Context(), key, testMsgP, 0)
@@ -140,6 +165,7 @@ func TestSetMessagePrivate(t *testing.T) {
 }
 
 func TestHSet(t *testing.T) {
+	rdb := redisForTest(t)
 	// rdb.Client.HSet(context.Background(), "hash", "key", "value")
 	// rdb.Client.Expire(context.Background(), "hash", 20*time.Second)
 	rdb.Client.Do(context.Background(), rdb.Client.B().Hset().Key("hash").FieldValue().FieldValue("key", "value").Build())

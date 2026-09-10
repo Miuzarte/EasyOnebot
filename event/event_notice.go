@@ -32,10 +32,10 @@ type fileInfo struct {
 	// busid（目前不清楚有什么作用）
 	Busid int `json:"busid" mapstructure:"busid"`
 
-	fileInfo_Lgr
+	fileInfo_Nc
 }
 
-type fileInfo_Lgr struct {
+type fileInfo_Nc struct {
 	Url string `json:"url" mapstructure:"url"`
 }
 
@@ -69,7 +69,7 @@ type NoticeGroupDecrease struct {
 type NoticeGroupIncrease struct {
 	NoticeBase // [TYPE_L2_NOTICE_GROUP_INCREASE] "group_increase"
 
-	// "approve", "invite", "invite_approve"(lagrange) // 事件子类型，分别表示管理员已同意入群、管理员邀请入群
+	// "approve", "invite", "invite_approve"(NapCat 扩展) // 事件子类型，分别表示管理员已同意入群、管理员邀请入群
 	SubType string `json:"sub_type" mapstructure:"sub_type"`
 	// 群号
 	GroupId int `json:"group_id" mapstructure:"group_id"`
@@ -116,7 +116,7 @@ type NoticeGroupRecall struct {
 	// 被撤回的消息 ID
 	MessageId int `json:"message_id" mapstructure:"message_id"`
 
-	NoticeRecall_Lgr
+	NoticeRecall_Nc
 }
 
 // NoticeFriendRecall 好友消息撤回
@@ -128,10 +128,10 @@ type NoticeFriendRecall struct {
 	// 被撤回的消息 ID
 	MessageId int `json:"message_id" mapstructure:"message_id"`
 
-	NoticeRecall_Lgr
+	NoticeRecall_Nc
 }
 
-type NoticeRecall_Lgr struct {
+type NoticeRecall_Nc struct {
 	Tip string `json:"tip" mapstructure:"tip"`
 }
 
@@ -155,13 +155,21 @@ type NoticeNotify struct {
 type NoticeNotifyPoke struct {
 	NoticeNotify // [TYPE_L3_NOTICE_NOTIFY_POKE] "poke"
 
-	NoticeNotifyPoke_Lgr
+	NoticeNotifyPoke_Nc
 }
 
-type NoticeNotifyPoke_Lgr struct {
+type NoticeNotifyPoke_Nc struct {
 	Action       string `json:"action" mapstructure:"action"`
 	Suffix       string `json:"suffix" mapstructure:"suffix"`
 	ActionImgUrl string `json:"action_img_url" mapstructure:"action_img_url"`
+
+	// SenderId 是 poke 的发起者
+	//
+	// NapCat 的 poke 语义与 OneBot 11 标准不同: user_id 与 target_id 都是被戳方,
+	// 发起方放在 sender_id (标准里没有这个字段)。非 NapCat 实现不带 sender_id,
+	// Easyonebot 在分发前会把它补齐成 user_id, 消费方统一读 SenderId。
+	// 详见 docs/napcat-protocol-differences.md
+	SenderId int `json:"sender_id" mapstructure:"sender_id"`
 }
 
 // NoticeNotifyLuckyKing 群红包运气王

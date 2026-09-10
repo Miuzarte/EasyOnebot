@@ -30,9 +30,9 @@ type RequestGroup struct {
 	// 群号
 	GroupId int `json:"group_id" mapstructure:"group_id"`
 
-	RequestGroup_Lgr
+	RequestGroup_Nc
 }
 
-type RequestGroup_Lgr struct {
+type RequestGroup_Nc struct {
 	InvitorId int `json:"invitor_id" mapstructure:"invitor_id"`
 }

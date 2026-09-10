@@ -22,7 +22,7 @@ type MessageBase struct {
 	// 字体
 	Font int `json:"font" mapstructure:"font"`
 
-	Message_Lgr
+	Message_Nc
 }
 
 // MessagePrivate 私聊消息
@@ -90,7 +90,7 @@ type Anonymous struct {
 }
 
 type (
-	Message_Lgr struct {
+	Message_Nc struct {
 		MessageStyle *MessageStyle `json:"message_style" mapstructure:"message_style"`
 	}
 	MessageStyle struct {

@@ -158,7 +158,7 @@ func signature(s string) string {
 
 // TestVersionMetaMatchesSpec 校验同步脚本写下的指纹与当前 spec 一致。
 func TestVersionMetaMatchesSpec(t *testing.T) {
-	meta, err := readVersionMeta()
+	version, _, metaPaths, err := SpecVersionMeta()
 	if err != nil {
 		t.Fatalf("读取 version.json 失败: %v", err)
 	}
@@ -166,13 +166,13 @@ func TestVersionMetaMatchesSpec(t *testing.T) {
 	if err != nil {
 		t.Fatalf("读取 spec 失败: %v", err)
 	}
-	if meta.Paths != len(eps) {
-		t.Errorf("version.json 记 %d 个端点, 实际 %d 个, spec 可能被手改过", meta.Paths, len(eps))
+	if metaPaths != len(eps) {
+		t.Errorf("version.json 记 %d 个端点, 实际 %d 个, spec 可能被手改过", metaPaths, len(eps))
 	}
-	if meta.Version == "" {
+	if version == "" {
 		t.Error("version.json 缺少 version 字段")
 	}
-	if !strings.Contains(specFile, meta.Version) {
-		t.Errorf("specFile (%s) 与 version.json (%s) 版本不一致", specFile, meta.Version)
+	if !strings.Contains(specFile, version) {
+		t.Errorf("specFile (%s) 与 version.json (%s) 版本不一致", specFile, version)
 	}
 }

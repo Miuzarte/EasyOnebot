@@ -1,6 +1,7 @@
 package napcat
 
 import (
+	"embed"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -13,40 +14,54 @@ import (
 // 同步新版本 spec 后需要同步改这里 (以及 generate.go 里的 go:generate 指令)。
 const specFile = "spec/openapi-4.18.19.json"
 
+// specFS 把 spec 编进二进制。
+//
+// 这里只能 embed 本包目录下的文件, 所以 spec/ 放在包内; 用 embed 而不是运行期读文件,
+// 是为了让调用方在任何工作目录下都能拿到端点表 (单元测试、go run、别的项目都成立)。
+//
+//go:embed spec/openapi-*.json spec/version.json
+var specFS embed.FS
+
 type specInfo struct {
 	Version string `json:"version"`
 	Latest  string `json:"latest"`
 	Paths   int    `json:"paths"`
 }
 
-// readVersionMeta 读取同步脚本写下的版本指纹 (spec/version.json)。
-func readVersionMeta() (specInfo, error) {
-	var info specInfo
-	b, err := os.ReadFile(filepath.Join(specDir(), "version.json"))
+// SpecVersionMeta 返回同步脚本写下的版本指纹 (spec/version.json)。
+func SpecVersionMeta() (version, latest string, paths int, err error) {
+	b, err := specFS.ReadFile("spec/version.json")
 	if err != nil {
-		return info, err
+		return "", "", 0, err
 	}
-	err = json.Unmarshal(b, &info)
-	return info, err
+	var info specInfo
+	if err = json.Unmarshal(b, &info); err != nil {
+		return "", "", 0, err
+	}
+	return info.Version, info.Latest, info.Paths, nil
 }
 
-func specDir() string { return "spec" }
+// specDoc 是 spec 里本包用得到的部分
+type specDoc struct {
+	Paths map[string]map[string]struct {
+		OperationID string `json:"operationId"`
+	} `json:"paths"`
+}
 
-// SpecFile 返回当前生效的 spec 路径 (相对本包目录)。
-func SpecFile() string { return specFile }
-
-// SpecEndpoints 返回 spec 里定义的全部端点名 (path 去掉前导 '/')。
-//
-// 这里直接解析 spec JSON, 不依赖生成代码, 因此可以独立作为"端点名是否存在"的判据。
-func SpecEndpoints() ([]string, error) {
-	b, err := os.ReadFile(specFile)
+func loadSpec() (specDoc, error) {
+	var doc specDoc
+	b, err := specFS.ReadFile(specFile)
 	if err != nil {
-		return nil, err
+		return doc, err
 	}
-	var doc struct {
-		Paths map[string]map[string]json.RawMessage `json:"paths"`
-	}
-	if err := json.Unmarshal(b, &doc); err != nil {
+	err = json.Unmarshal(b, &doc)
+	return doc, err
+}
+
+// SpecEndpoints 返回 spec 里定义的全部端点名 (path 去掉前导 '/'), 已排序。
+func SpecEndpoints() ([]string, error) {
+	doc, err := loadSpec()
+	if err != nil {
 		return nil, err
 	}
 	out := make([]string, 0, len(doc.Paths))
@@ -57,18 +72,10 @@ func SpecEndpoints() ([]string, error) {
 	return out, nil
 }
 
-// SpecOperationIDs 返回 spec 里全部 operationId, 顺序与 [SpecEndpoints] 一致。
+// SpecOperationIDs 返回 spec 里全部 operationId, 已排序。
 func SpecOperationIDs() ([]string, error) {
-	b, err := os.ReadFile(specFile)
+	doc, err := loadSpec()
 	if err != nil {
-		return nil, err
-	}
-	var doc struct {
-		Paths map[string]map[string]struct {
-			OperationID string `json:"operationId"`
-		} `json:"paths"`
-	}
-	if err := json.Unmarshal(b, &doc); err != nil {
 		return nil, err
 	}
 	out := make([]string, 0, len(doc.Paths))
@@ -78,6 +85,27 @@ func SpecOperationIDs() ([]string, error) {
 		}
 	}
 	sort.Strings(out)
+	return out, nil
+}
+
+// EndpointToAction 返回 operationId -> 端点名 (即 WS 请求里的 action 字段) 的映射。
+//
+// 生成类型用 operationId 命名, 实际调用要发端点名, 两者靠 spec 里的 path 对齐。
+func EndpointToAction() (map[string]string, error) {
+	doc, err := loadSpec()
+	if err != nil {
+		return nil, err
+	}
+	out := make(map[string]string, len(doc.Paths))
+	for p, ops := range doc.Paths {
+		action := trimPath(p)
+		for _, op := range ops {
+			if op.OperationID == "" {
+				continue
+			}
+			out[op.OperationID] = action
+		}
+	}
 	return out, nil
 }
 
@@ -91,7 +119,7 @@ func trimPath(p string) string {
 // endpointRe 匹配手写 API 层里的 NewReq("<endpoint>", ...) 调用。
 var endpointRe = regexp.MustCompile(`NewReq\(\s*"([a-zA-Z0-9_.]+)"`)
 
-// HandwrittenEndpoints 扫描 EasyOnebot 手写的 api 包, 返回其中出现的全部端点名。
+// HandwrittenEndpoints 扫描 EasyOnebot 手写的 api 包, 返回端点名 -> 出现的文件。
 func HandwrittenEndpoints(apiDir string) (map[string][]string, error) {
 	entries, err := os.ReadDir(apiDir)
 	if err != nil {

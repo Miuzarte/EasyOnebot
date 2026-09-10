@@ -5,7 +5,7 @@ SetFriendAddRequest 设置好友添加请求
 
 std: [SetFriendAddRequest]
 
-https://lagrange-onebot.apifox.cn/236975604e0
+见 NapCat 端点 [set_friend_add_request] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -13,7 +13,7 @@ https://lagrange-onebot.apifox.cn/236975604e0
 	approve: 是否同意 <默认值: true>
 	reason(可选): 拒绝原因
 */
-func SetFriendAddRequest_Lgr(flag string, approve bool, reason ...string) *Request {
+func SetFriendAddRequest_Nc(flag string, approve bool, reason ...string) *Request {
 	if len(reason) == 0 {
 		return NewReq("set_friend_add_request", map[string]any{
 			"flag":    flag,
@@ -28,17 +28,17 @@ func SetFriendAddRequest_Lgr(flag string, approve bool, reason ...string) *Reque
 	}
 }
 
-type validateSetFriendAddRequest_Lgr struct {
+type validateSetFriendAddRequest struct {
 	Flag   string   `validate:"required"`
 	Reason []string `validate:"omitempty"`
 }
 
-func (c LgrCaller) SetFriendAddRequest_Lgr(flag string, approve bool, reason ...string) error {
-	err := validate.Struct(&validateSetFriendAddRequest_Lgr{flag, reason})
+func (c NcCaller) SetFriendAddRequest(flag string, approve bool, reason ...string) error {
+	err := validate.Struct(&validateSetFriendAddRequest{flag, reason})
 	if err != nil {
 		return err
 	}
-	return c.PostReqNoResp(SetFriendAddRequest_Lgr(flag, approve, reason...))
+	return c.PostReqNoResp(SetFriendAddRequest_Nc(flag, approve, reason...))
 }
 
 /*
@@ -46,7 +46,7 @@ SetGroupAddRequest 处理加群请求／邀请
 
 std: [SetGroupAddRequest]
 
-https://lagrange-onebot.apifox.cn/236975617e0
+见 NapCat 端点 [set_group_add_request] (docs/onebot-napcat-endpoints.md)
 
 参数:
 
@@ -54,7 +54,7 @@ https://lagrange-onebot.apifox.cn/236975617e0
 	approve: 是否同意 <默认值: true>
 	reason(可选): 拒绝原因
 */
-func SetGroupAddRequest_Lgr(flag string, approve bool, reason ...string) *Request {
+func SetGroupAddRequest_Nc(flag string, approve bool, reason ...string) *Request {
 	if len(reason) == 0 {
 		return NewReq("set_group_add_request", map[string]any{
 			"flag":    flag,
@@ -69,15 +69,15 @@ func SetGroupAddRequest_Lgr(flag string, approve bool, reason ...string) *Reques
 	}
 }
 
-type validateSetGroupAddRequest_Lgr struct {
+type validateSetGroupAddRequest_Nc struct {
 	Flag   string   `validate:"required"`
 	Reason []string `validate:"omitempty"`
 }
 
-func (c LgrCaller) SetGroupAddRequest_Lgr(flag string, approve bool, reason ...string) error {
-	err := validate.Struct(&validateSetGroupAddRequest_Lgr{flag, reason})
+func (c NcCaller) SetGroupAddRequest(flag string, approve bool, reason ...string) error {
+	err := validate.Struct(&validateSetGroupAddRequest_Nc{flag, reason})
 	if err != nil {
 		return err
 	}
-	return c.PostReqNoResp(SetGroupAddRequest_Lgr(flag, approve, reason...))
+	return c.PostReqNoResp(SetGroupAddRequest_Nc(flag, approve, reason...))
 }

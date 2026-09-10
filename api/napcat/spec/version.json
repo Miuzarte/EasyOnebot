@@ -5,7 +5,12 @@
   "paths": 175,
   "schemas": 39,
   "operationIdsInjected": 175,
-  "responseDataTypesNamed": 171,
+  "responseModelComponentsCreated": 171,
+  "int64FieldOverrides": 62,
+  "schemaOverrides": [
+    "GetMsgData.message",
+    "GetMsgData.sender"
+  ],
   "aliasedEndpoints": {
     "/.ocr_image": "OcrImageLegacy",
     "/.handle_quick_operation": "HandleQuickOperationLegacy"
